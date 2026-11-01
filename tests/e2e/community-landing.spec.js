@@ -4,7 +4,7 @@
 // The grid is the only way into Get Involved, the Technical Advisory Board,
 // User Groups, Awards, the End User Directory and Projects from End Users
 // from the section's own front door, and it is hand-authored JSX inside an MDX
-// document: six `.pillar` cards, each a <h3><Link to="…"> plus a descriptive
+// document: six `.pillar` cards, each a <h2><Link to="…"> plus a descriptive
 // paragraph.
 //
 // Nothing asserts it today. Three specs load `/community` already —
@@ -76,7 +76,7 @@ test.describe('community landing page', () => {
 
     for (const [index, { label }] of CARDS.entries()) {
       const card = cards.nth(index);
-      await expect(card.locator('h3')).toHaveText(label);
+      await expect(card.locator('h2')).toHaveText(label);
       // Each card carries a full description; an empty paragraph is the shape
       // a truncated MDX edit leaves behind, and the reason the grid replaced
       // the DocCardList that showed only a frontmatter line.

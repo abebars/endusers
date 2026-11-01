@@ -6,7 +6,7 @@
 //   1. The files contain JSX, which Node cannot parse.
 //   2. They import `./styles.module.css`, which Node cannot resolve.
 //   3. They import the `@site/...` alias, which only webpack understands.
-//   4. They import `@docusaurus/useBaseUrl` and `@docusaurus/Link`, which are
+//   4. They import `@docusaurus/...` and `@theme/...` aliases, which are
 //      theme aliases rather than installed packages.
 //   5. They import relative paths with no file extension, such as
 //      `../hooks/useFocusTrap`, which webpack completes and Node does not.
@@ -35,13 +35,27 @@ const DATA_ALIAS = '@site/data/';
 const JSON_SPECIFIER = /\.json$/;
 const RELATIVE_SPECIFIER = /^\.\.?\//;
 const DOCUSAURUS_ALIAS = '@docusaurus/';
+const THEME_ALIAS = '@theme/';
 
 const REPO_ROOT = new URL('../../', import.meta.url);
 const STUB_ROOT = new URL('./docusaurus-stubs/', import.meta.url);
+const THEME_STUB_ROOT = new URL('./theme-stubs/', import.meta.url);
 
 // Only the `@docusaurus/...` aliases that src/ actually imports are stubbed;
 // anything else keeps failing loudly rather than resolving to a silent no-op.
-const DOCUSAURUS_STUBS = new Set(['useBaseUrl', 'Link', 'useGlobalData']);
+const DOCUSAURUS_STUBS = new Set([
+  'useBaseUrl',
+  'Link',
+  'useGlobalData',
+  'Translate',
+  'theme-common',
+  'theme-common/internal',
+]);
+
+// `@theme/...` names the swizzlable component set the active theme provides;
+// the aliases src/ imports are stubbed from ./theme-stubs/ under the same
+// fail-loud rule as the Docusaurus aliases above.
+const THEME_STUBS = new Set(['Layout', 'Heading']);
 
 const CSS_STUB =
   'data:text/javascript,export default new Proxy({},{get:(_,key)=>' +
@@ -133,6 +147,16 @@ export function resolve(specifier, context, nextResolve) {
     if (DOCUSAURUS_STUBS.has(name)) {
       return {
         url: new URL(`${name}.mjs`, STUB_ROOT).href,
+        format: 'module',
+        shortCircuit: true,
+      };
+    }
+  }
+  if (specifier.startsWith(THEME_ALIAS)) {
+    const name = specifier.slice(THEME_ALIAS.length);
+    if (THEME_STUBS.has(name)) {
+      return {
+        url: new URL(`${name}.mjs`, THEME_STUB_ROOT).href,
         format: 'module',
         shortCircuit: true,
       };

@@ -31,7 +31,7 @@ export default function EmptyFilterState({
 }) {
   return (
     <div className={styles.emptyState}>
-      <h3>{heading}</h3>
+      <h2>{heading}</h2>
       <p>{children}</p>
       <button type="button" onClick={onClear} className={styles.clearButton}>
         {clearLabel}

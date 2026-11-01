@@ -102,7 +102,7 @@ function PersonCard({ person }) {
         <span className={styles.viewLabel}>View profile</span>
       </button>
       <div className={styles.personInfo}>
-        <h4>{name}</h4>
+        <h3>{name}</h3>
         <p>{role || company}</p>
         {role && <span>{company}</span>}
       </div>

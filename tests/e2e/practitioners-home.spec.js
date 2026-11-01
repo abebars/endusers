@@ -139,7 +139,7 @@ test.describe('landing page hero', () => {
 
     for (const [index, heading] of PILLARS.entries()) {
       const pillar = pillars.nth(index);
-      await expect(pillar.locator('h3')).toHaveText(heading);
+      await expect(pillar.locator('h2')).toHaveText(heading);
       // Every pillar carries a body paragraph; an empty one is the shape a
       // truncated MDX edit leaves behind.
       await expect(pillar.locator('p')).not.toBeEmpty();
@@ -306,7 +306,7 @@ test.describe('landing page TAB roster', () => {
 
     for (const [index, person] of tabPeople.entries()) {
       const card = cards.nth(index);
-      await expect(card.locator('h4')).toHaveText(person.name);
+      await expect(card.locator('h3')).toHaveText(person.name);
       await expect(
         card.getByRole('button', { name: `Open ${person.name} profile` }),
       ).toBeVisible();

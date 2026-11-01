@@ -23,6 +23,9 @@
 }
 
 .title {
+  /* Same size the h3 rendered at before the outline fix: the heading moved
+     up a level because the list sits directly under the page h1. */
+  font-size: 1.5rem;
   margin: 0 0 0.25rem;
 }
 

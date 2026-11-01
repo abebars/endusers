@@ -38,6 +38,15 @@ test('an unstubbed @docusaurus alias is left to the default resolver', async () 
   assert.notEqual(hooks.resolve('@docusaurus/Link', {}, next), sentinel);
 });
 
+test('a stubbed @theme alias resolves to theme-stubs, an unstubbed one defers', async () => {
+  const hooks = await import('./tools/jsx-hooks.mjs');
+  const sentinel = { url: 'deferred', shortCircuit: true };
+  const next = () => sentinel;
+  const { url } = hooks.resolve('@theme/Layout', {}, next);
+  assert.match(url, /\/tests\/tools\/theme-stubs\/Layout\.mjs$/);
+  assert.equal(hooks.resolve('@theme/NoSuchComponent', {}, next), sentinel);
+});
+
 test('useBaseUrl leaves absolute and protocol-relative URLs untouched', () => {
   assert.equal(useBaseUrl('https://cncf.io/a.svg'), 'https://cncf.io/a.svg');
   assert.equal(useBaseUrl('//cdn.example/a.svg'), '//cdn.example/a.svg');

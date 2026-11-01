@@ -55,7 +55,7 @@ function cardFor(page, entry) {
     .locator('article')
     .filter({
       has: page.getByRole('heading', {
-        level: 3,
+        level: 2,
         name: entry.organization,
         exact: true,
       }),

@@ -22,7 +22,7 @@ export function MemberCard({ member }) {
           lazy
         />
         <div className={styles.cardContent}>
-          <h3 className={styles.orgName}>{member.name}</h3>
+          <h2 className={styles.orgName}>{member.name}</h2>
           {member.membershipStatus && (
             <p className={styles.roleLabel}>
               {membershipLabel(member.membershipStatus)}
