@@ -48,33 +48,50 @@ const MONTHS = [
 ];
 
 // "Wednesday March 25, 2026 16:00 - 16:30" or "Friday June 19, 2026 10:07am
-// - 10:10am", depending on the clock the event's Sched is configured with.
+// - 10:10am", depending on the clock the event's Sched is configured with. A
+// session that runs past midnight repeats the date before its end time:
+// "Tuesday April 1, 2025 19:00 - Wednesday April 2, 2025 02:00".
 const LISTING_TIME =
-  /^\w+ (\w+) (\d{1,2}), (\d{4}) (\d{1,2}):(\d{2})(am|pm)? - (\d{1,2}):(\d{2})(am|pm)?$/;
+  /^\w+ (\w+) (\d{1,2}), (\d{4}) (\d{1,2}):(\d{2})(am|pm)? - (?:\w+ (\w+) (\d{1,2}), (\d{4}) )?(\d{1,2}):(\d{2})(am|pm)?$/;
 
 function parseListingTimes(text) {
   const match = LISTING_TIME.exec(text.replace(/\s+/g, ' '));
-  const month = match ? MONTHS.indexOf(match[1].toLowerCase()) : -1;
-  if (month === -1) {
+  if (!match) {
     throw new Error(`Sched listing has no usable session time: ${text}`);
   }
   const [
     ,
-    ,
-    day,
-    year,
+    startMonth,
+    startDay,
+    startYear,
     startHour,
     startMinute,
     startHalf,
+    endMonth,
+    endDay,
+    endYear,
     endHour,
     endMinute,
     endHalf,
   ] = match;
-  const date = `${year}-${String(month + 1).padStart(2, '0')}-${day.padStart(2, '0')}`;
+  const startDate = calendarDate(startMonth, startDay, startYear, text);
+  const endDate = endMonth
+    ? calendarDate(endMonth, endDay, endYear, text)
+    : startDate;
   return {
-    startsAt: `${date}T${clockTime(startHour, startMinute, startHalf)}:00`,
-    endsAt: `${date}T${clockTime(endHour, endMinute, endHalf)}:00`,
+    startsAt: `${startDate}T${clockTime(startHour, startMinute, startHalf)}:00`,
+    endsAt: `${endDate}T${clockTime(endHour, endMinute, endHalf)}:00`,
   };
+}
+
+// ("April", "1", "2025") -> "2025-04-01"; an unknown month name is a listing
+// the parser cannot read.
+function calendarDate(monthName, day, year, text) {
+  const month = MONTHS.indexOf(monthName.toLowerCase());
+  if (month === -1) {
+    throw new Error(`Sched listing has no usable session time: ${text}`);
+  }
+  return `${year}-${String(month + 1).padStart(2, '0')}-${day.padStart(2, '0')}`;
 }
 
 // ("10", "07", "am") / ("7", "00", "pm") / ("16", "00", undefined) -> "HH:MM".

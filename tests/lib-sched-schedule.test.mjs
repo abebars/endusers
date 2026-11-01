@@ -119,6 +119,31 @@ test('parseSchedListing converts the 12-hour clock around noon and midnight', ()
   ]);
 });
 
+test('parseSchedListing reads the end date of a session that runs past midnight', () => {
+  const [session] = parseSchedListing(
+    listingEntry({
+      date: 'Wednesday April  30, 2025 19:00 - Thursday May  1, 2025 02:00',
+    }),
+  ).values();
+  assert.equal(session.startsAt, '2025-04-30T19:00:00');
+  assert.equal(session.endsAt, '2025-05-01T02:00:00');
+  const [lateEnd] = parseSchedListing(
+    listingEntry({
+      date: 'Friday April 11, 2025 19:00 - Saturday April 12, 2025 02:00',
+    }),
+  ).values();
+  assert.equal(lateEnd.endsAt, '2025-04-12T02:00:00');
+  assert.throws(
+    () =>
+      parseSchedListing(
+        listingEntry({
+          date: 'Tuesday April 1, 2025 19:00 - Wednesday Avril 2, 2025 02:00',
+        }),
+      ),
+    /no usable session time: Tuesday April 1, 2025 19:00 - Wednesday Avril 2, 2025 02:00$/,
+  );
+});
+
 test('parseSchedListing knows every month name', () => {
   const months = [
     'January',
