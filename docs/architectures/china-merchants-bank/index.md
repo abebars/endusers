@@ -29,7 +29,7 @@ architecture:
 
 import CNCFProjectCard from '@site/src/components/CNCFProjectCard';
 
-> Submitted by China Merchants Bank and Alibaba Cloud to the CNCF End User Technical Advisory Board via [cncf/tab#140](https://github.com/cncf/tab/issues/140). Documentation is distributed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+> Submitted by China Merchants Bank to the CNCF End User Technical Advisory Board via [cncf/tab#140](https://github.com/cncf/tab/issues/140). Documentation is distributed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 
 ## Relevant CNCF projects
 
@@ -49,7 +49,7 @@ China Merchants Bank (CMB) is a nationwide joint-stock commercial bank headquart
 
 ## Teams
 
-This architecture is owned by the Architecture Management Team in China Merchants Bank's Information Technology Department and was developed together with Alibaba Cloud. The team integrates open source infrastructure and AI runtimes with CMB's internal platforms through Kubernetes-native interfaces.
+This architecture is owned by the Architecture Management Team in China Merchants Bank's Information Technology Department. The team integrates open source infrastructure and AI runtimes with CMB's internal platforms through Kubernetes-native interfaces.
 
 ## Architecture overview and goals
 
@@ -82,6 +82,10 @@ The architecture uses one shared Kubernetes foundation with two decoupled worklo
 Both paths share the Kubernetes control plane, accelerator node pool, data and model access layer, model registry, and observability foundation. They remain separate at the workload-policy and runtime levels so each can use the behavior best suited to its demand pattern.
 
 ![Kubernetes-native training and inference architecture. A workload layer holds a training deployment (Twinkle multi-tenant LoRA training, verl-SpeCo draft-model training, and a Ray runtime) fed by the Training API, and an inference deployment (RBG role-based orchestration, vLLM or SGLang serving engine, and a Ray runtime) fed by the Inference Gateway. A platform control layer holds KEDA event-driven autoscaling, Kueue admission and quota, Kubernetes Scheduler Pod placement, HAMi vGPU, memory, and core quota, and the Fluid control plane for datasets, runtimes, and PVCs. A data and resource layer holds the heterogeneous accelerator pool of nearly 10,000 cards from three vendors with the HAMi device plugin, the Fluid cache runtime for datasets, models, and checkpoints, object storage, and the model registry. Arrows show business requests, data and model paths, control and scaling signals, and GPU allocation, with a model lifecycle of train, checkpoint, evaluate and register, deploy, online metrics, and retrain trigger.](./images/architecture.png)
+
+### Shared model lifecycle
+
+Training produces model or adapter checkpoints for evaluation and registration. The model registry tracks versions, adapters, and tokenizers; inference services load the selected version through Fluid. Prometheus metrics inform capacity adjustments and subsequent model iterations. This lifecycle connects the two workload paths through shared model assets and operational feedback, as described in the [CNCF case study](https://www.cncf.io/case-studies/china-merchants-bank-2/).
 
 ### Component ownership and responsibility boundaries
 
@@ -184,4 +188,11 @@ CMB also co-developed two open source projects with the community to close gaps 
 
 ## What's next for your architecture? What are you looking to do next?
 
-CMB continues to expand compatibility coverage across accelerator generations, model architectures, and training and inference runtimes, and to increase operational automation, while preserving the Kubernetes-native interfaces that keep the control plane, resource layer, data path, monitoring system, and workload runtimes loosely coupled. Areas identified for further work include dynamic tenant concurrency for multi-tenant training, broader hardware and runtime support, and unit-cost-based capacity management.
+CMB continues to expand compatibility coverage across accelerator generations, model architectures, and training and inference runtimes, and to increase operational automation, while preserving the Kubernetes-native interfaces that keep the control plane, resource layer, data path, monitoring system, and workload runtimes loosely coupled.
+
+The next steps are:
+
+- **Dynamic tenant concurrency:** Plan to tune Twinkle concurrency using model size, LoRA settings, memory pressure, and service objectives, building on the eight-tenant validation.
+- **Unit-cost-based capacity management:** Use utilization, Kueue queue conditions, Prometheus latency, and token cost to inform training and inference capacity allocation.
+- **Serverless inference with KEDA:** Extend autoscaling to allow zero replicas when service objectives permit, restoring capacity from live demand signals and using Fluid caching to shorten model-loading delays.
+- **Broader hardware and runtime support:** Extend heterogeneous accelerator support through HAMi and add training and serving backends while preserving independent workload paths.
