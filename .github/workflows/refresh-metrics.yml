@@ -37,6 +37,8 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
       - run: npm run collect:case-studies
+      # Fetches only conferences that have not yet ended; a finished schedule
+      # is final and is refreshed by hand (see the collector's header).
       - run: npm run collect:end-user-talks
       - run: npm run fix:format
       - run: npm run validate:metrics
