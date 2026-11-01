@@ -207,7 +207,9 @@ const INTERACTIVE_STATES = [
 // SearchButton without passing `translations`, so neither string can be
 // changed from docusaurus.config.js. This is a baseline, not a suppression;
 // every route's scan fails the moment the plugin stops reporting it.
-const NAVBAR_VIOLATIONS = ['label-content-name-mismatch'];
+//
+// One button, so one node — see the node-count contract on KNOWN_VIOLATIONS.
+const NAVBAR_VIOLATIONS = { 'label-content-name-mismatch': 1 };
 
 // The state counterpart of KNOWN_VIOLATIONS, keyed by state label, with the
 // same self-retiring contract: an entry that stops being reported fails the
@@ -216,11 +218,12 @@ const KNOWN_STATE_VIOLATIONS = {
   // Each dialog opens over a page whose card headings already skip a level,
   // and axe scans the whole document, so the underlying list is still in the
   // scan. These retire with the route entries above.
-  'member profile dialog': [...NAVBAR_VIOLATIONS, 'heading-order'],
-  'TAB profile dialog': [...NAVBAR_VIOLATIONS, 'heading-order'],
+  'member profile dialog': { ...NAVBAR_VIOLATIONS, 'heading-order': 1 },
+  'TAB profile dialog': { ...NAVBAR_VIOLATIONS, 'heading-order': 1 },
   // The drawer replaces the navbar links it would otherwise report on, so
-  // this state records the heading skip alone.
-  'mobile navigation drawer': ['heading-order'],
+  // this state records the heading skips alone. It opens over `/`, so it
+  // carries that route's two skips: the pillar h3 and the person card h4.
+  'mobile navigation drawer': { 'heading-order': 2 },
 };
 
 const WCAG_TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'];
@@ -244,71 +247,104 @@ const EXTRA_RULES = ['heading-order'];
 // that merely fails belongs in KNOWN_VIOLATIONS, which retires itself.
 const DISABLED_RULES = Object.create(null);
 
-// Violations that exist on the site today, keyed by route path. Each entry is
-// an axe rule id. Deleting a fixed entry is required, not optional: the
-// route's light-mode scan fails while a stale entry remains, so the baseline
-// cannot outlive the bug it describes.
+// Violations that exist on the site today, keyed by route path. Each entry
+// maps an axe rule id to the number of elements that rule reports on the
+// route today. Deleting a fixed entry is required, not optional: the route's
+// light-mode scan fails while a stale entry remains, so the baseline cannot
+// outlive the bug it describes.
+//
+// The count is what stops the baseline from covering a *second* instance of a
+// rule it already records. Allowing a recorded rule any number of nodes would
+// mean that once `/community/members` is known to skip a heading level, a
+// skip added anywhere else on that page — a new component, a new section —
+// reports under the same rule id and ships green. A count that is too high
+// fails in light mode as a stale entry, so the numbers cannot drift upward
+// unchallenged either.
+//
+// Counts are a property of the markup's shape, not of the content: axe's
+// heading-order reports the first heading of each run that skips a level, so
+// the member directory reports one node whether it lists ten organisations or
+// a hundred, and adding a member does not move a number here.
 //
 // Every route carries the navbar, so every route starts from
 // NAVBAR_VIOLATIONS; route-specific entries are appended per path.
 //
-// HEADING_ORDER_ROUTES are the pages whose first card heading skips a level:
-// a card list rendered at h3 under the page h1 (member directory, radar
-// reports, award winners, the home and community landing pillars), a person
-// card rendered at h4 under an h2 section (TAB roster), and the blog
-// archive's year headings. The markup lives in src/components and in the
-// authored pages, not in this spec, so the entries are recorded here and
-// retire themselves when that markup is fixed.
-const HEADING_ORDER_ROUTES = [
-  '/',
-  '/community',
-  '/community/members',
-  '/community/technical-advisory-board',
-  '/community/awards',
-  '/resources/radar-reports',
-  '/blog/archive',
-];
+// HEADING_ORDER_NODES are the pages whose card headings skip a level: a card
+// list rendered at h3 under the page h1 (member directory, radar reports,
+// award winners, the home and community landing pillars), a person card
+// rendered at h4 under an h2 section (TAB roster), and the blog archive's
+// year headings. The markup lives in src/components and in the authored
+// pages, not in this spec, so the entries are recorded here and retire
+// themselves when that markup is fixed. The home page scores two because it
+// renders both shapes: a pillar h3 and a person card h4.
+const HEADING_ORDER_NODES = {
+  '/': 2,
+  '/community': 1,
+  '/community/members': 1,
+  '/community/technical-advisory-board': 1,
+  '/community/awards': 1,
+  '/resources/radar-reports': 1,
+  '/blog/archive': 1,
+};
 
 const KNOWN_VIOLATIONS = Object.fromEntries(
   ROUTES.map((route) => [
     route.path,
-    [
+    {
       ...NAVBAR_VIOLATIONS,
-      ...(HEADING_ORDER_ROUTES.includes(route.path) ? ['heading-order'] : []),
-    ],
+      ...(HEADING_ORDER_NODES[route.path]
+        ? { 'heading-order': HEADING_ORDER_NODES[route.path] }
+        : {}),
+    },
   ]),
 );
 
 // Route-specific violations on CONTENT_ROUTES, keyed by path, with the same
-// self-retiring contract. The navbar entry is implied for every content route
-// and retired through the template sample in KNOWN_VIOLATIONS, so only what
-// a page adds of its own belongs here.
+// self-retiring contract and the same node counts. The navbar entry is
+// implied for every content route and retired through the template sample in
+// KNOWN_VIOLATIONS, so only what a page adds of its own belongs here.
 const KNOWN_CONTENT_VIOLATIONS = Object.assign(Object.create(null), {
   // The staff person cards render at h4 directly under the page h1.
-  '/community/get-involved': ['heading-order'],
+  '/community/get-involved': { 'heading-order': 1 },
 });
 
 // Both halves of the baseline contract against one scan's results. `allowed`
-// is every rule id the scan may report without failing; `recorded` is the
-// subset the baseline claims still fails, which must therefore be reported.
-// Retirement is checked in light mode only, the mode the retired serial
-// rescans ran in, so a rule that fails in one colour scheme but not the
-// other is not asked to fail in both.
+// maps every rule id the scan may report to the number of elements it may
+// report it on; `recorded` is the subset the baseline claims still fails,
+// which must therefore be reported, on that many elements.
+//
+// A rule reported on more elements than `allowed` records fails in both
+// colour modes, like a rule that is not recorded at all: both are new markup
+// the baseline never described. Retirement — a rule that stopped failing, or
+// now fails on fewer elements — is checked in light mode only, the mode the
+// retired serial rescans ran in, so a rule that fails in one colour scheme
+// but not the other is not asked to fail in both.
 function expectBaselined(results, { allowed, recorded, mode, where, list }) {
-  const allowedIds = new Set(allowed);
-  const reported = new Set(results.violations.map((v) => v.id));
-  const unrecorded = results.violations.filter((v) => !allowedIds.has(v.id));
+  const reported = new Map(
+    results.violations.map((v) => [v.id, v.nodes.length]),
+  );
+  const allowance = (ruleId) =>
+    Object.hasOwn(allowed, ruleId) ? allowed[ruleId] : 0;
+  const unrecorded = results.violations.filter(
+    (v) => v.nodes.length > allowance(v.id),
+  );
 
   expect(
-    unrecorded.map(describe),
+    unrecorded.map((v) => describe(v, allowance(v.id))),
     `${where} reported WCAG violations that are not in ${list}`,
   ).toEqual([]);
 
   if (mode !== 'light') return;
-  const stale = recorded.filter((ruleId) => !reported.has(ruleId));
+  const stale = Object.entries(recorded)
+    .filter(([ruleId, count]) => (reported.get(ruleId) ?? 0) < count)
+    .map(([ruleId, count]) =>
+      reported.has(ruleId)
+        ? `${ruleId} (recorded on ${count}, now fails on ${reported.get(ruleId)})`
+        : ruleId,
+    );
   expect(
     stale,
-    `${where}: these rules no longer fail — delete them from ${list}`,
+    `${where}: these rules no longer fail as recorded — update or delete them in ${list}`,
   ).toEqual([]);
 }
 
@@ -330,13 +366,19 @@ function scanner(page) {
 
 // axe reports one violation object per rule, each carrying the nodes it
 // matched; this flattens that into "rule id + where" so a failure message
-// names the element instead of just the rule.
-function describe(violation) {
+// names the element instead of just the rule. `allowedNodes` is how many
+// elements the baseline already accounts for, so a rule that is recorded but
+// has grown says so rather than reading as an entirely new violation.
+function describe(violation, allowedNodes = 0) {
   const where = violation.nodes
     .slice(0, 5)
     .map((node) => node.target.join(' '))
     .join(', ');
-  return `${violation.id} (${violation.impact ?? 'unknown impact'}) at ${where}`;
+  const count =
+    allowedNodes > 0
+      ? ` on ${violation.nodes.length} elements, ${allowedNodes} recorded,`
+      : '';
+  return `${violation.id} (${violation.impact ?? 'unknown impact'})${count} at ${where}`;
 }
 
 // The routes the built site publishes, normalized to the form ROUTES uses.
@@ -418,7 +460,7 @@ for (const mode of ['light', 'dark']) {
     }) => {
       await page.emulateMedia({ colorScheme: mode });
       const results = await scan(page, route.path, mode);
-      const recorded = KNOWN_VIOLATIONS[route.path] ?? [];
+      const recorded = KNOWN_VIOLATIONS[route.path] ?? {};
       expectBaselined(results, {
         allowed: recorded,
         recorded,
@@ -437,9 +479,9 @@ for (const mode of ['light', 'dark']) {
     }) => {
       await page.emulateMedia({ colorScheme: mode });
       const results = await scan(page, path, mode);
-      const recorded = KNOWN_CONTENT_VIOLATIONS[path] ?? [];
+      const recorded = KNOWN_CONTENT_VIOLATIONS[path] ?? {};
       expectBaselined(results, {
-        allowed: [...NAVBAR_VIOLATIONS, ...recorded],
+        allowed: { ...NAVBAR_VIOLATIONS, ...recorded },
         recorded,
         mode,
         where: path,
@@ -456,7 +498,7 @@ for (const mode of ['light', 'dark']) {
     }) => {
       await page.emulateMedia({ colorScheme: mode });
       const results = await scanState(page, state, mode);
-      const recorded = KNOWN_STATE_VIOLATIONS[state.label] ?? [];
+      const recorded = KNOWN_STATE_VIOLATIONS[state.label] ?? {};
       expectBaselined(results, {
         allowed: recorded,
         recorded,
