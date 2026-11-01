@@ -27,9 +27,10 @@ export default defineConfig({
   // The same 4 applies in CI: Playwright's default there is half of the
   // runner's 4 cores, and the suite is I/O-bound on page loads and axe scans
   // rather than on CPU, so two more browsers against the one server shorten
-  // the run without starving it. The coverage lane passes --workers=2 on the
-  // command line, which takes precedence, because it also writes per-test V8
-  // coverage artifacts.
+  // the run without starving it. The coverage lane (E2E_COVERAGE=1) uses the
+  // same count: its per-test V8 artifacts are keyed by worker and test, so
+  // workers never write the same file, and four workers finish the lane in
+  // about 60% of the time two take with an identical coverage result.
   workers: 4,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 1 : 0,

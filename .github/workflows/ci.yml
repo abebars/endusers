@@ -186,11 +186,13 @@ jobs:
 
   e2e:
     name: End-to-end tests
-    needs: [validate, lint]
-    if: >-
-      ${{ !cancelled() && (needs.validate.result != 'success' ||
-      needs.lint.result != 'success' || needs.validate.outputs.document_only !=
-      'true') }}
+    # Depends on classify alone so the browser suites start alongside validate
+    # and lint instead of after them; the three jobs no longer share a critical
+    # path. A document-only change skips the browsers on the classification
+    # itself (ADR 0011, amendment of 2026-11-01). A failed classify leaves
+    # document_only unset, so the comparison below runs the browsers then too.
+    needs: classify
+    if: ${{ !cancelled() && needs.classify.outputs.document_only != 'true' }}
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
@@ -230,11 +232,9 @@ jobs:
 
   e2e-coverage:
     name: End-to-end coverage
-    needs: [classify, validate, lint]
-    if: >-
-      ${{ !cancelled() && (needs.classify.result != 'success' ||
-      needs.classify.outputs.document_only != 'true' || needs.validate.result !=
-      'success' || needs.lint.result != 'success') }}
+    # Same gate as e2e, for the same reasons.
+    needs: classify
+    if: ${{ !cancelled() && needs.classify.outputs.document_only != 'true' }}
     runs-on: ubuntu-24.04
     timeout-minutes: 20
     env:

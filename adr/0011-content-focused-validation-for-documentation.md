@@ -6,6 +6,9 @@
   Markdown no longer requires hard-wrapped prose, and formatting drift on `main`
   is repaired by an automated pull request; see
   [Amendment: advisory formatting and spelling](#amendment-advisory-formatting-and-spelling-2026-10-30).
+  Amended 2026-11-01: the browser jobs are skipped on the document-only
+  classification alone and no longer wait for the validation and lint jobs; see
+  [Amendment: browser jobs run alongside validation](#amendment-browser-jobs-run-alongside-validation-2026-11-01).
 - **Date**: 2026-10-29
 - **Related**:
   [ADR 0008](./0008-scope-agent-findings-to-user-observable-change.md),
@@ -94,8 +97,9 @@ generated, it must select full validation.
 
 The existing required check names remain stable. For document-only changes, the
 required validation check still runs the focused content checks and production
-build, and the lint check runs the changed-document checks. Browser jobs may be
-skipped only when that required content-validation path succeeds. The merge
+build, and the lint check runs the changed-document checks. Browser jobs are
+skipped on the document-only classification (see the amendment of 2026-11-01;
+they originally also ran whenever the content-validation path failed). The merge
 queue must apply the same classification and safety rules.
 
 ## Implementation plan
@@ -173,3 +177,42 @@ commits, so the web editor adds the trailer itself.
   contract suites and the production build remain the trust boundary.
 - No frozen threshold changes. This amendment narrows which focused-path
   findings block; it does not alter coverage, mutation or clone gates.
+
+## Amendment: browser jobs run alongside validation (2026-11-01)
+
+The original decision let the browser jobs skip only when the focused
+content-validation path succeeded, so `e2e` and `e2e-coverage` declared
+`needs: [validate, lint]` and read `validate`'s result. That made the two
+browser jobs wait for the whole validation job on every full-path pull request
+as well, putting the unit coverage gate, the dependency audit and the production
+build on the browser suites' critical path. In a representative run the
+validation job took two and a half minutes and the end-to-end coverage job then
+took another six and a half, so a full-path pull request waited around nine
+minutes of serial work after the runner queue for a set of jobs whose longest
+member needs about six and a half.
+
+The fallback the dependency implemented protected nothing. A document-only pull
+request whose focused validation fails is already red on the required
+"Validate repository" check and cannot merge; running the browser suites as well
+adds a second signal to a decision that is already made.
+
+### What changes in the browser jobs
+
+1. `e2e` and `e2e-coverage` depend on `classify` alone and skip when, and only
+   when, it classified the change as document-only. They start at the same time
+   as `validate` and `lint`.
+2. The sentence in the decision that read "Browser jobs may be skipped only when
+   that required content-validation path succeeds" is replaced by "Browser jobs
+   are skipped on the document-only classification".
+3. The required check names, the classifier and its fail-safe toward full
+   validation are unchanged. A classifier that fails writes no
+   `document_only` output, so the browser jobs still run.
+
+### Effects on pull requests
+
+- A full-path pull request's wall time drops by the duration of the validation
+  job, since the browser jobs no longer follow it.
+- A document-only pull request whose focused checks fail shows one red required
+  check instead of one red check and two green browser suites.
+- `tests/content-only-ci-workflow.test.mjs` binds the new shape: either browser
+  job depending on `validate` or `lint` again fails the suite.
