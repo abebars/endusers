@@ -5,9 +5,9 @@
   "apiUrl": "https://kccncna2025.sched.com/list/descriptions",
   "selection": "presented by speakers from organizations that meet the CNCF End User definition",
   "location": "Atlanta",
-  "generatedAt": "2026-11-01T15:19:58.301Z",
+  "generatedAt": "2026-11-01T16:59:38.271Z",
   "timezone": "EST (UTC−5)",
-  "talkCount": 96,
+  "talkCount": 104,
   "final": true,
   "days": [
     {
@@ -80,6 +80,15 @@
               "url": "https://kccncna2025.sched.com/event/27FV7",
               "description": "When your production network suddenly starts dropping packets, the last thing you expect is that your cloud provider quietly deployed a new monitoring tool. This talk shares our journey from mysterious outage to desperate fix to surprising discovery.\n\nIt started with alerts: packet loss spiking, network throughput crashing from 800MB/s to near 250MB/s. No recent changes on our end. Hours into the crisis, we discovered an unfamiliar DaemonSet running eBPF programs - Retina, silently rolled out across our clusters. But here's the catch: we couldn't remove it. The daemonset was reconciled instantly back to original state after an update.\nWith users impacted and no time for root cause analysis, we took a leap: build a mutation webhook to intercept and neuter this mysterious DaemonSet. It worked instantly - networks recovered, crisis averted.\n\nOnly then could we investigate: How did an eBPF observability tool cause such devastation? And why didn't we know it was being deployed?",
               "recording": "https://www.youtube.com/watch?v=J-Zx64mJzVk"
+            },
+            {
+              "id": "27FVD",
+              "title": "Benchmarking GenAI Foundation Model Inference Optimizations on Kubernetes",
+              "speakers": "Sachin MV, Brendan Slabe",
+              "room": "Building B | Level 5 | Thomas Murphy Ballroom 1",
+              "url": "https://kccncna2025.sched.com/event/27FVD",
+              "description": "Foundation models are general purpose deep learning models trained on vast amounts of data capable of responding to a diverse set of tasks. To minimize the recurring inference costs, such large model deployments are now being optimized in various ways to reduce the model computations without substantial loss in accuracy. These include techniques to optimize the attention mechanism like flash attention, paged attention etc, model parameter optimizations like quantization and other serving optimizations like in-flight batching, speculative decoding, disaggregated serving and other smart routing strategies. One of the biggest requirements to testing and deploying any such inference optimization technique is a consistent framework to measure and benchmark the inference performance. This talk introduces a Kubernetes SIG project to benchmark GenAI foundation model inference and validate the performance usability of inference optimizations in a standard manner for real world applications.",
+              "recording": "https://www.youtube.com/watch?v=_JhARfcw58A"
             },
             {
               "id": "27Nnr",
@@ -177,6 +186,15 @@
               "recording": "https://www.youtube.com/watch?v=8QS3hmsDjNE"
             },
             {
+              "id": "27FWE",
+              "title": "Meta’s Kubernetes-based Portable AI Research Environment",
+              "speakers": "Shaun Hopper, Navarre Pratt",
+              "room": "Building B | Level 5 | Thomas Murphy Ballroom 1",
+              "url": "https://kccncna2025.sched.com/event/27FWE",
+              "description": "As Meta's AI research demands grow, providing researchers with a consistent, high-productivity\ncomputing environment across diverse infrastructure has become essential. At the same time,\ninfrastructure engineers need a consistent and portable platform to deploy the environment\nacross multiple cloud providers. This session explores how Meta collaborated with CoreWeave\nto leverage SUNK (Slurm on Kubernetes) to enable a reliable and unified Slurm experience that\nruns seamlessly across heterogeneous multi-cloud environments, backed by comprehensive\nhealth checking, consistent security controls, deep centralized observability and unified\nresearch experience.\n\nIn this session, Meta and CoreWeave will share how SUNK enables researchers to focus on\ntheir work through a familiar Slurm interface, secure per-user isolation, shared storage mounts,\nand streamlined access management, abstracting away underlying infrastructure complexity.\nWhile allowing infrastructure engineers to realize the benefits of deploying everything on top of\nkubernetes.\n\nKey takeaways:\n\nHow Meta platformized their Slurm research environment on top of kubernetes, enabling a portable and consistent experience for researchers across different cloud providers.Novel patterns for enabling users to deploy infrastructure on top of kubernetes withoutrealizing it.Leveraging OpenTelemetry as a unified interface for both platform and research levelinsights.",
+              "recording": "https://www.youtube.com/watch?v=ts7bI51gRCo"
+            },
+            {
               "id": "27NnE",
               "title": "Introducing TAG Workloads Foundation: Advancing the Core of Cloud Native Execution",
               "speakers": "Yuan Tang, Paco Xu, Rajas Kakodkar, Alex Scammon, Stephen Rust",
@@ -252,6 +270,15 @@
               "url": "https://kccncna2025.sched.com/event/27FX0",
               "description": "CopperPoint Insurance embarked on a bold transformation initiative—transitioning from legacy, on-premises infrastructure to a cloud-native foundation on AWS powered by CNCF-hosted technologies. This presentation is the real story of how CopperPoint leveraged Kubernetes on Amazon EKS, Prometheus, Fluent Bit, OpenTelemetry, and other CNCF projects to modernize its core systems, enhance observability, and build a composable integration layer that now powers over 100 enterprise integrations.We will share how this new platform has enabled agility, innovation, and rapid scalability via CopperPoint's ecosystem, thus directly contributing to premium growth of over $1 billion. You will find out the architecture blueprint, top-level decisions, governance model, and lessons learned from cost and environment management perspective that you may apply to replicate this kind of transformation within your company.",
               "recording": "https://www.youtube.com/watch?v=jQRpHOm4Vts"
+            },
+            {
+              "id": "27FX9",
+              "title": "GAMMA in Action: How Careem Migrated To Istio Without Downtime",
+              "speakers": "Suren Raju, Sergey Marunich",
+              "room": "Building B | Level 4 | B405-406a",
+              "url": "https://kccncna2025.sched.com/event/27FX9",
+              "description": "Careem, the leading multi-service app in the Middle East, handles over 5 billion Kubernetes-based service requests daily. As our platform evolved, we began to outgrow the operational and extensibility constraints of our existing service mesh.\n\nThis talk shares how we executed an in-place, zero-downtime migration to Istio within the same Kubernetes cluster—without increasing infrastructure cost or rewriting most service configurations. A key enabler was our early adoption of the Kubernetes Gateway API (GAMMA initiative). By building on vendor-neutral, Kubernetes-native APIs for routing and traffic policies, we achieved a “define once, swap many times” model that allowed us to reuse the majority of our existing config during the transition.\n\nTo validate changes in production safely, we integrated Flagger to implement metrics-driven canary rollouts and gradual traffic shifting.",
+              "recording": "https://www.youtube.com/watch?v=igJXmbwMYAc"
             }
           ]
         },
@@ -339,6 +366,15 @@
               "url": "https://kccncna2025.sched.com/event/27FXy",
               "description": "Kubernetes is more than a container orchestrator; it is a platform for building custom compute abstractions. This extensibility is rooted in its modular architecture, where platform engineers can deploy custom resources and controllers to achieve specialized functionalities. Although powerful, this extensibility creates new challenges: complex interactions between controllers can lead to unintended behaviors that can cause outages or data loss. Worse yet, diagnosing these behaviors is notoriously difficult; the loosely coupled, asynchronous nature of the control plane offers poor visibility into the reconciliation process. This talk introduces Kamera, a new observability toolkit that empowers developers to quickly diagnose issues in custom control planes by tracing causality across controller reconciliations and the environmental events that trigger them. We will also show how Kamera uses model-checking and simulation techniques to catch problematic emergent behaviors pre-deployment.",
               "recording": "https://www.youtube.com/watch?v=E1f87Z6mij0"
+            },
+            {
+              "id": "27FY1",
+              "title": "People-first Path To Cell-based Architecture",
+              "speakers": "Asanka Abeysinghe, Martin Jones",
+              "room": "Building B | Level 3 | B308-309",
+              "url": "https://kccncna2025.sched.com/event/27FY1",
+              "description": "How do you move a 400-year-old university with 60,000 students and staff from a monolithic ESB to a decentralized, Kubernetes-native future—while keeping everyone engaged?\nThe university’s API-first mandate exposed hundreds of services but surfaced bottlenecks in governance, release cadence, and team autonomy. By grouping related microservices, APIs, and policies into self-contained cells deployed on Kubernetes, the team built a repeatable framework any squad could adopt in days. Provisioning fell from weeks to minutes, cell & artifact level logging streamlined incident investigation, deploying code couldn't be easier.\nMost important was how they succeeded: involving both business users and technical staff throughout the process, they built engagement and trust together. Collectively developing lightweight playbooks meant they now have a blueprint for rolling out cell-based architecture in large, federated organizations—starting with people, not platforms.",
+              "recording": "https://www.youtube.com/watch?v=XCpfpD_gMpo"
             },
             {
               "id": "27FY4",
@@ -751,6 +787,15 @@
               "recording": "https://www.youtube.com/watch?v=IPbamReWdss"
             },
             {
+              "id": "27Fbe",
+              "title": "How Comcast Leverages Radius in Their Internal Developer Platform",
+              "speakers": "Nick Beenham, Jonathan Smith",
+              "room": "Building B | Level 4 | B406b-407",
+              "url": "https://kccncna2025.sched.com/event/27Fbe",
+              "description": "Building cloud-native applications which can be deployed across multiple cloud environments is challenging—especially when using cloud resources beyond Kubernetes. In this session, learn about Comcast's journey of discovering a more intuitive way to combine application and infrastructure definitions and how they are using Radius to manage resources across multiple cloud environments. As an contributor to the Radius project, Comcast is using Radius custom resource types to model application resources deployed in the cloud and on-premises. This session will explore key features and benefits of custom resource types in Radius as well as real-world use cases and best practices for implementing Radius in a multi-cloud enterprise environment.",
+              "recording": "https://www.youtube.com/watch?v=axR7paIbmPI"
+            },
+            {
               "id": "27FbS",
               "title": "TikTok's IPv6 Journey To Cilium: Pitfalls and Lessons Learned",
               "speakers": "Giri Kuncoro, Joseph Pallamidessi",
@@ -828,6 +873,15 @@
               "url": "https://kccncna2025.sched.com/event/27FcN",
               "description": "Self-service database platforms help teams move fast—but only if engineers can help themselves. Over the past two years, the HubSpot data infrastructure team has built and evolved a suite of LLM-powered tools to assist developers working with their large Vitess installation running on Kubernetes. In this talk, the team will share what worked (and what didn't): from interpreting slow query plans to guiding self-scaling decisions to failed attempts at RAG-based documentation search. Participants will learn about latency workarounds, integrations with chat and UI flows, prompt pitfalls, and the essential glue work that made it all usable.",
               "recording": "https://www.youtube.com/watch?v=qDBgHS2bE7s"
+            },
+            {
+              "id": "27FcQ",
+              "title": "LLMs on Kubernetes: Squeeze 5x GPU Efficiency With Cache, Route, Repeat!",
+              "speakers": "Suraj Deshmukh, Yuhan Liu",
+              "room": "Building B | Level 5 | Thomas Murphy Ballroom 1",
+              "url": "https://kccncna2025.sched.com/event/27FcQ",
+              "description": "Struggling with GPU shortages & sky-high inference costs? You’re not alone. Deploying production-grade LLMs on K8s in 2025 still feels like competing in the GPU Hunger Games. But what if you could 5x your cluster’s efficiency using battle-tested Comp. Sci. principles—not magic?\n\nJoin us to explore how the open-source project “Production Stack” (a first-party vLLM project) supercharges vLLM on K8s with:\n- Cache: Offload KV Cache using LMCache to CPU/disk/remote storage(no redundant computations!)\n- Smarter Routing: Match requests to GPUs with pre-computed caches (lower TTFT)\n- Fault Tolerance++: Migrate live requests mid-generation during failures\n- RAG Revolution: Blend non-prefix caches from retrieved chunks(CacheBlend=3x faster TTFT)\n- Benchmarks Don’t Lie: See 5x throughput vs. vanilla vLLM in real-world tests\n\nWhether you’re an Infra Engineer, ML Developer or SRE, this deep dive will leave you with actionable patterns to deploy faster,cheaper & more reliably.",
+              "recording": "https://www.youtube.com/watch?v=2YCDvZokqnk"
             },
             {
               "id": "27NoL",
@@ -938,6 +992,15 @@
               "url": "https://kccncna2025.sched.com/event/27Fc2",
               "description": "Operating multiple Kubernetes clusters is becoming par for the course in any enterprise-scale Kubernetes deployment. As the complexity of your infrastructure deployments grow, so do the opportunities for inefficiencies.\n\nOnce the boundaries of a single cluster have been broken, the first place this complexity goes to is the end-user, often the least-well-informed to make decisions about optimal resource placement across a global fleet.\n\nThis talk is a deep-dive into taming the user experience of multi-cluster scheduling in order to enable platform engineering teams to reclaim the power in placing workload across fleets of clusters, and will cover:\n\n* Multi-cluster resource views (‘pod aggregation’) and subresource proxying for a seamless multi-cluster experience.\n* Multi-cluster discovery, authentication and authorization patterns.\n* Using MultiKueue as the engine for multi-cluster quota abstractions.\n* Using the tenant as the scaling boundaries with scoped apiserver views.",
               "recording": "https://www.youtube.com/watch?v=khUixjjwhAQ"
+            },
+            {
+              "id": "27Fda",
+              "title": "Inference Awakens: Tools for the Age of GenAI",
+              "speakers": "Alexa Griffith, Erica Hughberg",
+              "room": "Building B | Level 4 | B401-402",
+              "url": "https://kccncna2025.sched.com/event/27Fda",
+              "description": "A long time ago (okay, not that long), stateless microservices ruled the galaxy. But a new force is rising, shaped by agents, LLMs, and highly dynamic, resource-intensive workloads. As traffic shifts from simple REST to streaming tokens, prompt orchestration and GPU-aware routing, traditional gateways are showing their limits.\n\nWe’ll explore what it takes to build GenAI platforms capable of serving modern inference at scale without falling to the dark side of complexity. You’ll learn from a real-world reference architecture using open-source tools like Envoy AI Gateway, KServe, and others—designed to support dynamic model-based routing, token-level rate limiting, secure upstream auth, observability, and multi-provider failover. These aren’t bonus features–they’re the new minimum requirements for reliable AI inference.\n\nYou’ll leave with a practical blueprint for routing, serving and observing LLM traffic, and a clearer vision for how today’s CNCF tools are awakening in the GenAI era.",
+              "recording": "https://www.youtube.com/watch?v=nlTk5q3MPZ4"
             },
             {
               "id": "27Fdd",
@@ -1148,6 +1211,15 @@
               "url": "https://kccncna2025.sched.com/event/27Ff8",
               "description": "There is a sea of tools one can use for the critical phase of Deployment during your SDLC. To keep our environment secure and reliable, ING chose to work with Kubernetes and Azure DevOps. In this talk, we will share the success story of how 1400 in-house developed APIs reached 100k+ Production deployments in half a year, using one single pipeline. In order to stay in control, we use Open Policy Agent. To ensure the reliability and the resilience of the APIs, we use tools like: QuotaAutoscaler (ING open source CRD) and HorizontalPodAustoscaler, native rollback mechanisms with Helm, automatic certificates using CertManager and Prometheus monitoring. The pipeline deploys code in Azure Kubernetes Service and on-prem Kubernetes clusters. This solution was built as a platform, designed to be agnostic to the target system, reducing the cognitive load on the teams and allowing them to focus on the application development. We call this The Kingsroad.",
               "recording": "https://www.youtube.com/watch?v=cO4f7-JDG0Y"
+            },
+            {
+              "id": "27FfQ",
+              "title": "Quorum-Based Consistency for Cluster Changes With CloudNativePG Operator",
+              "speakers": "Jeremy Schneider, Gabriele Bartolini",
+              "room": "Building B | Level 5 | Thomas Murphy Ballroom 2-3",
+              "url": "https://kccncna2025.sched.com/event/27FfQ",
+              "description": "Most people don’t think of Postgres in the context of quorum or distributed systems theory but vanilla open source Postgres has supported quorum commits across multiple replicas for almost 10 years now. Technologies like cassandra and dynamo popularized quorum consistency in the hot path of distributed writes and reads, but the theory also applies to cluster reconfigurations in a single-writer database like Postgres. Stateful operators at level V of the capabilities framework require very careful end-to-end coordination between control plane and data plane algorithms to avoid data loss when providing auto-healing under circumstances like network partitions or compounded failures. This session will explore how quorum consistency can be applied in the CloudNativePG operator, offering lessons and insights to fellow maintainers of other Kubernetes operators for stateful workloads.",
+              "recording": "https://www.youtube.com/watch?v=iQUOO3-JRK4"
             }
           ]
         }
