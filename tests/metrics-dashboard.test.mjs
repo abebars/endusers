@@ -373,11 +373,17 @@ test('a lifecycle card without a suffix renders no stray unit', () => {
   cards.forEach((card, index) => {
     const { value, suffix, sampleSize } = source.cards[index];
     const strong = findByType(card, 'strong');
+    // A unit is a plain English plural, so a card whose value is exactly 1
+    // publishes the singular ("1 day", never "1 days").
+    const unit =
+      suffix && value === 1 && suffix.endsWith('s')
+        ? suffix.slice(0, -1)
+        : (suffix ?? '');
     assert.equal(
       textOf(strong).trim(),
       sampleSize === 0
         ? 'No data yet'
-        : `${value.toLocaleString()} ${suffix ?? ''}`.trim(),
+        : `${value.toLocaleString()} ${unit}`.trim(),
     );
   });
 });
@@ -600,6 +606,68 @@ test('a lifecycle card with an empty sample says "No data yet" instead of a zero
   assert.equal(findByType(empty, 'span').props.className, 'noTrend');
   assert.equal(textOf(one).trim(), '0 days');
   assert.equal(textOf(legacy).trim(), '0');
+});
+
+// The collector publishes the unit as a bare plural ("days"), so a median of
+// exactly one day read "1 days" on /resources/metrics. Only an exact 1 is
+// singular; 0, a fraction and a unit that is not an "-s" plural are untouched.
+test('a lifecycle card whose value is exactly 1 publishes the singular unit', async () => {
+  const panel = await renderWith(
+    baseData({
+      referenceArchitectureLifecycle: {
+        cards: [
+          {
+            id: 'one',
+            label: 'Median cycle',
+            value: 1,
+            sampleSize: 18,
+            suffix: 'days',
+            note: 'n',
+          },
+          {
+            id: 'two',
+            label: 'Median age',
+            value: 2,
+            sampleSize: 13,
+            suffix: 'days',
+            note: 'n',
+          },
+          {
+            id: 'fraction',
+            label: 'Median wait',
+            value: 1.5,
+            sampleSize: 4,
+            suffix: 'days',
+            note: 'n',
+          },
+          {
+            id: 'unitless',
+            label: 'Open',
+            value: 1,
+            note: 'n',
+          },
+          {
+            id: 'not-a-plural',
+            label: 'Share',
+            value: 1,
+            sampleSize: 9,
+            suffix: '%',
+            note: 'n',
+          },
+        ],
+      },
+    }),
+    'LifecycleSection',
+  );
+  const [one, two, fraction, unitless, percent] = findAllByType(
+    panel,
+    'strong',
+  );
+  assert.equal(textOf(one).trim(), '1 day');
+  assert.equal(textOf(two).trim(), '2 days');
+  assert.equal(textOf(fraction).trim(), '1.5 days');
+  assert.equal(textOf(unitless).trim(), '1');
+  assert.equal(textOf(percent).trim(), '1 %');
 });
 
 test('a metrics file with no series renders no line charts', async () => {
