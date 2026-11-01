@@ -138,7 +138,7 @@ for (const { event, schedule } of snapshots) {
       );
     });
 
-    test('the source line links the API and the live schedule in one sentence', () => {
+    test('the source line links the API and the official schedule, with wording for the event state', () => {
       const tree = render(schedule);
       const source = findAllByType(tree, 'p').find(
         (node) => node.props.className === 'source',
@@ -156,9 +156,17 @@ for (const { event, schedule } of snapshots) {
         sessionize: 'official Sessionize API',
         sched: 'official Sched listing',
       }[schedule.source];
+      // The collector stamps a concluded conference's snapshot `final: true`;
+      // anything without the flag can still move. The fixture test below pins
+      // which wording each arm gets, so this check can derive the arm from the
+      // snapshot without mirroring a bug in the component.
+      const closing =
+        schedule.final === true
+          ? 'This conference has ended; the schedule below is the final record. See the official schedule for the full program.'
+          : 'Times, rooms, and speakers may change; check the live official schedule for updates.';
       assert.equal(
         textOf(source),
-        `Source: ${label} · Verified ${verified}. Times, rooms, and speakers may change; check the live official schedule for updates.`,
+        `Source: ${label} · Verified ${verified}. ${closing}`,
       );
       assert.deepEqual(
         findAllByType(source, 'a').map((node) => node.props.href),
@@ -311,5 +319,54 @@ test('TalkDetails renders slides and recording links only when present, naming t
       .slice(1)
       .map((node) => node.props.href),
     ['https://youtu.be/only'],
+  );
+});
+
+// The closing sentence promises updates only while the conference can still
+// move: the collector stamps a snapshot `final: true` once its last day has
+// passed. The corpus happens to carry both arms today, but a fixture keeps
+// them covered the day every committed snapshot is concluded. The decision
+// reads the flag alone: a snapshot whose verification date is already past
+// its last day, but which the collector has not stamped, still says the
+// schedule may change, and generatedAt never enters into it.
+test('the closing sentence promises updates until the collector marks the snapshot final', () => {
+  const [{ schedule }] = snapshots;
+  const sourceLine = (overrides) => {
+    const { final: _ignored, ...base } = schedule;
+    const tree = render({ ...base, ...overrides });
+    return textOf(
+      findAllByType(tree, 'p').find(
+        (node) => node.props.className === 'source',
+      ),
+    );
+  };
+  const label = {
+    sessionize: 'official Sessionize API',
+    sched: 'official Sched listing',
+  }[schedule.source];
+  const generatedAt = '2031-01-02T00:00:00.000Z';
+  const prefix = `Source: ${label} · Verified January 2, 2031. `;
+  const concluded = `${prefix}This conference has ended; the schedule below is the final record. See the official schedule for the full program.`;
+  const upcoming = `${prefix}Times, rooms, and speakers may change; check the live official schedule for updates.`;
+  const lastDay = (date) =>
+    schedule.days.map((day, index) =>
+      index === schedule.days.length - 1 ? { ...day, date } : day,
+    );
+
+  assert.equal(
+    sourceLine({ generatedAt, final: true, days: lastDay('2031-01-01') }),
+    concluded,
+  );
+  assert.equal(
+    sourceLine({ generatedAt, days: lastDay('2031-01-01') }),
+    upcoming,
+  );
+  assert.equal(
+    sourceLine({ generatedAt, final: false, days: lastDay('2031-01-01') }),
+    upcoming,
+  );
+  assert.equal(
+    sourceLine({ generatedAt, days: lastDay('2031-01-03') }),
+    upcoming,
   );
 });

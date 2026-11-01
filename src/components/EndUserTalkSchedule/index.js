@@ -62,6 +62,12 @@ function TalkDetails({ talk }) {
 // page that renders it so the component stays free of any one event's data.
 export default function EndUserTalkSchedule({ schedule }) {
   const verifiedDate = formatDate(schedule.generatedAt);
+  // The collector stamps a snapshot `final: true` once its last day has
+  // passed and stops refreshing it, so the closing sentence stops promising
+  // updates that will never come. The flag ships in the snapshot, so the
+  // server-rendered HTML and the hydrated page agree without consulting a
+  // clock; generatedAt would not do, since it only moves when talks change.
+  const isFinal = schedule.final === true;
   return (
     <div className={styles.schedule}>
       <p>
@@ -82,12 +88,25 @@ export default function EndUserTalkSchedule({ schedule }) {
         <a href={schedule.apiUrl} rel="noreferrer">
           {SOURCE_LABELS[schedule.source]}
         </a>{' '}
-        · Verified {verifiedDate}. Times, rooms, and speakers may change; check
-        the{' '}
-        <a href={schedule.sourceUrl} rel="noreferrer">
-          live official schedule
-        </a>{' '}
-        for updates.
+        · Verified {verifiedDate}.{' '}
+        {isFinal ? (
+          <>
+            This conference has ended; the schedule below is the final record.
+            See the{' '}
+            <a href={schedule.sourceUrl} rel="noreferrer">
+              official schedule
+            </a>{' '}
+            for the full program.
+          </>
+        ) : (
+          <>
+            Times, rooms, and speakers may change; check the{' '}
+            <a href={schedule.sourceUrl} rel="noreferrer">
+              live official schedule
+            </a>{' '}
+            for updates.
+          </>
+        )}
       </p>
       {schedule.days.map((day) => (
         <section key={day.date} className={styles.day} aria-labelledby={day.id}>
