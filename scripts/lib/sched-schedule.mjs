@@ -203,22 +203,43 @@ export function toLocalStamp(utc, offset) {
   return shifted.toISOString().slice(0, 19);
 }
 
+// Letters and digits only, so punctuation, commas and the "&" between two
+// speakers never join two names into one token.
+const NAME_WORDS = /[\p{L}\p{N}]+/gu;
+
+function words(text) {
+  return [...text.toLowerCase().matchAll(NAME_WORDS)].map(([word]) => word);
+}
+
+// The words of a speaker's name a title suffix is recognized by: the surname,
+// whatever its length, plus the other words of four letters or more. The
+// schedule and the profile sometimes transliterate a surname differently
+// ("Yushkovskiy" against "Yushkovsky"), and then the given name is the only
+// word the two spellings share; initials and short given names are left out,
+// since a one- to three-letter word is as likely to belong to the title.
+// Sched profiles carry handles and pronouns in brackets ("Aya Igarashi
+// (@ladicle)"), which the suffix never repeats, so they go first.
+function suffixWords(speaker) {
+  const parts = words(speaker.replace(/[([{][^)\]}]*[)\]}]/gu, ' '));
+  return parts.filter(
+    (word, index) => index === parts.length - 1 || word.length >= 4,
+  );
+}
+
 /**
  * Strips the "Title - Speaker, Company; Speaker, Company" suffix the Linux
  * Foundation appends to every Sched session name. A title may itself contain
  * " - ", so the cut is at the last separator whose tail names one of the
- * session's speakers. The schedule abbreviates or recases some first names,
- * so the surname is what is looked for, case-insensitively; a title that
- * names no speaker is returned unchanged.
+ * session's speakers. The schedule abbreviates or recases some names, so the
+ * match is case-insensitive and on whole words of the name rather than the
+ * full name; a title that names no speaker is returned unchanged.
  *
  * @param {string} name
  * @param {string[]} speakers
  * @returns {string}
  */
 export function stripSpeakerSuffix(name, speakers) {
-  const surnames = speakers.map((speaker) =>
-    speaker.split(' ').at(-1).toLowerCase(),
-  );
+  const wanted = new Set(speakers.flatMap(suffixWords));
   const separators = [];
   for (
     let at = name.indexOf(' - ');
@@ -227,10 +248,9 @@ export function stripSpeakerSuffix(name, speakers) {
   ) {
     separators.unshift(at);
   }
-  const at = separators.find((index) => {
-    const tail = name.slice(index + 3).toLowerCase();
-    return surnames.some((surname) => tail.includes(surname));
-  });
+  const at = separators.find((index) =>
+    words(name.slice(index + 3)).some((word) => wanted.has(word)),
+  );
   // No separator named a speaker: `at` is undefined and slice keeps it all.
   return name.slice(0, at).trim();
 }

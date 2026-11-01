@@ -324,6 +324,68 @@ test('stripSpeakerSuffix matches the surname of a recased or abbreviated name', 
   );
 });
 
+test('stripSpeakerSuffix ignores a handle or pronouns bracketed into a speaker name', () => {
+  assert.equal(
+    stripSpeakerSuffix(
+      'The Shared Service Blueprint: A Guide to Multi-Tenancy, Illustrated With KEDA - Aya Igarashi, Preferred Networks, Inc.',
+      ['Aya Igarashi (@ladicle)'],
+    ),
+    'The Shared Service Blueprint: A Guide to Multi-Tenancy, Illustrated With KEDA',
+  );
+  assert.equal(
+    stripSpeakerSuffix('Edge Storage - Jane Doe, Acme', ['Jane Doe [she/her]']),
+    'Edge Storage',
+  );
+  assert.equal(
+    stripSpeakerSuffix('Edge Storage - Jane Doe, Acme', ['Jane Doe {he/him}']),
+    'Edge Storage',
+  );
+  // The handle would otherwise stand in for the surname and match nothing.
+  assert.equal(
+    stripSpeakerSuffix('Edge AI at the Port - Jia Li, Acme', [
+      'Jia Li (@jiali)',
+    ]),
+    'Edge AI at the Port',
+  );
+});
+
+test('stripSpeakerSuffix matches a given name when the surname is spelled differently', () => {
+  assert.equal(
+    stripSpeakerSuffix(
+      'REST in Peace: AI Needs to Be Async - Meet Asya - Artem Yushkovskiy, Delivery Hero',
+      ['Artem Yushkovsky'],
+    ),
+    'REST in Peace: AI Needs to Be Async - Meet Asya',
+  );
+  // A four-letter given name is long enough to be matched on.
+  assert.equal(
+    stripSpeakerSuffix('Edge Storage - Alex Smith, Acme', ['Alex Smyth']),
+    'Edge Storage',
+  );
+});
+
+test('stripSpeakerSuffix matches a surname however short it is', () => {
+  assert.equal(
+    stripSpeakerSuffix('Edge AI at the Port - Jia Li, Acme', ['Jia Li']),
+    'Edge AI at the Port',
+  );
+});
+
+test('stripSpeakerSuffix does not cut on a short given name the title uses as a word', () => {
+  assert.equal(
+    stripSpeakerSuffix('Observability - May the Metrics Be With You', [
+      'May Chen',
+    ]),
+    'Observability - May the Metrics Be With You',
+  );
+  assert.equal(
+    stripSpeakerSuffix('Policy at Scale - Lessons From the Client Side', [
+      'Wen Li',
+    ]),
+    'Policy at Scale - Lessons From the Client Side',
+  );
+});
+
 test('stripSpeakerSuffix leaves a title that names no speaker after a separator alone', () => {
   assert.equal(
     stripSpeakerSuffix('  Trivia Challenge! Hosted by Someone Else ', [

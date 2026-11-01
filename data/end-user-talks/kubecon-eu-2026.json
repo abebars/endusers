@@ -5,7 +5,7 @@
   "apiUrl": "https://kccnceu2026.sched.com/list/descriptions",
   "selection": "presented by speakers from organizations that meet the CNCF End User definition",
   "location": "Amsterdam",
-  "generatedAt": "2026-11-01T02:38:23.793Z",
+  "generatedAt": "2026-11-01T13:03:28.317Z",
   "timezone": "CET (UTC+1)",
   "talkCount": 133,
   "final": true,
@@ -883,7 +883,7 @@
             },
             {
               "id": "2CW2j",
-              "title": "REST in Peace: AI Needs to Be Async - Meet Asya🎭 - Artem Yushkovskiy, Delivery Hero",
+              "title": "REST in Peace: AI Needs to Be Async - Meet Asya🎭",
               "speakers": "Artem Yushkovsky",
               "room": "Auditorium",
               "url": "https://kccnceu2026.sched.com/event/2CW2j",
@@ -1360,7 +1360,7 @@
             },
             {
               "id": "2CW6n",
-              "title": "The Shared Service Blueprint: A Guide to Multi-Tenancy, Illustrated With KEDA - Aya Igarashi, Preferred Networks, Inc.",
+              "title": "The Shared Service Blueprint: A Guide to Multi-Tenancy, Illustrated With KEDA",
               "speakers": "Aya Igarashi (@ladicle)",
               "room": "Hall 8 | Room F",
               "url": "https://kccnceu2026.sched.com/event/2CW6n",
