@@ -7,6 +7,46 @@ const managers = new Map();
 const runModulePromise = import('./e2e-coverage-run.mjs');
 const COVERAGE_ARTIFACT_KIND = 'endusers.playwright.v8-coverage';
 
+// How long stopPage waits for the page React has not yet hydrated. Hydration
+// of a built page takes well under a second even on a loaded CI runner; the
+// bound only keeps a page that never hydrates (a 404 shell, a navigation the
+// test abandoned) from holding the worker.
+const HYDRATION_SETTLE_MS = 10_000;
+
+/* global document -- runs inside the browser page via page.waitForFunction */
+// Runs in the page. Docusaurus mounts into #__docusaurus and React stamps a
+// `__reactFiber$...` key on each DOM node as it hydrates it, so `main`
+// carrying one means the route's component tree has run on the client. A
+// document without the mount point (about:blank, a non-site URL) has nothing
+// to wait for.
+function isHydrated() {
+  const root = document.getElementById('__docusaurus');
+  const target = root?.querySelector('main') ?? root;
+  return (
+    target === null ||
+    Object.keys(target).some((key) => key.startsWith('__react'))
+  );
+}
+
+// Docusaurus serves server-rendered HTML, so a test can see the text it
+// asserts and finish before the client bundle has hydrated the page. V8 only
+// counts code that ran: the component the assertion was about then records
+// module evaluation and nothing else, and the report calls its render
+// uncovered. The window is a few hundred milliseconds wide and is reached
+// whenever the runner is busy enough, which four parallel workers on a hosted
+// runner are. Settling hydration before the coverage is read makes what the
+// test saw what the report measures. A page that is closed or mid-navigation
+// when the wait starts, or that never hydrates, is read as it is.
+async function settleHydration(page) {
+  try {
+    await page.waitForFunction(isHydrated, null, {
+      timeout: HYDRATION_SETTLE_MS,
+    });
+  } catch {
+    // Take the coverage there is; the report will say what it missed.
+  }
+}
+
 function isCoverageEnabled(env = process.env) {
   return env.E2E_COVERAGE === '1';
 }
@@ -122,6 +162,7 @@ class CoverageManager {
     const record = this.pages.get(page);
     if (!record) return;
     try {
+      if (!record.empty) await settleHydration(page);
       const result = record.empty ? [] : await page.coverage.stopJSCoverage();
       const normalized = result.map(({ source, ...script }) => ({
         ...script,
@@ -319,6 +360,7 @@ exports.CoverageManager = CoverageManager;
 exports.coverageManagerFixture = coverageManagerFixture;
 exports.expect = expect;
 exports.isCoverageEnabled = isCoverageEnabled;
+exports.isHydrated = isHydrated;
 exports.newCoverageContext = newCoverageContext;
 exports.newCoverageContextForTest = newCoverageContextForTest;
 exports.pageFixture = pageFixture;

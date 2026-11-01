@@ -11,6 +11,7 @@ import {
   coverageArtifactStem,
   coverageManagerFixture,
   isCoverageEnabled,
+  isHydrated,
   newCoverageContext,
   newCoverageContextForTest,
   pageFixture,
@@ -31,9 +32,21 @@ function info(testId = 'fixture-test') {
   };
 }
 
-function fakePage({ result = [], startError, stopError, versionError } = {}) {
+function fakePage({
+  result = [],
+  startError,
+  stopError,
+  versionError,
+  settleError,
+  calls = [],
+} = {}) {
   let started = false;
   return {
+    calls,
+    async waitForFunction(predicate, argument, options) {
+      calls.push(['waitForFunction', predicate.name, options.timeout]);
+      if (settleError) throw settleError;
+    },
     context: () => ({
       async newCDPSession() {
         return {
@@ -52,6 +65,7 @@ function fakePage({ result = [], startError, stopError, versionError } = {}) {
         started = true;
       },
       async stopJSCoverage() {
+        calls.push(['stopJSCoverage']);
         if (!started) throw new Error('coverage was not started');
         if (stopError) throw stopError;
         return result;
@@ -133,6 +147,95 @@ test('CoverageManager writes a raw artifact with source identity metadata', asyn
   } finally {
     await rm(runDir, { recursive: true, force: true });
   }
+});
+
+test('CoverageManager settles hydration before it reads the coverage', async () => {
+  // Docusaurus pages assert green from server-rendered HTML, so a test can
+  // end before React has run the component it was about; coverage read at
+  // that moment calls the render uncovered. The wait has to come first, and
+  // it has to be bounded so a page that never hydrates cannot hold a worker.
+  const runDir = await mkdtemp(join(tmpdir(), 'endusers-fixture-settle-'));
+  try {
+    await initCoverageRun(runDir, 'settle-1');
+    const manager = new CoverageManager(info(), runDir, 'settle-1');
+    const page = fakePage();
+    await manager.startPage(page);
+    await manager.stopPage(page);
+    assert.deepEqual(page.calls, [
+      ['waitForFunction', 'isHydrated', 10_000],
+      ['stopJSCoverage'],
+    ]);
+  } finally {
+    await rm(runDir, { recursive: true, force: true });
+  }
+});
+
+test('CoverageManager still writes the artifact when hydration never settles', async () => {
+  const runDir = await mkdtemp(join(tmpdir(), 'endusers-fixture-unsettled-'));
+  try {
+    await initCoverageRun(runDir, 'settle-2');
+    const manager = new CoverageManager(info(), runDir, 'settle-2');
+    const page = fakePage({
+      settleError: new Error('page.waitForFunction: Timeout 10000ms exceeded'),
+      result: [{ url: 'http://localhost/app.js', functions: [] }],
+    });
+    await manager.startPage(page);
+    await manager.stopPage(page);
+    const names = await readdir(runDir);
+    assert.equal(
+      names.some((name) => name.endsWith('-error.json')),
+      false,
+    );
+    const artifact = names.find((name) => name.startsWith('worker-'));
+    const payload = JSON.parse(await readFile(join(runDir, artifact), 'utf8'));
+    assert.equal(payload.result[0].url, 'http://localhost/app.js');
+  } finally {
+    await rm(runDir, { recursive: true, force: true });
+  }
+});
+
+test('isHydrated reads the React marker on the mounted route, and is vacuously true off-site', () => {
+  const withDocument = (root, run) => {
+    const previous = globalThis.document;
+    globalThis.document = { getElementById: () => root };
+    try {
+      return run();
+    } finally {
+      if (previous === undefined) delete globalThis.document;
+      else globalThis.document = previous;
+    }
+  };
+  const node = (keys, main) => {
+    const element = Object.fromEntries(keys.map((key) => [key, true]));
+    element.querySelector = () => main ?? null;
+    return element;
+  };
+
+  assert.equal(
+    withDocument(null, isHydrated),
+    true,
+    'a document with no #__docusaurus has nothing to hydrate',
+  );
+  assert.equal(
+    withDocument(node([], node(['__reactFiber$abc'])), isHydrated),
+    true,
+    'a hydrated main is the signal',
+  );
+  assert.equal(
+    withDocument(node(['__reactContainer$abc'], node([])), isHydrated),
+    false,
+    'a root that React has claimed but a main it has not reached is not yet hydrated',
+  );
+  assert.equal(
+    withDocument(node(['__reactContainer$abc']), isHydrated),
+    true,
+    'without a main the root marker stands in',
+  );
+  assert.equal(
+    withDocument(node([]), isHydrated),
+    false,
+    'a bare server-rendered root is not hydrated',
+  );
 });
 
 test('CoverageManager accepts JavaScript-disabled contexts as empty captures', async () => {
