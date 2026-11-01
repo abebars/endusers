@@ -1,0 +1,1251 @@
+{
+  "description": "Generated from the official Sched listing by npm run collect:end-user-talks. Do not hand-edit.",
+  "source": "sched",
+  "sourceUrl": "https://kccnceu2025.sched.com/",
+  "apiUrl": "https://kccnceu2025.sched.com/list/descriptions",
+  "selection": "presented by speakers from organizations that meet the CNCF End User definition",
+  "location": "London",
+  "generatedAt": "2026-11-01T16:17:05.160Z",
+  "timezone": "BST (UTC+1)",
+  "talkCount": 104,
+  "final": true,
+  "days": [
+    {
+      "date": "2025-04-02",
+      "id": "wednesday-april-2",
+      "label": "Wednesday, April 2",
+      "slots": [
+        {
+          "start": "2025-04-02T09:33:00+01:00",
+          "end": "2025-04-02T09:48:00+01:00",
+          "startLabel": "9:33 AM",
+          "endLabel": "9:48 AM",
+          "talks": [
+            {
+              "id": "1txBX",
+              "title": "Keynote: AI Enabled Observability Explainers - We Actually Did Something With AI!",
+              "speakers": "Vijay Samuel",
+              "room": "Level 0 | ICC Auditorium",
+              "url": "https://kccnceu2025.sched.com/event/1txBX",
+              "description": "If folks think that this will be yet another hand wavy AI talk, prepared to be disappointed! Over the last few quarters, the Observability platform team at eBay has embarked on the journey of building \"Explainers\" for telemetry signals. \"So, you are just shoving data into an LLM, big deal!\" - one might say. The approach that we took was slightly different. Yes, an LLM does know how to interpret an OTEL trace waterfall but does it do it predictably? No! For various reasons. This is where AI and Engineering have a beautiful marriage. For each signal, we have carefully married crafty algorithms and LLMs to create more predictable and accurate AI enabled experiences. Some of which include explaining traces, metrics and logs.\n\nWe have also cumulated these building block explainers to create compound explainers that can explain dashboards. This talk describes how things like critical path detection along with LLMs are better than just giving entire traces to the LLMs and more.",
+              "recording": "https://www.youtube.com/watch?v=j0AqGpC_pp4"
+            }
+          ]
+        },
+        {
+          "start": "2025-04-02T11:15:00+01:00",
+          "end": "2025-04-02T11:45:00+01:00",
+          "startLabel": "11:15 AM",
+          "endLabel": "11:45 AM",
+          "talks": [
+            {
+              "id": "1tcxA",
+              "title": "OpenFeature Update From the Maintainers",
+              "speakers": "Thomas Poignant, Lukas Reining, Alexandra Oberaigner",
+              "room": "Level 3 | ICC Capital Suite 10-12",
+              "url": "https://kccnceu2025.sched.com/event/1tcxA",
+              "description": "OpenFeature is an open specification that provides a vendor-agnostic, community-driven API for feature flagging that works with your favorite feature flag management tool or in-house solution.\n\nCome along to hear all the news about OpenFeature (including: code generation, support of tracking events, OTEL semantic conventions, distributed flag evaluation) and the projects future plans.\n\nWe also wants to open the floor to all the questions about the current state and future of OpenFeature.",
+              "recording": "https://www.youtube.com/watch?v=lEXm6k2wpG4"
+            },
+            {
+              "id": "1tcxD",
+              "title": "OpenTelemetry Project Update",
+              "speakers": "Severin Neumann, Alolita Sharma, Dan Gomez Blanco, Trask Stalnaker, Pablo Baeyens",
+              "room": "Level 3 | ICC Capital Suite 14-16",
+              "url": "https://kccnceu2025.sched.com/event/1tcxD",
+              "description": "Join us for the official OpenTelemetry project updates session at KubeCon+CloudNativeCon. In this session, Governance Committee members will share some of the latest project developments and milestones achieved, and they will offer a glimpse into the future of OpenTelemetry. This session is your chance to engage with other contributors present at the event, ask questions about the project, and receive direct responses from core project maintainers. Don't miss this opportunity to stay informed and contribute to the discussion on the exciting advancements within OpenTelemetry.",
+              "recording": "https://www.youtube.com/watch?v=nclJn1KEjis"
+            },
+            {
+              "id": "1tx75",
+              "title": "Dashboards & Dragons: Crafting SLOs To Tame the AI Platform Chaos",
+              "speakers": "Alexa Griffith, Ankita Chaudhari",
+              "room": "Level 1 | Hall Entrance S10 | Room B",
+              "url": "https://kccnceu2025.sched.com/event/1tx75",
+              "description": "Scaling a Kubernetes platform is no fairy tale—it’s a quest with unexpected twists, chaos, and the occasional missing treasure map. In this talk, we’ll recount our journey taming the complexity of multi-cluster platforms with SLIs, SLOs, and observability dashboards.\nFrom defining meaningful metrics to designing actionable SLO dashboards, we’ll share insights, lessons learned, and practical tips for maintaining platform reliability — regardless of if you’re deploying in the cloud, on-prem or in a hybrid environment. Through real-life lessons and battle-tested strategies, we’ll dive into the role of SLIs and SLOs in helping ensure platform robustness, discuss how to design platform observability, and highlight best practices for maintaining reliability at scale. You’ll leave equipped with the knowledge to design observability practices that ensure your AI workloads run smoothly, even at scale. Join us as we demystify SLI/SLO strategies with practical examples from our AI platform.",
+              "recording": "https://www.youtube.com/watch?v=KyoxaAtHi-c"
+            },
+            {
+              "id": "1txE3",
+              "title": "First Day Foresight: Anomaly Detection for Observability",
+              "speakers": "Kruthika Prasanna Simha, Prashant Gupta",
+              "room": "Level 1 | Hall Entrance N10 | Room E",
+              "url": "https://kccnceu2025.sched.com/event/1txE3",
+              "description": "Picture this! You are deploying an application on a cloud platform, and you want to ensure seamless performance for the application from day one. Early anomaly detection is crucial for identifying issues before they escalate and maintaining system reliability. Ideally, you will leverage historical data to train an ML model for real-time anomaly detection. However, the complexity of training and deploying ML models makes them impractical at launch. What if you could skip training and still spot anomalies in your application health metrics the moment your system is live?\n\nIn this session you’ll learn about the benefits of using pre-trained ML models for day one anomaly detection. We’ll discuss how to deploy lightweight, unsupervised pre-trained models using cloud-native tools like Kubeflow for model fine-tuning. Attendees will learn techniques to setup and refine models to detect anomalies and observe application health from the first deployment.",
+              "recording": "https://www.youtube.com/watch?v=jiT7kGqcpR4"
+            },
+            {
+              "id": "1txHR",
+              "title": "A Comparative Analysis of Kueue, Volcano, and YuniKorn",
+              "speakers": "Wei Huang, Shiming Zhang",
+              "room": "Level 1 | Hall Entrance N10 | Room G",
+              "url": "https://kccnceu2025.sched.com/event/1txHR",
+              "description": "Choosing the best solution for running batch workloads on Kubernetes can be frustrating. Kueue, Volcano, and Apache YuniKorn were designed to address similar challenges but differ in how they tackle them. Deciding which is most suitable for a specific use case is often confusing.\n\nBatch workloads like big data, data engineering, HPC, AI, and machine learning share common requirements, especially around batch-scheduling. Managing resource sharing and isolation between tenants while balancing utilization and meeting SLAs presents a significant challenge on Kubernetes.\n\nThis session dives into three community-driven solutions: Kueue, Volcano, and Apache YuniKorn. We’ll explore their features, use-case suitability, and design trade-offs, providing a comprehensive comparison. Attendees will leave with the insights needed to answer a crucial question: which solution best addresses the batch-scheduling needs of my workloads?",
+              "recording": "https://www.youtube.com/watch?v=njT5r3JjIaA"
+            }
+          ]
+        },
+        {
+          "start": "2025-04-02T12:00:00+01:00",
+          "end": "2025-04-02T12:30:00+01:00",
+          "startLabel": "12:00 PM",
+          "endLabel": "12:30 PM",
+          "talks": [
+            {
+              "id": "1tcxV",
+              "title": "What's New With Kubectl and Kustomize … and How You Can Help!",
+              "speakers": "Maciej Szulik, Eddie Zaneski, Yugo Kobayashi, Marly Salazar",
+              "room": "Platinum Suite | Level 3 | Room 1-2",
+              "url": "https://kccnceu2025.sched.com/event/1tcxV",
+              "description": "Have you ever wondered how kubectl and kustomize enhancements are designed and built? Curious why your favorite feature request wasn't accepted? Join the folks from Kubernetes SIG CLI to find out!\n\nIn this session, the SIG CLI maintainers will provide an introduction to the tooling they are working on and an overview of how to get started contributing. They will share the work done over the past year and the roadmap for what is next. Join us to help shape your favorite tools!",
+              "recording": "https://www.youtube.com/watch?v=KQBz7nwWxUE"
+            },
+            {
+              "id": "1tx78",
+              "title": "Day-2’000 - Migration From Kubeadm+Ansible To ClusterAPI+Talos: A Swiss Bank’s Journey",
+              "speakers": "Clément Nussbaumer",
+              "room": "Level 1 | Hall Entrance S10 | Room B",
+              "url": "https://kccnceu2025.sched.com/event/1tx78",
+              "description": "Is it even possible to migrate 35 clusters in an air-gapped environment with a custom PKI infrastructure to ClusterAPI without Downtime? We'll show you why and how this can be pulled off, and how you could do the same.\n\nThe journey starts with our legacy provisioning setup (a mix of kubeadm/ansible/puppet), followed by the migration path and tooling. Along the road, we'll discover a series of challenges such as loss of etcd quorum, matching legacy/new kube-apiserver configuration, mismatching etcd encryption keys, and more.\n\nAfter a live demo of a migration, the session explores managing our fleet of clusters with ArgoCD (with a focus on simple Talos configuration files in our repositories thanks to a few templating tricks, and a clean ClusterAPI workload cluster overview through ArgoCD ApplicationSets).\n\nThe presentation concludes by addressing a critical puzzle: solving the chicken/egg bootstrapping problem of the first ClusterAPI management cluster(s).",
+              "recording": "https://www.youtube.com/watch?v=uQ_WN1kuDo0"
+            },
+            {
+              "id": "1tx9t",
+              "title": "Leveraging Internal Knowledge: Building AiKA at Spotify",
+              "speakers": "Jofre Mateu Matesanz, Majd Salman",
+              "room": "Level 0 | ICC Capital Hall | Room J",
+              "url": "https://kccnceu2025.sched.com/event/1tx9t",
+              "description": "In the fast-paced world of technology, access to the right information at the right time is crucial for innovation and efficiency. Enter AiKA, Spotify's RAG based internal “artificial intelligence knowledge assistance” platform, designed to empower our developers by providing instant access to the vast pool of internal knowledge through various surfaces. We'll cover why we developed AiKA, detailing the challenges of managing and retrieving info across a large organization. Learn about the technologies and methodologies we employed and how we integrated AiKA seamlessly into our existing infrastructure\n\nWe'll highlight how AiKA's flexible API allows engineers to ingest their own custom knowledge, tailoring the tool to meet the unique needs of different teams. Discover how it not only enhances productivity but also fosters a culture of self-service and continuous learning.",
+              "recording": "https://www.youtube.com/watch?v=FEy2lhe6CM8"
+            }
+          ]
+        },
+        {
+          "start": "2025-04-02T13:30:00+01:00",
+          "end": "2025-04-02T14:30:00+01:00",
+          "startLabel": "1:30 PM",
+          "endLabel": "2:30 PM",
+          "talks": [
+            {
+              "id": "1txDQ",
+              "title": "🪧 Poster Session (PS 02): Catch More Hackers With Koney: Automated Honeytokens for Cloud Native Apps",
+              "speakers": "Matteo Golinelli",
+              "room": "Level 1 | Hall Entrance N8-N9 | Poster Pavilion",
+              "url": "https://kccnceu2025.sched.com/event/1txDQ",
+              "description": "Techniques to deceive hackers are not new. Placing honeytokens, such as a fake \"passwords.txt\" file in your container, wastes hackers' time and provides strong indicators of compromise when accessed. But do you set traps in your workloads? Probably not. Manually injecting a fleet of decoys into your applications and detecting access attempts to them isn't straightforward.\n\nKubernetes offers a great foundation into which we can easily integrate traps to detect hackers. This poster will introduce Koney, an operator that lets you define so-called deception policies for your clusters. Koney automates the setup, rotation, and teardown of honeytokens and fake API endpoints, and uses eBPF to detect, log, and forward alerts when your traps have been accessed.\n\nOur poster will cover prior research on cyber deception, discuss why this concept is still rarely applied in practice, and how using cloud-native design patterns may finally accelerate the adoption of cyber deception."
+            },
+            {
+              "id": "1txDT",
+              "title": "🪧 Poster Session (PS 03): Effortlessly Build High-Performance AI/ML Pipelines With Accelerator Chaining and K8s Native Tech",
+              "speakers": "Derek Wang, Kazuki Yamamoto",
+              "room": "Level 1 | Hall Entrance N8-N9 | Poster Pavilion",
+              "url": "https://kccnceu2025.sched.com/event/1txDT",
+              "description": "Join us for an enlightening presentation on effortlessly building advanced, high-performance processing infrastructure for AI/ML workloads with low power consumption.\n\nIn streaming processing, accelerators are assigned only for specific tasks in the workload. By assigning each task to the appropriate accelerator and \"chaining\" them, we obtain high-performance infrastructure with low power consumption at the service level.\n\nNative Kubernetes is a popular choice for deploying AI/ML workloads. However, more is needed to create a new processing form, described above, \"Accelerator Chaining Pipelines.\"\n\nThis presentation will demonstrate how we leverage Numaflow and \"Dynamic Resource Allocation\"(DRA) to overcome challenges, and effortlessly build an \"Accelerator Chaining Pipeline\" in NTT. You will see a glimpse of future innovations, including direct data transfer and CNI extensions for high-speed communication between accelerators."
+            },
+            {
+              "id": "1txDW",
+              "title": "🪧 Poster Session (PS 04): Enhancing Research and Data Delivery With the Data Delivery System (DDS)",
+              "speakers": "Valentin Georgiev, Álvaro Revuelta",
+              "room": "Level 1 | Hall Entrance N8-N9 | Poster Pavilion",
+              "url": "https://kccnceu2025.sched.com/event/1txDW",
+              "description": "The Data Delivery System (DDS) is a cloud-based platform developed by the SciLifeLab Data Centre for the secure and efficient delivery of research data from SciLifeLab Facilities to their users, specifically research groups. The application is containerized and running in Kubernetes clusters. The deployments are synchronized with ArgoCD and uses modern GitOps tools such as SealedSecrets.\n\nThis poster session will present the architecture and key features of DDS, including its use of containerization, automated deployment, and robust data management capabilities. Attendees will gain insights into how DDS facilitates fast and secure data transfers, supporting the needs of the life sciences research community."
+            },
+            {
+              "id": "1txDZ",
+              "title": "🪧 Poster Session (PS 05): Extensible Kubernetes CRDs Via Inheritance for Modularity and Reuse",
+              "speakers": "Mostafa Hadadian, Nik Dijkema",
+              "room": "Level 1 | Hall Entrance N8-N9 | Poster Pavilion",
+              "url": "https://kccnceu2025.sched.com/event/1txDZ",
+              "description": "Maintainability and adaptability are crucial for continuous deployment in dynamic cloud environments, emphasizing the need for modularity.\n\nKubernetes CRDs and controllers provide declarative APIs. But extensibility and reusability limitations pose a challenge and impair custom resource modularity. Extending CRD schemas induces API changes or requires weaker schemas, control logic is not reusable for similar resource types, and many operators are complex monolithic controllers.\n\nThis work solves these limitations by implementing inheritance to enable extension and reuse of CRD schemas and controllers. Schema inheritance enables extending an existing CRD schema without changing its API, providing APIs at different levels of abstraction. This allows reuse of common controller functionality through generalisation, promoting separation of concerns in operators. Finally, inheritance enables reasoning about substitutability of custom resources, providing opportunities for adaptability."
+            }
+          ]
+        },
+        {
+          "start": "2025-04-02T14:30:00+01:00",
+          "end": "2025-04-02T15:00:00+01:00",
+          "startLabel": "2:30 PM",
+          "endLabel": "3:00 PM",
+          "talks": [
+            {
+              "id": "1tcxY",
+              "title": "KEDA: Unlocking Advanced Event-Driven Scaling for Kubernetes",
+              "speakers": "Zbynek Roubalik, Jorge Turrado",
+              "room": "Platinum Suite | Level 3 | Room 3-4",
+              "url": "https://kccnceu2025.sched.com/event/1tcxY",
+              "description": "KEDA continues to evolve, introducing powerful new capabilities that make event-driven scaling in Kubernetes more flexible, secure, and insightful. In this session, we’ll delve into the latest enhancements launched over the past year, including:\n- OpenTelemetry Integration: Gain richer observability of autoscaling behavior and system performance.\n- Admission Webhooks: Achieve finer-grained control and streamlined validation of scaling actions.\n- Security Improvements: Protect your production environments with strengthened, built-in security measures.\n- Expanded Scalers & HTTP Scaling: Scale from an even broader range of event sources and natively handle HTTP-based scaling.\n- Additional Fixes & Improvements: Benefit from smaller adjustments and refinements that further enhance performance and usability.\n- Future?!\n\nJoin us to learn how these innovations can reshape your approach to dynamic autoscaling in event-driven workloads, helping you maximize resource efficiency and reliability.",
+              "recording": "https://www.youtube.com/watch?v=317rLOIKfDQ"
+            },
+            {
+              "id": "1tx86",
+              "title": "Superpowers for Humans of Kubernetes: How K8sGPT Is Transforming Enterprise Ops",
+              "speakers": "Alex Jones, Anais Urlichs",
+              "room": "Level 1 | Hall Entrance S10 | Room C",
+              "url": "https://kccnceu2025.sched.com/event/1tx86",
+              "description": "Humans cannot scale like software, and our ability to diagnose and triage is finite. Imagine the burden of operating dozens of tenants across multiple clusters. It’s going to take a team, no lone hero can keep the lights on and the customers happy.\n\nUntil now.\n\nThe CNCF project, K8sGPT has unlocked a fast track for managing clusters, triaging issues and identifying a problem before they impact users. Using AI to simplify complex errors, we demonstrate how this project is elevating humans to scale at a rate never seen before, and able to do more with less.\n\nNever before has there been a crisper example of getting AI to focus on the toil so humans can do the things we’re good at - problem solving.\n\nOur Enterprise adopters share of how they’ve used K8sGPT to lower the bar to entry, uplifting the skills of their teams.\nWe chart a course together, presenter and audience, as we reset the expectation of what great looks for operating Kubernetes at planet scale.",
+              "recording": "https://www.youtube.com/watch?v=EXtCejkOJB0"
+            }
+          ]
+        },
+        {
+          "start": "2025-04-02T15:15:00+01:00",
+          "end": "2025-04-02T15:45:00+01:00",
+          "startLabel": "3:15 PM",
+          "endLabel": "3:45 PM",
+          "talks": [
+            {
+              "id": "1tcxw",
+              "title": "Simplifying the Networking and Security Stack With Cilium, Hubble, and Tetragon",
+              "speakers": "Bowei Du, Bill Mulligan, Anna Kapuścińska, Amir Kheirkhahan",
+              "room": "Level 3 | ICC Capital Suite 7-9",
+              "url": "https://kccnceu2025.sched.com/event/1tcxw",
+              "description": "Join us as we celebrate nearly a decade of Cilium, now the de-facto standard CNI for Kubernetes and a cornerstone of cloud native networking, observability, and security. This session provides updates on the latest Cilium release and showcases how its unified eBPF-powered stack is transforming Kubernetes environments by replacing fragmented toolchains with seamless, secure, scalable, and simplified solutions.\n\nWe’ll explore features like multi-cluster networking, scaling to 65,000 nodes, and service mesh use cases and dive into sub-projects Hubble for network observability and Tetragon’s security observability and runtime enforcement. Hear from contributors and adopters DB Schenker, Google, and Isovalent about how Cilium is simplifying the cloud native stack and solidifying its role as the comprehensive networking and security solution for modern cloud native architectures.",
+              "recording": "https://www.youtube.com/watch?v=kYT7KV_Cijs"
+            },
+            {
+              "id": "1tx7E",
+              "title": "A Fork to Reckon With: Minimizing Friction When Adopting OSS",
+              "speakers": "Alexander Perlman, Narayanamurthi Mari",
+              "room": "Level 1 | Hall Entrance S10 | Room B",
+              "url": "https://kccnceu2025.sched.com/event/1tx7E",
+              "description": "Open source software often does not meet internal requirements at large enterprises, especially those with elevated security and regulation requirements. Leveraging said projects often requires modifying or extending them to meet these internal mandates.\n\nIn this talk, we will review different patterns for “internalizing” external open source projects and discuss the pros and cons of each approach. These patterns are upstream contribution, forking, wrapping, and mutation.\n\nWe will review specific case studies using popular open source projects (including Kubeflow, Argo Workflows, Dask, and more) and how we fulfilled internal requirements using the four aforementioned approaches.\n\nIn particular, we want to highlight the comparative benefits of Kubernetes mutating admission control (with Kyverno) when adopting open source projects. We hope that audiences will walk away with concrete tools to streamline open source adoption.",
+              "recording": "https://www.youtube.com/watch?v=yeg-uoBYCO0"
+            },
+            {
+              "id": "1tx94",
+              "title": "Production-Ready LLMs on Kubernetes: Patterns, Pitfalls, and Performance",
+              "speakers": "Priya Samuel, Luke Marsden",
+              "room": "Level 1 | Hall Entrance S10 | Room A",
+              "url": "https://kccnceu2025.sched.com/event/1tx94",
+              "description": "Many orgs are evaluating running open source LLMs on their own infrastructure, and Kubernetes is a natural platform choice. However, running open source LLMs in production on Kubernetes is, honestly, a bit of an undocumented mess.\n\nThis technical presentation shares the experience of both speakers in deploying production-grade LLM infrastructure on Kubernetes. Through practical demonstrations, we'll explore the complete deployment lifecycle, from GPU setup to optimization techniques like Flash Attention, quantization tradeoffs and GPU sharing.\n\nYou'll learn:\n\n* Architectural patterns for efficient LLM deployment using Ollama and vLLM\n* Solutions for model weight management and context length optimization\n* Techniques for GPU sharing and improving resource utilization\n* Production approaches to fine-tuning with Axolotl and serving multiple models with LoRAX\n\nYou'll leave with a complete blueprint for building reliable, scalable LLM infrastructure on Kubernetes.",
+              "recording": "https://www.youtube.com/watch?v=KIRUbaUjEKw"
+            },
+            {
+              "id": "1tx9z",
+              "title": "More Data Please: Hands on Green Cloud Experiments",
+              "speakers": "Antonio Di Turi, Leonard Pahlke",
+              "room": "Level 0 | ICC Capital Hall | Room J",
+              "url": "https://kccnceu2025.sched.com/event/1tx9z",
+              "description": "Sustainable cloud computing has been a topic for over a decade, but we lack concrete data on Kubernetes energy consumption. This session shares a case study of a microservice running on a k3s clusters, providing real energy metrics at every stage of Platform Engineering: Day 0 (manual setup with k3s, Cilium, microservice deployment), Day 1 (introducing ArgoCD, Falco for security), and Day 2 (adding observability with Prometheus, Grafana, OpenTelemetry, and Kepler). We use bare metal environments ensuring clean, measurable energy data, from idle setup to fully operational.\n\nWe’ll explore how tools like Kepler estimate energy consumption for Kubernetes components and compare them to actual plug measurements. For Day 3, we’ll present experiments: changing programming languages, OS images, VPA and KEDA. By sharing practical insights and data, we aim to inspire engineers to innovate and build a more sustainable cloud-native ecosystem.\n\nPresented by TAG Environmental Sustainability Leads.",
+              "recording": "https://www.youtube.com/watch?v=4OdYWliYpPg"
+            },
+            {
+              "id": "1txF1",
+              "title": "Trino and Data Governance on Kubernetes",
+              "speakers": "Aki Sukegawa, Sung Yun",
+              "room": "Level 1 | Hall Entrance S10 | Room D",
+              "url": "https://kccnceu2025.sched.com/event/1txF1",
+              "description": "As secure and seamless data discovery and exploration become top priorities for data science platforms and their generative AI workflows, intelligent solutions for data access, catalog management, and distributed data analytics are becoming critical for cloud platform teams. One extremely popular solution is to utilize Trino in combination with Open Policy Agent (OPA) to deliver a distributed and secure SQL solution that can answer authorization checks at runtime, in a cloud native manner.\n\nIn this talk, we will walk through how we designed various Trino CustomResources on top of Kubernetes, Envoy Proxy, and Istio to enable a self-service and scalable data exploration platform. This design, in conjunction with a granular and centralized data governance framework, enables secure data discovery at a company-wide level within Bloomberg.",
+              "recording": "https://www.youtube.com/watch?v=vCfehltPKxk"
+            },
+            {
+              "id": "1txHa",
+              "title": "The Bricks That Make Us – How the LEGO Group Avoids 50 Mediocre Kubernetes Implementations",
+              "speakers": "Paul Farver, Thomas Øther Rasmussen",
+              "room": "Level 1 | Hall Entrance N10 | Room G",
+              "url": "https://kccnceu2025.sched.com/event/1txHa",
+              "description": "Striking the balance between Autonomy and Governance is surprisingly difficult. At The LEGO Group, developers are free to choose the tools they believe suit their task best. Limiting this autonomy will stifle developer creativity and lead to shadow IT, so how can you leverage Platform Engineering without becoming a Kragle-wielding Lord Business?\n\nMore than 100 product teams run their applications in LEGO factories across the globe, and that requires good communication between infrastructure-, platform-, and application teams. This session will focus on how the LEGO Container Platform Team successfully onboards new applications, engages with developers, and keeps them happy.",
+              "recording": "https://www.youtube.com/watch?v=weOIwt1lbvI"
+            }
+          ]
+        },
+        {
+          "start": "2025-04-02T16:15:00+01:00",
+          "end": "2025-04-02T16:45:00+01:00",
+          "startLabel": "4:15 PM",
+          "endLabel": "4:45 PM",
+          "talks": [
+            {
+              "id": "1tcyN",
+              "title": "The State of Backstage in 2025",
+              "speakers": "Patrik Oldsberg, Ben Lambert, Vincenzo Scamporlino, Camila Loiola, Fredrik Adelöw",
+              "room": "Level 3 | ICC Capital Suite 14-16",
+              "url": "https://kccnceu2025.sched.com/event/1tcyN",
+              "description": "The Backstage project has seen a big push for stability and maturity in the last year. Backstage’s new backend system had its stable 1.0 release, and a lot of work has gone into the new frontend system as well, all towards the end goal of making Backstage easier to manage and extend. During this work there has still been space to ship many new features and improvements, both big and small.\n\nJoin the maintainers for a session featuring project updates, feature highlights, and live demos, as is tradition. Among the topics covered will be success stories from running Backstage at Spotify's scale with thousands of members of the engineering organization and an ever growing catalog.\n\nFinally there will be a look toward the future, highlighting the upcoming roadmap items and what to be excited for in the coming year!",
+              "recording": "https://www.youtube.com/watch?v=anqWhSnN7sA"
+            },
+            {
+              "id": "1txF4",
+              "title": "Unleashing the Power of Init Containers: Reducing Database Management Toil at Yelp",
+              "speakers": "Muhammad Junaid Muzammil",
+              "room": "Level 1 | Hall Entrance S10 | Room D",
+              "url": "https://kccnceu2025.sched.com/event/1txF4",
+              "description": "Init containers are specialized containers that are launched during pod initialization and complete their tasks before the main containers in the pod start. But how do they unleash their potential in real-life situations, particularly when it comes to database management?\nAt Yelp, we run several Cassandra clusters in production on Kubernetes. Init containers have been instrumental in transforming the operational efficiency for managing these Cassandra clusters, especially during horizontal scaling, upgrades, and restoring clusters from backups. Join us to explore the strategic use of init containers by the Database Reliability Engineering team at Yelp.",
+              "recording": "https://www.youtube.com/watch?v=nTmwmd4fcGI"
+            }
+          ]
+        },
+        {
+          "start": "2025-04-02T17:00:00+01:00",
+          "end": "2025-04-02T17:30:00+01:00",
+          "startLabel": "5:00 PM",
+          "endLabel": "5:30 PM",
+          "talks": [
+            {
+              "id": "1tx7K",
+              "title": "The Explorer's Guide To Cloud Native GenAI Platform Engineering",
+              "speakers": "Max Körbächer, Alexa Griffith",
+              "room": "Level 1 | Hall Entrance S10 | Room B",
+              "url": "https://kccnceu2025.sched.com/event/1tx7K",
+              "description": "The rapid evolution of generative AI has introduced a complex ecosystem of tools, but many conversations focus narrowly on isolated features and solutions. This can leave engineers wondering: What does a complete, functional GenAI platform actually look like?\n\nThis talk provides a practical roadmap for building generative AI infrastructure from the ground up. We’ll guide you through three key phases starting with a Thinnest Viable Platform (TVP), demonstrating the minimal setup needed for LLM inference on Kubernetes. Moving to MVP, we'll explore essential platform components: LLM gateways, vector databases, and KServe deployments. Finally, we'll dive into advanced platform features: intelligent load balancing for LLMs, observability patterns, and performance optimization techniques.\n\nThis session is more than a showcase of tools — it’s a roadmap for navigating the AI platform landscape. Join us for practical insights and lessons learned from real-world GenAI platform engineering.",
+              "recording": "https://www.youtube.com/watch?v=8ta_zFiUG1s"
+            },
+            {
+              "id": "1txDx",
+              "title": "Reliable K8s Resource Submission & Bookkeeping",
+              "speakers": "Yao Lin, Tiancheng Yin",
+              "room": "Level 1 | Hall Entrance N10 | Room H",
+              "url": "https://kccnceu2025.sched.com/event/1txDx",
+              "description": "At Bloomberg, we maintain a cloud-native container orchestration platform for general utility compute. This internal service offering has seen rapid growth, which imposes challenges related to the reliability of resource submission and post-deployment status tracking.\n\nCreating resources in a cluster is easy. Developers could build an API that performs resource creation against the Kubernetes API server. However, it gets complicated if and when the API needs to support large volumes of resource creation requests in multiple clusters.\n\nIn this talk, we will explore our current implementation of resource submission and bookkeeping, which utilizes in-cluster pull agents and source-of-truth. We will then compare this to our proposed solution, which involves a highly available PostgreSQL database, a Kubernetes resource watcher, and Apache Kafka. We will conclude our talk with a proposed design that allows for more reliable resource submission and post-deployment status tracking.",
+              "recording": "https://www.youtube.com/watch?v=NCkHrvqFMl8"
+            },
+            {
+              "id": "1txEI",
+              "title": "An Exemplary Path: Leveraging EBPFs and OpenTelemetry To Auto-instrument for Exemplars",
+              "speakers": "Charlie Le, Kruthika Prasanna Simha",
+              "room": "Level 1 | Hall Entrance N10 | Room E",
+              "url": "https://kccnceu2025.sched.com/event/1txEI",
+              "description": "Have you already adopted eBPF to unlock powerful, dynamic observability at the kernel level? Are you looking to take the next step by integrating exemplars seamlessly into your observability workflows? If so, you’ve likely encountered the challenge of manually instrumenting applications for exemplar support—an approach that’s often tedious, error-prone, and difficult to maintain. But what if you could leverage your existing eBPF setup to automate exemplar creation for your applications without touching your application code?\n\neBPF's in-kernel aggregation capabilities, paired with OpenTelemetry's flexible observability framework, enable automatic generation of exemplars. We’ll dive into how eBPF dynamically collects metrics and traces, processes them at the source, and works with OpenTelemetry to correlate kernel-level and application-level observability—all with minimal overhead and maximum convenience.",
+              "recording": "https://www.youtube.com/watch?v=u-eUO3rIQV4"
+            },
+            {
+              "id": "1txHg",
+              "title": "Why Allyship Matters and Your Role in Creating a More Diverse Cloud Native Community",
+              "speakers": "Catherine Paganini, Rob Koch, Sandeep Kanabar, Anastasiia Gubska, Milad Vafaeifard",
+              "room": "Level 1 | Hall Entrance N10 | Room G",
+              "url": "https://kccnceu2025.sched.com/event/1txHg",
+              "description": "Despite many DEI initiatives, diversity in open source is still lacking. That's not only bad for underrepresented groups, it's also bad for OSS (studies have shown time and again that diverse teams produce better outcomes). While there isn't much you can do about the industry's hiring practices, you can help make a difference!\n\nAs companies scale back on DEI efforts, community-driven change becomes essential—and that’s where allies come in. Minorities are, by definition, in the minority, and their advocacy alone has limits. Allies have the power to amplify underrepresented voices, raise awareness among peers, and advocate for change. When allies take a stand for inclusivity, accessibility, and ethical responsibility, they hold the power to influence the industry's values and priorities.\n\nJoin this panel with CNCF Deaf and Hard of Hearing WG members to learn how you can drive meaningful change and contribute to a more diverse, inclusive, and innovative open-source community.",
+              "recording": "https://www.youtube.com/watch?v=1rgZPi2dTvE"
+            }
+          ]
+        },
+        {
+          "start": "2025-04-02T17:45:00+01:00",
+          "end": "2025-04-02T18:15:00+01:00",
+          "startLabel": "5:45 PM",
+          "endLabel": "6:15 PM",
+          "talks": [
+            {
+              "id": "1tcyf",
+              "title": "Attesting and Verifying Your Software Supply-Chain With In-toto",
+              "speakers": "Justin Cappos, Alan Chung Ma",
+              "room": "Level 3 | ICC Capital Suite 7-9",
+              "url": "https://kccnceu2025.sched.com/event/1tcyf",
+              "description": "in-toto is a framework that allows users to protect their software supply chain. The framework achieves this by providing two key capabilities: cryptographically attesting steps along the supply chain and enforcing policies that govern the relationships between the attestations.\n\nThis talk aims to introduce new users to in-toto and provide a brief overview of the progress made by all the subprojects and working groups.",
+              "recording": "https://www.youtube.com/watch?v=Cydz0hadVuQ"
+            },
+            {
+              "id": "1tcyi",
+              "title": "Beyond CloudEvents: Endpoints, Messages, Schemas – CNCF XRegistry",
+              "speakers": "Manuel Ottlik",
+              "room": "Level 3 | ICC Capital Suite 10-12",
+              "url": "https://kccnceu2025.sched.com/event/1tcyi",
+              "description": "The CNCF xRegistry project is an offspring of the graduated CNCF CloudEvents project, motivated by the need to formally declare which events can be raised by services and which are available to handle. This session provides an overview of the xRegistry metadata model, its API and the mirroring document format, dives into reference implementations, explains its use in products, and shows you how you can leverage xRegistry to build robust and type-safe event pipelines.",
+              "recording": "https://www.youtube.com/watch?v=M56SHzETAmM"
+            },
+            {
+              "id": "1tcyl",
+              "title": "Buildpacks: Pragmatic Solutions To Quick and Secure Image Builds",
+              "speakers": "Aidan Delaney, Juan Bustamante",
+              "room": "Level 3 | ICC Capital Suite 14-16",
+              "url": "https://kccnceu2025.sched.com/event/1tcyl",
+              "description": "Buildpacks streamline the process of building, deploying, and managing applications by automating the creation of container images from source code. Their key objectives include detecting application dependencies, configuring runtime environments, and ensuring consistent builds across different platforms. By abstracting away complex infrastructure details, buildpacks enable faster deployments, enhance developer productivity, and ensure better security through standardized and reproducible workflows.",
+              "recording": "https://www.youtube.com/watch?v=Eb9AweCazi8"
+            },
+            {
+              "id": "1tx8I",
+              "title": "Scaling Shopify's Search: Enhancing Elasticsearch Resilience With Kubernetes and KEDA",
+              "speakers": "Leila Vayghan",
+              "room": "Level 1 | Hall Entrance S10 | Room C",
+              "url": "https://kccnceu2025.sched.com/event/1tx8I",
+              "description": "Millions of merchants across the globe use Shopify to sell their products. The cornerstone of this commerce platform is the search infrastructure, which hosts more than two petabytes of data, providing search for millions of users.\nThis session explains how Shopify improved their search infrastructure resiliency while increasing write performance for Elasticsearch clusters. This was done by isolating production writes from bursts of maintenance writes that degraded search availability for all users. This approach leverages Kubernetes native mechanisms to host production workloads on isolated Google Cloud nodepools protecting them from the heavy writes that are sent to autoscalable nodepools that are dedicated for maintenance tasks. Using Kubernetes based Event Driven Autoscaling (KEDA), an autoscaler that responds to events such as bursts of writes, allowed maintenance nodepools to scale only when needed. Using KEDA saved 40% in costs and improved production write performance by 65%.",
+              "recording": "https://www.youtube.com/watch?v=r59IfCSmUBQ"
+            },
+            {
+              "id": "1txFA",
+              "title": "Flink on Karmada: Building Resilient Data Pipelines on Multi-Cluster K8s",
+              "speakers": "Michas Szacillo, Li Wang",
+              "room": "Level 1 | Hall Entrance S10 | Room D",
+              "url": "https://kccnceu2025.sched.com/event/1txFA",
+              "description": "Karmada is an increasingly popular open source tool for deploying and managing cloud-native applications across Kubernetes clusters. It can also be used to boost workload resiliency with its existing failover support. But what happens if we need to conserve state?\n\nWithin the context of data processing (e.g., Apache Flink or Apache Spark), the state is often critical to making sure workloads are able to gracefully resume in the event of a disruption. In collaboration with the Karmada community, the Bloomberg Streaming Analytics team has worked to bridge this gap in Karmada’s existing failover features.\n\nDuring this talk, we’ll use a real-life Flink on Karmada use case to discuss:\n- The complexities related to intelligently scheduling stateful workloads, improving resiliency, and ensuring state consistency during failover on multi-cluster K8s\n- The open source enhancements to Karmada to manage these challenges\n- How to leverage Karmada to support other stateful use cases!",
+              "recording": "https://www.youtube.com/watch?v=mqXZ2T-jWuU"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2025-04-03",
+      "id": "thursday-april-3",
+      "label": "Thursday, April 3",
+      "slots": [
+        {
+          "start": "2025-04-03T09:03:00+01:00",
+          "end": "2025-04-03T09:10:00+01:00",
+          "startLabel": "9:03 AM",
+          "endLabel": "9:10 AM",
+          "talks": [
+            {
+              "id": "1txBp",
+              "title": "Keynote: Mind the Gap: Bridging Cloud Native Innovation with Real-World Use",
+              "speakers": "Katie Gamanji, Carlo Fisicaro, Stephen Connolly, Fabio Airoldi, Tyson Singer",
+              "room": "Level 0 | ICC Auditorium",
+              "url": "https://kccnceu2025.sched.com/event/1txBp",
+              "description": "In this keynote, leaders from end user companies will share how their organization leverages cloud native technologies to tackle real-world challenges, scale efficiently, and drive innovation. Through firsthand insights, you’ll learn key lessons, best practices, and the evolving needs of cloud native adopters.\n\nHSBC\nStephen Connolly will explore HSBC’s journey with Kubernetes, from its early adoption to the development of the Service Hosting Platform, an internal developer platform for API microservices. He’ll share key challenges of running Kubernetes at scale in a global financial institution, including security, compliance, and reliability for millions of retail customers.\n\nPEPTONE\nCarlo and Fabio will demonstrate an ensemble generator that predicts structures of proteins that don't fold into a single shape but rather exist in multiple conformations. Running on a Kubernetes cluster that orchestrates workloads across GPU nodes, their system leverages both model and data parallelism to efficiently sample these conformational spaces, opening new possibilities in therapeutic development.\n\nSPOTIFY\nContext switching, fragmentation, cognitive load, duplication, dependencies, congestion, more dependencies, changing priorities, and bookmarked spreadsheets as far as the eye can see. While these problems are acute in the early days, they threaten DevEx cultures within growing organizations.\n\nAPPLE\nApple Intelligence is the personal intelligence system that brings powerful generative models to iPhone, iPad, and Mac. To handle computationally demanding requests for Apple Intelligence while prioritizing user privacy, Apple introduced Private Cloud Compute (PCC). This talk will highlight two open source ecosystems that provided foundational building blocks for PCC by discussing the use of gRPC and the Swift programming language.",
+              "recording": "https://www.youtube.com/watch?v=JqG1wey7-Ao"
+            }
+          ]
+        },
+        {
+          "start": "2025-04-03T09:10:00+01:00",
+          "end": "2025-04-03T09:15:00+01:00",
+          "startLabel": "9:10 AM",
+          "endLabel": "9:15 AM",
+          "talks": [
+            {
+              "id": "1zgHB",
+              "title": "Keynote: Open Source in Apple’s Private Cloud Compute",
+              "speakers": "Katie Gamanji",
+              "room": "Level 0 | ICC Auditorium",
+              "url": "https://kccnceu2025.sched.com/event/1zgHB",
+              "description": "Apple Intelligence is the personal intelligence system that brings powerful generative models to iPhone, iPad, and Mac. To handle computationally demanding requests for Apple Intelligence while prioritizing user privacy, Apple introduced Private Cloud Compute (PCC). This talk will highlight two open source ecosystems that provided foundational building blocks for PCC by discussing the use of gRPC and the Swift programming language.",
+              "recording": "https://www.youtube.com/watch?v=7GQRyAxPa9g"
+            }
+          ]
+        },
+        {
+          "start": "2025-04-03T09:25:00+01:00",
+          "end": "2025-04-03T09:30:00+01:00",
+          "startLabel": "9:25 AM",
+          "endLabel": "9:30 AM",
+          "talks": [
+            {
+              "id": "1w69M",
+              "title": "Keynote: Driving Innovation at Michelin: How We Scaled Cloud & On-Prem Infrastructure While Cutting Costs",
+              "speakers": "Arnaud Pons, Gabriel Quennesson",
+              "room": "Level 0 | ICC Auditorium",
+              "url": "https://kccnceu2025.sched.com/event/1w69M",
+              "description": "Faced with significant strategic shifts, Michelin re-architected its Kubernetes platform to support 441 business applications across 62 clusters in both cloud and on-prem environments. By leveraging Cluster API, Crossplane, and ArgoCD, we automated infrastructure management, reduced platform costs by 44%, and cut upgrade lead times by 85%. This transformation not only improved scalability and efficiency but also ensured Michelin remains an attractive workplace for top engineering talent.",
+              "recording": "https://www.youtube.com/watch?v=lFaSEevdZvU"
+            }
+          ]
+        },
+        {
+          "start": "2025-04-03T09:38:00+01:00",
+          "end": "2025-04-03T09:53:00+01:00",
+          "startLabel": "9:38 AM",
+          "endLabel": "9:53 AM",
+          "talks": [
+            {
+              "id": "1vUcl",
+              "title": "Keynote: CNCF at 10: Navigating Challenges, Embracing Opportunities",
+              "speakers": "Liz Rice, Katie Gamanji, Joseph Sandoval",
+              "room": "Level 0 | ICC Auditorium",
+              "url": "https://kccnceu2025.sched.com/event/1vUcl",
+              "description": "As the Cloud Native Computing Foundation (CNCF) celebrates its 10th anniversary in 2025, we reflect on a decade of transformative growth in the cloud-native ecosystem which has reshaped how organizations build, deploy, and scale applications. From Kubernetes’ rise to the explosion of the cloud native ecosystem and landscape, CNCF has played a pivotal role in fostering open-source collaboration. However, this journey has not been without challenges—balancing innovation with stability, addressing security concerns in an era of increasing and emerging threats, and navigating the complexity of a rapidly evolving technology landscape.\nIn this keynote, we’ll explore how CNCF has tackled these challenges over the last decade and the lessons learned. We’ll also focus on the next decade: How will CNCF adapt to the changing tech landscape? What steps are being taken to simplify cloud-native adoption for developers and enterprises? And how can the community work together to ensure sustainability, security, and scalability in a cloud-driven world?",
+              "recording": "https://www.youtube.com/watch?v=rACTrbTnFqY"
+            }
+          ]
+        },
+        {
+          "start": "2025-04-03T10:03:00+01:00",
+          "end": "2025-04-03T10:18:00+01:00",
+          "startLabel": "10:03 AM",
+          "endLabel": "10:18 AM",
+          "talks": [
+            {
+              "id": "1txBy",
+              "title": "Keynote: Adventures of Building a Platform as a Service for the Government",
+              "speakers": "Audun Fauchald Strand, Hans Kristian Flaatten",
+              "room": "Level 0 | ICC Auditorium",
+              "url": "https://kccnceu2025.sched.com/event/1txBy",
+              "description": "Who said that Government Tech has to be boring? In Norway the largest administration has been using Kubernetes for over 7 years! StatefulSets had just been introduced (alpha) and RBAC was still in beta. During this time we moved from quarterly releases to thousands of continuous releases each week across our fleet of cloud native applications!\n\nCould we replicate the success we had at NAV for other agencies? Could we provide them with a fully managed platform as a service to let them focus on building new and innovative services for their users and not reinventing the wheel by building yet another platform?\n\nIn this session Audun and Hans Kristian will share their experience building and operating one of the largest platforms of its kind in Norway providing a fully fledged application development platform for more than a 100 product teams. And how they set an ambitious goal of being able to provide their platform as a service to other agencies.",
+              "recording": "https://www.youtube.com/watch?v=DWq8UWmcRQg"
+            }
+          ]
+        },
+        {
+          "start": "2025-04-03T11:00:00+01:00",
+          "end": "2025-04-03T11:30:00+01:00",
+          "startLabel": "11:00 AM",
+          "endLabel": "11:30 AM",
+          "talks": [
+            {
+              "id": "1tcyu",
+              "title": "Expanding the Contributor Pipeline Through Inclusion",
+              "speakers": "Josh Berkus, Nancy Chauhan, Stéphane Este-Gracias, Sandeep Kanabar, Khallai Taylor",
+              "room": "Level 3 | ICC Capital Suite 7-9",
+              "url": "https://kccnceu2025.sched.com/event/1tcyu",
+              "description": "The growing demand for maintainers and contributors to sustain and evolve projects is an ongoing challenge. Yet, an untapped talent source—individuals from underrepresented groups—is often overlooked. Systemic barriers and a lack of inclusive practices most project members may not even realize.\n\nThis panel brings together members of TAG Contributor Strategy initiatives, including BIPOC, Women in Cloud Native, Blind and Visually Impaired, and Deaf and Hard of Hearing, to discuss how fostering inclusivity can unlock this potential. Panelists will share firsthand experiences of the barriers they’ve faced and discuss what a welcoming environment looks like from their perspectives.\n\nAttendees will leave with actionable strategies to create more inclusive project spaces that attract and retain underrepresented contributors, ultimately ensuring the sustainability and vibrancy of open source for years to come.",
+              "recording": "https://www.youtube.com/watch?v=RgzyEc8pPa8"
+            },
+            {
+              "id": "1tcyx",
+              "title": "From the Observability TAG: Designing a Common Query Language for Observability Data",
+              "speakers": "Chris Larsen, Alolita Sharma, Pereira Braga",
+              "room": "Level 3 | ICC Capital Suite 10-12",
+              "url": "https://kccnceu2025.sched.com/event/1tcyx",
+              "description": "Unifying query languages is key in reducing toil for app developers and end users to query and analyze observability data. A common query language that can leverage all observability data such as metrics, traces, profiles, events, logs to facilitate correlation, support trend analytics and provide end-to-end observability for AI applications. The Observability TAG QLS workgroup is finalizing a semantic query language spec in 2025 and is recommending SQL as a basis with further experimentation on syntaxes. This talk will explore the design principles, user research and challenges of creating a query language to support observability goals. It will delve into the core concepts, syntax, and semantics of SQL operators and its needed syntactic sugar, while addressing the unique requirements of observability data. It will also explore the trade-offs between simplicity, expressiveness, and performance. This query language convergence for end-to-end analytics could enhance reliability and operational efficiency for SREs and your app developers. A win-win for all.",
+              "recording": "https://www.youtube.com/watch?v=1iWD14xvBQA"
+            },
+            {
+              "id": "1tcz0",
+              "title": "Kubeflow Ecosystem: What’s Next for Cloud Native AI/ML and LLMOps",
+              "speakers": "Johnu George, Yuan Tang, Andrey Velichkevich, Valentina Rodriguez Sosa, Yuki Iwai",
+              "room": "Level 3 | ICC Capital Suite 14-16",
+              "url": "https://kccnceu2025.sched.com/event/1tcz0",
+              "description": "Over the years, Kubeflow has become one of the most widely adopted ML platforms on Kubernetes, managing the entire AI/ML lifecycle, from pipeline orchestration and data processing to distributed training, tuning, and inference. The challenges in the MLOps domain evolved over time with newer ML models and advancements in infrastructure capabilities. With the recent GenAI wave, users want to train and deploy custom LLMs on public clouds or on-premises infrastructure. Unlike traditional ML models, LLMs are massive, requiring significant data processing and computing resources for training and inference. The Kubeflow community has been working hard to provide first-class citizen support to generative models and their core abstractions, focusing more on LLMOps. In this talk, the speakers will discuss the requirements for the next-generation ML platform, its current shortcomings, the roadmap to solving these challenges and how you or your organization can contribute to Kubeflow’s success.",
+              "recording": "https://www.youtube.com/watch?v=gGP9QdlNr9Y"
+            },
+            {
+              "id": "1txEO",
+              "title": "Debugging Envoy Tunnels: A Deep Dive",
+              "speakers": "Carlos Sanchez, Alexandra Stoica",
+              "room": "Level 1 | Hall Entrance N10 | Room E",
+              "url": "https://kccnceu2025.sched.com/event/1txEO",
+              "description": "Envoy is a powerful proxy for modern microservices architectures that can securely connect services using encryption and mutual authentication with certificates. However, when Envoy tunnels don't work as expected, troubleshooting can become a complex and time-consuming task.\n\nAt Adobe, we use Envoy to connect pods running in Kubernetes with customer-dedicated infrastructure, such as on-premise services and databases. This setup allows different pods to have their own dedicated egress IP, or to connect from pods to multiple customer on-premise services using VPN. This relies heavily on Envoy tunnels and mTLS, and we've encountered numerous situations where things can and do go wrong.\n\nJoin us as we challenge you through a series of interactive demos to solve various cases of tunnel failures. Are you ready to crack the case and become an Envoy troubleshooting expert?",
+              "recording": "https://www.youtube.com/watch?v=vrG5tBDsdd0"
+            }
+          ]
+        },
+        {
+          "start": "2025-04-03T11:00:00+01:00",
+          "end": "2025-04-03T12:15:00+01:00",
+          "startLabel": "11:00 AM",
+          "endLabel": "12:15 PM",
+          "talks": [
+            {
+              "id": "1tx6n",
+              "title": "Tutorial: Mind Your Pod's Business: Network Isolation Workshop",
+              "speakers": "Keith Burdis, Surya Seetharaman, Miguel Duarte Barroso",
+              "room": "Level 1 | Hall Entrance N11",
+              "url": "https://kccnceu2025.sched.com/event/1tx6n",
+              "description": "**Please review these requirements ahead of attending this tutorial**\n\nYour cluster's network may be secure enough for your boss, but is it secure enough for the EU? Learn how you can use network segmentation to meet regulatory requirements.\n\nBy default, Kubernetes allows unrestricted communication between all pods in a cluster, which does not meet the security standards required by the European Union’s NIS2 Directive. NetworkPolicies can restrict traffic, but they are complex and leave gaps for Layer 2 (eg. Ethernet) use cases, such as virtualization networking and telecom services on Kubernetes.\n\nIn this interactive tutorial you will gain hands-on experience on how to achieve native isolation for your workloads (pods and VMs) in Kubernetes using CNCF projects CNI, KubeVirt, and OVN-Kubernetes - no prior experience needed! Through step-by-step guidance, you will learn to configure these plugins on your KIND clusters, create isolated networks and attach workloads to these different networks that meet high security standards."
+            }
+          ]
+        },
+        {
+          "start": "2025-04-03T11:45:00+01:00",
+          "end": "2025-04-03T12:15:00+01:00",
+          "startLabel": "11:45 AM",
+          "endLabel": "12:15 PM",
+          "talks": [
+            {
+              "id": "1txAE",
+              "title": "Building a 5* Kubernetes Hotel",
+              "speakers": "Rachel Wonnacott, Dean Fuller",
+              "room": "Level 0 | ICC Capital Hall | Room J",
+              "url": "https://kccnceu2025.sched.com/event/1txAE",
+              "description": "When Fidelity International's public cloud journey began to slow it became clear that our barrier to cloud was too high and with lower cognitive load platforms readily available on premises (CloudFoundry) why would anyone move? This sparked the realisation that we needed to build a public cloud container hosting platform that could provide that experience our developers had become used to for so many years, what was born was known as the \"Kubernetes Hotel\". Abstracting much of the K8s infrastructure complexity from our internal developers it allowed them to focus on the business logic and leaving the platform team to do the heavy engineering. In this talk we'll explore the high's and low's of the K8s hotel business, how our MVP was more of a motel and what we believe a 5* K8s hotel might look like as we progress further on our journey.",
+              "recording": "https://www.youtube.com/watch?v=ahANKkTT-yo"
+            },
+            {
+              "id": "1txEX",
+              "title": "Journey at the New York Times: Is Sidecar-Less Service Mesh Disappearing Into Infrastructure?",
+              "speakers": "Ahmed Bebars, Lin Sun",
+              "room": "Level 1 | Hall Entrance N10 | Room E",
+              "url": "https://kccnceu2025.sched.com/event/1txEX",
+              "description": "At The New York Times, we manage a multi-tenant Kubernetes architecture across diverse regions, leveraging projects like Istio, OPA, and Karpenter. With Istio ambient mode now generally available, we’re exploring whether it’s time to eliminate sidecars in our production environment and allow the service mesh to integrate seamlessly into our infrastructure for multiple teams.\n\nIn this talk, we’ll take you through our journey of collaborating with the Istio and cloud-native community to build a sidecar-less architecture from scratch, utilizing the broader cloud-native stack we already have. We’ll share the technical challenges we encountered, practical tips for adopting Istio ambient mode, and the tangible benefits we’ve realized along the way. Join us to discover how we’re reshaping our cloud-native architecture for simplicity and efficiency.",
+              "recording": "https://www.youtube.com/watch?v=9U3WMez9q74"
+            },
+            {
+              "id": "1txGQ",
+              "title": "From Metal To Apps: LinkedIn’s Kubernetes-based Compute Platform",
+              "speakers": "Ahmet Alp Balkan, Ronak Nathani",
+              "room": "Level 0 | ICC Capital Hall | Room I",
+              "url": "https://kccnceu2025.sched.com/event/1txGQ",
+              "description": "What does it take to design a Kubernetes-based fleet management stack that bridges the gap between bare-metal servers in data centers and a platform capable of hosting thousands of microservices, large-scale stateful applications, and a GPU fleet running AI workloads?\n\nAt LinkedIn, we use Kubernetes as a foundational primitive in our compute platform. We run thousands of microservices, manage large stateful applications with our custom scheduler, manage a large fleet of GPUs –all while performing regular maintenance on the bare metal hosts with no downtime or manual intervention.\n\nIn this talk, we’ll talk about how we architected and built an API-driven, Kubernetes-based compute stack with a large-scale microservices platform, a workload-agnostic stateful scheduler, and a multi-tenant ML/batch jobs platform. We’ll share insights on scaling Kubernetes for diverse workloads while maintaining tenant isolation, resilience, flexibility, and ease of use for developers.",
+              "recording": "https://www.youtube.com/watch?v=dDkXFuy45EA"
+            },
+            {
+              "id": "1txHp",
+              "title": "Pushing the Limits of Prometheus at Etsy",
+              "speakers": "Bryan Boreham, Chris Leavoy",
+              "room": "Level 1 | Hall Entrance N10 | Room G",
+              "url": "https://kccnceu2025.sched.com/event/1txHp",
+              "description": "A deep dive into the journey of pushing Prometheus beyond its performance limits. This talk offers an insider's perspective on scaling a single Prometheus instance using a powerhouse 128-core machine with 4TB of RAM, and processing a staggering 500 million metrics at its peak. It’s a story packed with lessons, insights, and actionable takeaways from operating one of the industry's largest Prometheus servers.\n\nThe talk will go through:\n- Breaking Boundaries: Explore the challenges encountered in Prometheus' design and how they navigated them.\n- Diagnosing Bottlenecks: Discover how to combine observability signals—metrics, profiles, and traces—to pinpoint and overcome performance roadblocks.\n- Building Resilience: Uncover strategies to optimize metrics volume and enhance Prometheus' reliability under load.\n\nThis session isn’t just about pushing technology to the edge—it’s about learning to work smarter, build better systems, and create a more resilient observability stack.",
+              "recording": "https://www.youtube.com/watch?v=IWrd-pSojqg"
+            }
+          ]
+        },
+        {
+          "start": "2025-04-03T13:15:00+01:00",
+          "end": "2025-04-03T14:15:00+01:00",
+          "startLabel": "1:15 PM",
+          "endLabel": "2:15 PM",
+          "talks": [
+            {
+              "id": "1txDl",
+              "title": "🪧 Poster Session (PS 01): From Pods To Petabytes: Managing Data Objects as Kubernetes Resources",
+              "speakers": "Sebastian Beyvers, Jannis Hochmuth",
+              "room": "Level 1 | Hall Entrance N8-N9 | Poster Pavilion",
+              "url": "https://kccnceu2025.sched.com/event/1txDl",
+              "description": "As ML and data-intensive applications expand across industries, organizations face growing pressure to integrate more external and internal data sources into their data and compute ecosystems. This raises a crucial question: How do you integrate data lifecycle management in a distributed environment like Kubernetes? It turns out, there are striking parallels between orchestrating containerized applications in Kubernetes and managing datasets across various locations. From lifecycle management to replication to placement strategies, by applying Kubernetes' proven orchestration concepts to data, it is possible to deliver consistent, efficient, and scalable “data orchestration”, which can be a powerful tool for streamlining data-driven applications – all using familiar K8s interfaces. This presentation explores the benefits of rethinking distributed data management with Kubernetes-inspired strategies and showcases a prototypical data orchestration implementation."
+            },
+            {
+              "id": "1txDr",
+              "title": "🪧 Poster Session (PS 06): NOMADIC: How To Build a Flexible and Automated Compute Continuum From a Telco Operator’s Perspective",
+              "speakers": "Adam Morsman, Xuan Du",
+              "room": "Level 1 | Hall Entrance N8-N9 | Poster Pavilion",
+              "url": "https://kccnceu2025.sched.com/event/1txDr",
+              "description": "Telco cloud infrastructure is challenged on both a horizontal scale, as it extends towards the edge, and a vertical scale, given stringent KPIs from telco workloads. Thus, leveraging a blend of heterogeneous hardware such as multi-arch CPUs, GPUs, and other accelerators, and deploying them at large-scale and highly distributed locations is vital to having the most energy-efficient and cost-effective network.\n\nWhat technologies from open-source and cloud-native communities can help address these challenges? NOMADIC (Network-oriented Multi-architecture Distributed Infrastructure as Code) is an answer by applying the declarative approach, DevOps practices, and self-service principles to demonstrate automated lifecycle management of telco cloud.\n\nHowever, this presents yet unanswered questions on how to advertise heterogeneous resources so that intelligence driven workload placement can be achieved. A “single pane of glass” could enable this, but what implementation should this take?"
+            }
+          ]
+        },
+        {
+          "start": "2025-04-03T13:45:00+01:00",
+          "end": "2025-04-03T14:05:00+01:00",
+          "startLabel": "1:45 PM",
+          "endLabel": "2:05 PM",
+          "talks": [
+            {
+              "id": "1x0HN",
+              "title": "Sponsored Demo: NODE SCALING OPTIMIZATION",
+              "speakers": "Bertram Hass",
+              "room": "Level 1 | Solutions Showcase | Hall Entrances S8 - S9 | Demo Theater",
+              "url": "https://kccnceu2025.sched.com/event/1x0HN",
+              "description": "Managing Kubernetes clusters at scale is no easy task!\nWhen it comes to efficiently autoscaling nodes, there is no one-size-fits-all solution for every application use case. The challenge lies in implementing centralized best practices, such as bin-packing and workload right-sizing while giving developers the flexibility to tailor the solution to their needs.\nThis talk shares our platform team's journey from using a cluster autoscaler with static instance types to node scaling with dynamic instance sizes at scale. Along the way, we optimized costs and realized that reliability best practices, like Pod Disruption Budgets, Topology Spread Constraints, and resource rightsizing are more than just nice-to-have.\n\nIn order to facilitate networking and business relationships at the event, you may choose to visit a third party’s booth or access sponsored content. You are never required to visit third party booths or to access sponsored content. When visiting a booth or participating in sponsored activities, the third party will receive some of your registration data. This data includes your first name, last name, title, company, address, email, standard demographics questions (i.e. job function, industry), and details about the sponsored content or resources you interacted with. If you choose to interact with a booth or access sponsored content, you are explicitly consenting to receipt and use of such data by the third-party recipients, which will be subject to their own privacy policies."
+            }
+          ]
+        },
+        {
+          "start": "2025-04-03T14:15:00+01:00",
+          "end": "2025-04-03T14:45:00+01:00",
+          "startLabel": "2:15 PM",
+          "endLabel": "2:45 PM",
+          "talks": [
+            {
+              "id": "1tczd",
+              "title": "Multi-cluster Orchestration System: Karmada Updates and Use Cases",
+              "speakers": "Hongcai Ren, Joe Nathan Abellard",
+              "room": "Platinum Suite | Level 3 | Room 1-2",
+              "url": "https://kccnceu2025.sched.com/event/1tczd",
+              "description": "Karmada (Kubernetes Armada) is a Kubernetes management system that enables you to run your cloud-native applications across multiple Kubernetes clusters and clouds.\n\nIn this presentation, the maintainer of the Karmada project will share:\n\n- A Brief introduction to Karmada, including what it is and why you need it.\n\n- Key features and real-world use cases\n\n- Overview of the community, including the governance and how it works\n\n- New features over the last year\n\n- Next Plan\n\n- QA",
+              "recording": "https://www.youtube.com/watch?v=rbVV8WIJYww"
+            },
+            {
+              "id": "1tczp",
+              "title": "Istio: The Past, Present and Future of the Project and Community",
+              "speakers": "Lin Sun, Raymond Wong, Louis Ryan",
+              "room": "Level 3 | ICC Capital Suite 14-16",
+              "url": "https://kccnceu2025.sched.com/event/1tczp",
+              "description": "Istio, a CNCF graduated project, is the most popular service mesh, simplifying observability, traffic management, and policy for your services. The project, its roadmap, and the community have gone through several changes over the past few quarters and we’d like to give some updates. We will discuss the project and its health, new features added in recent releases, progress on the new ambient sidecar-less data plane mode, Gateway API support, the project roadmap, and much more. We will also discuss the plans for the future of community-building efforts and how you can help us make Istio the best that it can be.",
+              "recording": "https://www.youtube.com/watch?v=poBOYc_EkpA"
+            },
+            {
+              "id": "1tx7W",
+              "title": "AI Workload Preemption in a Multi-Cluster Scheduling System at Bloomberg",
+              "speakers": "Leon Zhou, Wei-Cheng Lai",
+              "room": "Level 1 | Hall Entrance S10 | Room B",
+              "url": "https://kccnceu2025.sched.com/event/1tx7W",
+              "description": "As Bloomberg’s usage of AI continues to grow rapidly, it is critical to ensure that those workloads with high business impact are prioritized to use the firm’s available GPU resources. As a result, Bloomberg’s Data Science Platform engineering team has implemented Karmada’s Priority and Preemption feature to efficiently manage the sequencing of machine learning (ML) workloads using a multi-cluster scheduling system.\n\nThis talk will discuss the challenges of balancing resource allocation between high-priority and lower-priority ML batch jobs, and how Karmada helps ensure that business-critical workloads are not starved of resources during periods of high contention. Attendees will gain practical insights into configuring and managing multi-cluster environments, ensuring timely execution of ML jobs while maintaining cluster efficiency. This session is ideal for Kubernetes' administrators and engineers who are managing large-scale ML workloads.",
+              "recording": "https://www.youtube.com/watch?v=LrL5AcS2d5g"
+            },
+            {
+              "id": "1txAH",
+              "title": "Set Your Developers Free: Fleet Management at Spotify",
+              "speakers": "Stefan Särne",
+              "room": "Level 0 | ICC Capital Hall | Room J",
+              "url": "https://kccnceu2025.sched.com/event/1txAH",
+              "description": "Migrations, security patches, and dependency upgrades are a necessary toil, but not one that your developers have to suffer through. Learn about Spotify’s approach to managing its fleet of over 10,000 software components — and how we patched the Log4J vulnerability across most of our software in 6 hours.\n\nFleet Management has freed our developers to focus on impactful software development — rather than the toil of dependency upgrades and migrations. Through automation, our percentage of software that’s up-to-date jumped from 10% to 80%, and security vulnerabilities were cut in half. Spotify orchestrates hundreds of changes, across thousands of repositories, and releases them to production — all without developer intervention.",
+              "recording": "https://www.youtube.com/watch?v=Zr7y27HpII4"
+            },
+            {
+              "id": "1txCe",
+              "title": "KubeCon FamilyFortune, Episode 2",
+              "speakers": "Tim Hockin, Lucy Sweet",
+              "room": "Level 0 | ICC Auditorium",
+              "url": "https://kccnceu2025.sched.com/event/1txCe",
+              "description": "Join us for a rousing game of Family Fortune (Family Feud to our friends across the pond)! We will have silly questions with even sillier answers, as we try to guess what our global community of Kubernauts think.",
+              "recording": "https://www.youtube.com/watch?v=2-fSMpCSYnw"
+            },
+            {
+              "id": "1txEU",
+              "title": "How We Moved Spotify To a Proxyless gRPC Service Mesh",
+              "speakers": "Erik Lindblad, Erica Manno",
+              "room": "Level 1 | Hall Entrance N10 | Room E",
+              "url": "https://kccnceu2025.sched.com/event/1txEU",
+              "description": "This talk tells the story of how Spotify transitioned its service network from a decade old DNS based service discovery to a modern service mesh built on the xDS API’s from the Envoy project. The talk covers the research and design considerations for this new system, and how it draws full advantage of native support in gRPC for both xDS and proxyless load balancing to support Spotify’s scale (1.5 million kubernetes pods) without the performance impact of traditional service mesh setups. The audience will learn how this setup was used to build three important mesh capabilities at Spotify: dynamic traffic splitting, a service call graph and zone aware routing.\n\nThis is a case study, so the talk will also cover operational considerations like safe rollouts using fast fallback mechanisms, and how to use gRPC’s custom load balancer support to do a centrally managed rollout that’s transparent to teams using your platform.",
+              "recording": "https://www.youtube.com/watch?v=2_ECK6v_yXc"
+            },
+            {
+              "id": "1txGB",
+              "title": "Simplify Kubernetes Operator Development With a Modular Design Pattern",
+              "speakers": "Alexander Lazovik, Mostafa Hadadian",
+              "room": "Level 1 | Hall Entrance N10 | Room F",
+              "url": "https://kccnceu2025.sched.com/event/1txGB",
+              "description": "Kubernetes operators automate complex application management. However, building and maintaining them poses significant challenges. Custom Resource Definitions (CRDs) are painful to evolve once established, and controllers’ logic becomes increasingly complex over time. We learned these lessons the hard way through years, but you don't have to.\n\nWe present a design pattern that simplifies Kubernetes operator development by decomposing CRDs into manageable pieces and controllers into more focused microcontrollers. This pattern decouples K8s instructions from controllers' logic by leveraging Helm charts for translating CRD specifications into Kubernetes resources. As a result, our solution reduces code and maintenance complexities, accelerates iteration, and provides an efficient development workflow.\n\nFinally, we share a real-world implementation of our design in the Netherlands' water sector that accelerates AI stream processing application delivery.",
+              "recording": "https://www.youtube.com/watch?v=m8ZnlZTo1OE"
+            },
+            {
+              "id": "1txHs",
+              "title": "How To Adopt OpenTelemetry in an Enterprise Where Incumbent Vendor Tools Reign Supreme",
+              "speakers": "Chris Weldon",
+              "room": "Level 1 | Hall Entrance N10 | Room G",
+              "url": "https://kccnceu2025.sched.com/event/1txHs",
+              "description": "OpenTelemetry isn't just an amazing set of tools and standards for observability - it's a useful ecosystem that's helped Wolters Kluwer to evolve our company from a monitoring strategy based on tool proliferation to an observability strategy with fewer, more purpose-specific tools.\n\nIn this session, you'll learn about Wolters Kluwer's 3-year journey to address high mean-time-to-resolution (MTTR) by adopting an observability strategy based on OpenTelemetry. We'll cover the technical tradeoffs for how we transitioned our portfolio of monolith and microservice applications from vendor-locked tools to open standards and a narrowed tool selection. We'll review challenges we encountered along the way, and how our platform-as-a-product mindset is helping to drive adoption of these open standards across the organization and improving our MTTR.",
+              "recording": "https://www.youtube.com/watch?v=JqRXqk-1CLo"
+            }
+          ]
+        },
+        {
+          "start": "2025-04-03T15:00:00+01:00",
+          "end": "2025-04-03T15:30:00+01:00",
+          "startLabel": "3:00 PM",
+          "endLabel": "3:30 PM",
+          "talks": [
+            {
+              "id": "1tx7i",
+              "title": "Efficient Transparent Checkpointing of AI/ML Workloads in Kubernetes",
+              "speakers": "Adrian Reber, Viktória Spišaková, Radostin Stoyanov",
+              "room": "Level 1 | Hall Entrance S10 | Room B",
+              "url": "https://kccnceu2025.sched.com/event/1tx7i",
+              "description": "As long-running AI/ML workloads become more common in cloud-native environments, the need for efficient checkpointing mechanisms to provide fault tolerance becomes increasingly important. However, current state-of-the-art techniques for transparent GPU checkpointing rely on intercepting and logging device API calls (e.g., CUDA runtime) as well as capturing input data and object handles (e.g., events, streams). This approach inevitably introduces steady-state overhead and requires replaying the entire recorded execution, potentially with nondeterministic operations, to recover from failures.\n\nThis talk will cover how the Kubernetes container checkpointing functionality has been extended with recently introduced CRIU plugins to enable transparent checkpoint/restore of GPU computations without the overhead of API interception, logging, or re-execution. This talk will also discuss how these mechanisms can be utilized to improve resource utilization in large-scale GPU clusters.",
+              "recording": "https://www.youtube.com/watch?v=BSoEY_tpxIo"
+            },
+            {
+              "id": "1tx8U",
+              "title": "​​SPIFFE in Practice: Universal Identity for WebAssembly Workloads",
+              "speakers": "Colin Murphy, Joonas Bergius",
+              "room": "Level 1 | Hall Entrance S10 | Room C",
+              "url": "https://kccnceu2025.sched.com/event/1tx8U",
+              "description": "Universal Identity (or Workload Identity) is a foundational concept that underpins every secure platform. When implemented well, it provides the platform and security teams the ability to reason about the entities running on their platform and the interactions between them.\n\nSPIFFE has become the industry standard for establishing Identity that can be used to authenticate across all major cloud providers, on various workload platforms and even to an increasing number of third-party services. As SPIFFE adoption across various CNCF projects is growing, WebAssembly workloads present some unique challenges to simply lifting and shifting from what’s been done before.\n\nThis talk will cover the journey CNCF wasmCloud underwent in adopting SPIFFE as the foundation for providing Secure Production Identity for the WebAssembly Workloads running on the platform. We will share the lessons we learned from our journey, starting out with a concept to then bringing it all the way to production.",
+              "recording": "https://www.youtube.com/watch?v=c0dEL_bBRVU"
+            },
+            {
+              "id": "1txAK",
+              "title": "Breaking Free From the Cloud: Banking on Self-Hosted Kubernetes",
+              "speakers": "Per Hedegaard Christiansen, Kārlis Akots Gribulis",
+              "room": "Level 0 | ICC Capital Hall | Room J",
+              "url": "https://kccnceu2025.sched.com/event/1txAK",
+              "description": "What drives a global investment bank to transition from managed cloud Kubernetes service to self-hosted on-premises solution? While managed Kubernetes in the cloud can simplify deployments they do often come with significant trade-offs. At Saxo Bank, we made the decision to regain control by shifting to a self-hosted, on-premises Kubernetes platform.\n\nThis session will unpack our motivations, such as decreasing costs by 80%, reducing cluster creation time fifteenfold, and improving our CIS benchmark standing by 30%. We’ll dive into the architecture we adopted, the lessons learned from overcoming performance and resilience challenges, and how this change has impacted our infrastructure into positioning Kubernetes as Saxo Bank’s cornerstone for the future.",
+              "recording": "https://www.youtube.com/watch?v=Zfp94fOMcwE"
+            },
+            {
+              "id": "1txH0",
+              "title": "Hot Takes: Kubernetes Paintainers Bring the Heat",
+              "speakers": "Ian Coldwater, Kat Cosgrove, Jeffrey Sica, Xander Grzywinski, Marly Salazar",
+              "room": "Level 1 | Hall Entrance N10 | Room H",
+              "url": "https://kccnceu2025.sched.com/event/1txH0",
+              "description": "Ever wondered what happens behind the scenes of one of the world's largest open source projects? Join us for a spicy twist on the traditional panel format, where Kubernetes SIG leads tackle increasingly challenging questions about project governance, technical architecture decisions, and community building - all while braving progressively hotter…hot sauces!\n\nModeled after the popular \"Hot Ones\" interview format, this session features technical leaders from across Kubernetes sharing candid insights about the joys and challenges of OSS maintenance. As the heat builds, they'll reveal the inside story of key technical decisions, discuss strategies for building consensus across competing interests, and share invaluable advice for aspiring contributors.\n\nWhether you're a current maintainer, a new contributor, or just curious about Kubernetes development, watch these brave maintainers bring the heat - literally and figuratively!",
+              "recording": "https://www.youtube.com/watch?v=syV-QGZDmWU"
+            }
+          ]
+        },
+        {
+          "start": "2025-04-03T16:00:00+01:00",
+          "end": "2025-04-03T16:30:00+01:00",
+          "startLabel": "4:00 PM",
+          "endLabel": "4:30 PM",
+          "talks": [
+            {
+              "id": "1td07",
+              "title": "etcd V3.6.0 and etcd-operator V0.1.0",
+              "speakers": "Ciprian Hacman, Arka Saha, Siyuan Zhang, Benjamin Wang, Ivan Valdes Castillo",
+              "room": "Level 3 | ICC Capital Suite 10-12",
+              "url": "https://kccnceu2025.sched.com/event/1td07",
+              "description": "etcd v3.6.0 has been released, almost 4 years after 3.5.0. It’s a big step forward. etcd-operator v0.1.0 is also now available and promises to greatly improve the usability and operability of etcd.\n\nWe will dive into all the new exciting features in 3.6, like downgrade support, v2store deprecation and performance improvement. We’ll also provide an upgrade checklist and highlight changes users need to make before upgrading to the 3.6 release. We will also show you how the etcd-operator works, how it can greatly simplify the operation of the etcd cluster. Come join us and raise your etcd questions with the on-site etcd maintainers.",
+              "recording": "https://www.youtube.com/watch?v=_xoDbpm-Qks"
+            },
+            {
+              "id": "1td0A",
+              "title": "Guiding Kubernetes: The Steering Committee's Role in Project Evolution",
+              "speakers": "Maciej Szulik, Stephen Augustus",
+              "room": "Level 3 | ICC Capital Suite 14-16",
+              "url": "https://kccnceu2025.sched.com/event/1td0A",
+              "description": "The Kubernetes Steering Committee plays a crucial role in overseeing the non-technical aspects of the Kubernetes project and making important project-wide decisions. The committee has a wide scope of working and responsibilities. The committee has evolved over the years. In this session, let’s take a look at how the committee came to be created, the bootstrap era, how it works now and what’s in store for the future. We will have excerpts from our emeritus members who served to shape the goals and vision of the steering committee. We will explore how you can leverage our learnings to enhance the governance of your own cloud native projects. If you are eager to gain insights or have queries about the governance journey of the Kubernetes project, we encourage you to drop by and engage in an insightful discussion",
+              "recording": "https://www.youtube.com/watch?v=ZManfhV6DZU"
+            },
+            {
+              "id": "1td0D",
+              "title": "Kubespray: Driving Cost-Efficiency for AI on Kubernetes",
+              "speakers": "Antoine Legrand, Mohamed Zaian",
+              "room": "Platinum Suite | Level 3 | Room 1-2",
+              "url": "https://kccnceu2025.sched.com/event/1td0D",
+              "description": "In 2025, cost efficiency is more critical than ever as organizations strive to optimize budgets while scaling AI capabilities. Kubernetes has become the backbone for deploying AI workloads, but organizations face the challenge of balancing performance, scalability, and cost efficiency. This session will address these challenges head-on.\n\nKubespray, a flexible, production-grade, open-source Kubernetes cluster management tool, has empowered countless users and organizations across cloud and bare-metal environments.\n\nAttendees will learn how to build cost-optimized Kubernetes clusters by leveraging efficient resource utilization, GPU integration, and multi-cloud deployment strategies. The session will cover practical configurations to reduce operational expenses while ensuring high availability and scalability for demanding AI use cases.",
+              "recording": "https://www.youtube.com/watch?v=SqKqB-q_m8E"
+            },
+            {
+              "id": "1tx8X",
+              "title": "Open Source Malware or a Vulnerability? The Philosophical Debate and How To Mitigate",
+              "speakers": "Madelein van der Hout, Santiago Torres-Arias, Brian Fox",
+              "room": "Level 1 | Hall Entrance S10 | Room C",
+              "url": "https://kccnceu2025.sched.com/event/1tx8X",
+              "description": "As open source software is increasingly important in modern software development, the security challenges continue to evolve. Vulnerabilities are largely understood, but open source malware poses a uniquely hidden threat. But when does a planted vulnerability transform a package into malware? This talk will discuss and debate the nuances between open source vulnerabilities and malware, as well as discuss the before diving into what’s most important: how to stay secure with open source.\n\nTraditional SCA and endpoint security tools do not detect open source malware, which increases the challenge. In this panel, key experts — from software engineering acad to influential analysts and open source security veterans — will dive into the different types of open source malware and why it’s so pervasive, outline practical strategies for mitigating threats and discuss the responsibility of enterprises and developers in safeguarding the software supply chain.",
+              "recording": "https://www.youtube.com/watch?v=kyLdmGYZ6BQ"
+            },
+            {
+              "id": "1tx9P",
+              "title": "Defusing the Kubernetes API Performance Minefield",
+              "speakers": "Madhav Jivrajani, Marek Siarkowicz",
+              "room": "Level 1 | Hall Entrance S10 | Room A",
+              "url": "https://kccnceu2025.sched.com/event/1tx9P",
+              "description": "Kubernetes enables a wide landscape of CNCF projects and organisations to build upon its foundation and extend its functionality through custom controllers. But anyone who has deployed an operator at scale, quickly discovers that the Kubernetes API is a performance minefield. Forget to set resourceVersion when listing pods? Your control plane explodes! This talk delves into recent enhancements in Kubernetes designed to defuse this performance minefield. We'll explore the improved storage layer that allows caching more types of requests, effectively halving request latency and reducing the load on etcd. Don't let your cluster fall victim to faulty controllers – join us to learn how these changes mitigate risks, boost performance, and contribute to a more stable and reliable Kubernetes experience. We'll explore how the storage layer improves API responsiveness and predictability, and you'll understand the impact of these changes on scalability, reliability, and overall user experience.",
+              "recording": "https://www.youtube.com/watch?v=SdLLOcNZN5E"
+            },
+            {
+              "id": "1txB6",
+              "title": "A Day in the Life of a Kubernetes Engineer",
+              "speakers": "Kasper Borg Nissen, Shane Lawrence, Micah Hausler, Nikhita Raghunath, Rajas Kakodkar",
+              "room": "Level 0 | ICC Capital Hall | Room I",
+              "url": "https://kccnceu2025.sched.com/event/1txB6",
+              "description": "In the cloud native universe, Kubernetes engineers are the unsung heroes--who wrangle YAML, tame logs and brave production crises. While AI steals the spotlight, challenges of managing Kubernetes remain in the shadows. Platform engineers, often grappling with relentless war room calls rarely get the stage they deserve.\nFor the first time, we’ll dive into the untold stories of platform engineers: triumphs and the grit it takes to navigate the complexities of Kubernetes. This is a celebration of the human side of cloud native, told through anecdotes, technical insights and lessons learned from the trenches.\n\nJoin industry experts as they explore:\n- Critical skills for resolving production issues\n- Successes & failures that define their journeys\n- Balancing ecosystem health\n- Secure practices for AI workloads\n- Reducing Kubernetes complexity\n\nJoin us for unfiltered insights, empowering stories and actionable takeaways to inspire your Kubernetes journey—you, too, deserve to be heard.",
+              "recording": "https://www.youtube.com/watch?v=QhTlZs4m59w"
+            },
+            {
+              "id": "1txFP",
+              "title": "Get WITty: Evolving Kubernetes Scheduling With the WebAssembly Component Model",
+              "speakers": "Dejan Zele Pejchev, Jonathan Giannuzzi",
+              "room": "Level 1 | Hall Entrance S10 | Room D",
+              "url": "https://kccnceu2025.sched.com/event/1txFP",
+              "description": "At KubeCon NA 2024, we introduced WASM + KWOK Wizardry: Writing and Testing Kubernetes Scheduler Plugins at Scale, showcasing how WASM plugins transform Kubernetes scheduling. This session continues the story, highlighting our progress toward a language-agnostic framework using the WebAssembly Component Model.\n\nThe current Go-centric WASM plugin SDK restricts innovation to a single language. By adopting the Component Model, we enable developers to write plugins in Rust, Python, JavaScript, and more, unlocking new possibilities. This approach enhances modularity, simplifies integration with standardized interfaces, and strengthens security through improved isolation.\n\nWe’ll also showcase how this aligns with the Kubernetes Scheduler Simulator, providing a powerful testing environment for these advanced plugins. Join us to see how the Component Model fosters collaboration, innovation, and extensibility in Kubernetes scheduling. Let’s move beyond wizardry and get truly WITty!",
+              "recording": "https://www.youtube.com/watch?v=hjbZOBghxYU"
+            },
+            {
+              "id": "1txHy",
+              "title": "Limitless Possibilities, Consistent Design: Crafting Dashboards With Perses DAC",
+              "speakers": "Nicolas Takashi, Antoine Thébaud",
+              "room": "Level 1 | Hall Entrance N10 | Room G",
+              "url": "https://kccnceu2025.sched.com/event/1txHy",
+              "description": "Managing dashboards can be overwhelming, especially for diverse teams with specific goals. This talk explores how Perses and Dashboard-as-Code (DAC) streamline large-scale dashboard management. DAC boosts efficiency, reduces costs, and enables consistent, customizable dashboards—even in complex setups.\n\nWe’ll dive into DAC fundamentals and the Go and Cue SDKs that power it. Discover percli, a new CLI tool for seamless Perses interactions. Learn how community-driven mixins, shared dashboards, panels, and PromQL integration make Perses adaptable to any observability stack.\n\nA live demo will showcase how Perses DAC fosters collaboration and simplifies dashboard management at any scale. Whether you oversee dozens or thousands, this session offers tools and insights to transform your approach. Join us to see Perses DAC in action!",
+              "recording": "https://www.youtube.com/watch?v=7h70Olo5Uzk"
+            }
+          ]
+        },
+        {
+          "start": "2025-04-03T16:45:00+01:00",
+          "end": "2025-04-03T17:15:00+01:00",
+          "startLabel": "4:45 PM",
+          "endLabel": "5:15 PM",
+          "talks": [
+            {
+              "id": "1tx7f",
+              "title": "Building & Operating a Large-scale HPC AI Cluster on Kubernetes",
+              "speakers": "Kalyan Saladi, Chandan Avdhut",
+              "room": "Level 1 | Hall Entrance S10 | Room B",
+              "url": "https://kccnceu2025.sched.com/event/1tx7f",
+              "description": "We explore the challenges of building and running a large-scale AI/ML cluster in cloud that can handle high-performance ML training jobs. We will cover the benefits of using a container orchestration platform like Kubernetes for managing AI/ML workloads and how Slurm can be used to schedule and manage jobs on a cluster. We will also dive into cluster health management and meeting performance expectations.\n\nShare lessons from building a 12K GPU state-of-the-art HPC cluster, with high performance storage systems, and Infiniband network fabric, playing host to workloads ranging from 10s to thousands of GPUs lasting days to weeks.\n\nWe highlight the importance of health-checks and telemetry in understanding and reacting to various failure modes experienced in HPC clusters and how to mitigate impact on AI training jobs.\n\nFinally, we share insights from operating the cluster for over a period of more than 6 months, and share pitfalls and best practices.",
+              "recording": "https://www.youtube.com/watch?v=7KCBigZi_Rk"
+            },
+            {
+              "id": "1txAQ",
+              "title": "How Do You Measure Developer Productivity?",
+              "speakers": "Jennifer Riggins, Cat Morris, Helen Greul, Akshaya Aradhya, Laura Tacho",
+              "room": "Level 0 | ICC Capital Hall | Room J",
+              "url": "https://kccnceu2025.sched.com/event/1txAQ",
+              "description": "Engineering is a science, so we know we can't improve what we don't measure. But many ways of measuring developer productivity focus too much on output, and aren’t trusted by developers.\nSo how should we measure developer productivity, and quantify the impact of processes, tools, Gen AI and culture on the developer experience (DevEx)?\nThen, how do you take this data and turn it into something that's actionable and effective? Should we collect quantitative vs qualitative measurements? What about business impact? Cognitive load? Is there a way to measure the maturity of your platform strategy?\nJoin this panel to learn how from those who have been working with a Platform-as-a-Product mindset for years now. Join Multiverse's (ex-Backstage) Helen Greul, Oscilar’s (ex-GitHub, Netflix) Akshaya Aradhya, DX's Laura Tacho and Syntasso's Cat Morris in this epic panel hosted by The New Stack's Jennifer Riggins.",
+              "recording": "https://www.youtube.com/watch?v=gycxQT3DHIU"
+            },
+            {
+              "id": "1txB9",
+              "title": "A Journey To Modernizing a Regulated Cloud Control Plane",
+              "speakers": "Steven Borrelli, Pranita Praveen",
+              "room": "Level 0 | ICC Capital Hall | Room I",
+              "url": "https://kccnceu2025.sched.com/event/1txB9",
+              "description": "At Macquarie, we have embarked on a transformative journey to modernize our cloud control plane. Initially designed for a single-cloud environment (AWS) to facilitate our move away from data centers, we are now evolving towards a multi-cloud solution underpinned by GitOps principles and foundational tooling made possible through the CNCF ecosystem. Our focus is on Kubernetes, Crossplane, OPA, Argo, among others, which have been instrumental in our progress.\n\nWe aim to share our successes and the lessons learned throughout this journey, built for engineers in a globally regulated environment comprising four distinct lines of business. Our experience underscores the vital role of the CNCF in our modernization efforts, and we are eager to give back to the community that has provided us with indispensable resources and support.",
+              "recording": "https://www.youtube.com/watch?v=TELnK0PrKHU"
+            },
+            {
+              "id": "1txFS",
+              "title": "GPU Sharing at CERN: Cutting the Cake Without Losing a Slice!",
+              "speakers": "Diana Gaponcic",
+              "room": "Level 1 | Hall Entrance S10 | Room D",
+              "url": "https://kccnceu2025.sched.com/event/1txFS",
+              "description": "GPUs and accelerators are changing traditional High Energy Physics (HEP) deployments while also being the key to enabling efficient machine learning. However, their high cost and increasing demand oblige service managers to look into ways to maximize the HW utilization through sharing. While the existing methods are flexible and easy to use, complex use cases still require building custom components on top of the existing device plugin API.\n\nThis talk explores the new, exciting way of allocating and sharing GPUs - using Dynamic Resource Allocation (DRA). We go over the multiple options for GPU scheduling: time sharing, MPS, and MIG. We cover the features and limitations of each option and present extensive benchmark results that helped us assign each of our ML and scientific workloads to the most appropriate layout. Finally, we describe how managing GPUs in a centralized way improves resource utilization across interactive and batch workloads while optimizing costs in the long run.",
+              "recording": "https://www.youtube.com/watch?v=_pgOuaYwvBQ"
+            },
+            {
+              "id": "1txGN",
+              "title": "From Hours To Minutes: The Evolution of Platform Engineering at Decathlon",
+              "speakers": "Adrien Gillard, Christophe Furmaniak",
+              "room": "Level 1 | Hall Entrance N10 | Room F",
+              "url": "https://kccnceu2025.sched.com/event/1txGN",
+              "description": "The platform engineering mindset is spreading like wildfire. As a way to accelerate business and empower developers, it is quickly becoming a “must-have”.\n\nHowever there are still few real world feedbacks of the process. That’s why we offer attendees a look at Decathlon’s journey into platform engineering.\nFrom its inception (when we did not call it platform engineering yet), to its current state where users are able to deploy infrastructure (including workloads, databases, service exposure) to host their applications, in full autonomy, while keeping strong standardization.\n\nWe will share how we can now provide our internal users with their environments in 20 minutes, and discuss the challenges we faced and the choices we had to make. We will also look into the next steps and improvements we intend for the future.",
+              "recording": "https://www.youtube.com/watch?v=UVPe-rdxK7w"
+            }
+          ]
+        },
+        {
+          "start": "2025-04-03T17:15:00+01:00",
+          "end": "2025-04-03T17:20:00+01:00",
+          "startLabel": "5:15 PM",
+          "endLabel": "5:20 PM",
+          "talks": [
+            {
+              "id": "1txD2",
+              "title": "⚡Lightning Talk: Scheduling Success: Precision Updates for Continuous Manufacturing Operations",
+              "speakers": "Orozco Juan Camilo",
+              "room": "Level 0 | ICC Auditorium",
+              "url": "https://kccnceu2025.sched.com/event/1txD2",
+              "description": "Cloud-native technologies are gaining traction in manufacturing, as the industry strives for zero-downtime deployments in production systems. However, many plants rely on legacy software that doesn’t integrate smoothly with cloud-native environments. Even when containerized, these components often fail to support seamless request redirection between replicas, causing disruptions during cluster or node updates. These disruptions require precise scheduling around plant shift plans. This lightning talk will explain why maintenance windows can still be effective and how Bosch Connected Industry addresses the limitations of public cloud providers' update controls. You’ll learn a simple yet effective approach to managing cluster updates and node image promotions in production-critical environments.",
+              "recording": "https://www.youtube.com/watch?v=QJ8MHzSRkbo"
+            }
+          ]
+        },
+        {
+          "start": "2025-04-03T17:30:00+01:00",
+          "end": "2025-04-03T18:00:00+01:00",
+          "startLabel": "5:30 PM",
+          "endLabel": "6:00 PM",
+          "talks": [
+            {
+              "id": "1td0k",
+              "title": "Containerd: Project Update and Deep Dive",
+              "speakers": "Akihiro Suda, Maksym Pavlenko, Jiaxiao Zhou, Samuel Karp, Laura Brehm",
+              "room": "Platinum Suite | Level 3 | Room 3-4",
+              "url": "https://kccnceu2025.sched.com/event/1td0k",
+              "description": "Join containerd maintainers for an update and deep dive into the latest developments in containerd. This panel will feature discussion of the launch and adoption of containerd 2.0, what’s next in 2.1, 1.7’s transition into Extended support, and how LTS is going with 1.6. Topics will also include how the containerd project is involved with the KEP process and highlight how the broader cloud native ecosystem is enhanced through extension points in containerd and subprojects like runwasi.",
+              "recording": "https://www.youtube.com/watch?v=5ZWbS01wCMk"
+            },
+            {
+              "id": "1txFV",
+              "title": "Image Snapshotters for Efficient Container Execution in Particle Physics",
+              "speakers": "Clemens Lange, Valentin Volkl",
+              "room": "Level 1 | Hall Entrance S10 | Room D",
+              "url": "https://kccnceu2025.sched.com/event/1txFV",
+              "description": "In particle physics, compute-intensive workloads often involve thousands of \"embarrassingly parallel\" jobs relying on multi-gigabyte container images. A large fraction of these workloads is executed using software containers. Efficient execution across large-scale computing environments demands advanced caching and image loading techniques to prevent network saturation and reduce startup times. Leveraging the industry-standard containerd runtime, we evaluate snapshotter plugins such as CVMFS (a CERN-developed distributed file system for large-scale software distribution), SOCI, and Stargz, which use \"lazy\" image loading to optimise performance. This talk includes an analysis of metrics such as container startup time and image data downloaded, alongside usability evaluations in a research environment. We demonstrate how these tools enhance the reusability and reproducibility of physics analyses---insights relevant to broader high-performance computing scenarios.",
+              "recording": "https://www.youtube.com/watch?v=Dc6S4vU9GiM"
+            },
+            {
+              "id": "1txH9",
+              "title": "Challenges of and Solutions for Migrating Spark From Legacy Hadoop Clusters To Kubernetes",
+              "speakers": "Rasik Pandey, Neha Singla",
+              "room": "Level 1 | Hall Entrance N10 | Room H",
+              "url": "https://kccnceu2025.sched.com/event/1txH9",
+              "description": "While there are performance and security reasons for operating Spark from bare metal Apache Hadoop clusters, cloud-based installations using Kubernetes as the cluster manager are becoming more and more mainstream due to superior scalability, flexibility, and cost-effectiveness for variable workloads. However, the migration of Spark from bare metal clusters to a cloud-based cluster environment poses a number of non-trivial challenges from a technical as well as from a human/organizational perspective. Specifically, these challenges include but are not limited to dealing with difficulties in achieving query performance parity, differences in scheduling and resource management, security in a multi-tenancy context, and the provisioning of sufficient introspection for aiding diagnostics and configuration adjustments. This case study recounts challenges encountered and solutions implemented while migrating Spark from bare metal to Kubernetes managed cloud in a large corporate environment.",
+              "recording": "https://www.youtube.com/watch?v=Q2ct5OXQ8fU"
+            },
+            {
+              "id": "1txI4",
+              "title": "Optimizing Metrics Collection & Serving When Autoscaling LLM Workloads",
+              "speakers": "Jiří Kremser, Vincent Hou",
+              "room": "Level 1 | Hall Entrance N10 | Room G",
+              "url": "https://kccnceu2025.sched.com/event/1txI4",
+              "description": "Balancing resource provision for LLM workloads is critical for maintaining both cost efficiency and service quality. Kubernetes’s Horizontal Autoscaling offers a cloud-native capability to address these challenges, relying on the metrics to make the autoscaling decisions. However, the efficiency of metrics collection impacts how quickly and accurately Autoscaler responds to the LLM workload demands. This session explores strategies to enhance metrics collection for autoscaling LLM workloads with:\n1. The fundamentals of how horizontal autoscaling works in Kubernetes\n2. The unique challenges of autoscaling LLM workloads\n3. A comparison of existing Kubernetes autoscaling solution for custom metrics with their pros and cons\n4. How optimizing metrics collection through push-based approaches can improve scaling responsiveness.\nIt will demonstrate an integrated solution using KServe, OpenTelemetry collector and KEDA to showcase how they can be leveraged to optimize LLM workload autoscaling.",
+              "recording": "https://www.youtube.com/watch?v=lefjb4Vnd8k"
+            }
+          ]
+        },
+        {
+          "start": "2025-04-03T17:30:00+01:00",
+          "end": "2025-04-03T17:35:00+01:00",
+          "startLabel": "5:30 PM",
+          "endLabel": "5:35 PM",
+          "talks": [
+            {
+              "id": "1txDB",
+              "title": "⚡Lightning Talk: Extending Envoy With WebAssembly",
+              "speakers": "Yuki Ito",
+              "room": "Level 0 | ICC Auditorium",
+              "url": "https://kccnceu2025.sched.com/event/1txDB",
+              "description": "As a Cloud Native network proxy, Envoy has been widely used as a sidecar for Service Mesh, API Gateway, and many other cases. To deal with many custom requirements, Envoy has some extension points, one of which is the WebAssembly plugin feature.\nIn this Lightning Talk, the speaker, who is writing some WebAssembly plugins for Envoy and using them in a production environment, introduces the basics of the WebAssembly plugin for Envoy and explains how to write it using SDK by sharing some real-world examples.",
+              "recording": "https://www.youtube.com/watch?v=bOhaJV3_7X4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2025-04-04",
+      "id": "friday-april-4",
+      "label": "Friday, April 4",
+      "slots": [
+        {
+          "start": "2025-04-04T09:06:00+01:00",
+          "end": "2025-04-04T09:21:00+01:00",
+          "startLabel": "9:06 AM",
+          "endLabel": "9:21 AM",
+          "talks": [
+            {
+              "id": "1txC7",
+              "title": "Keynote: LLM-Aware Load Balancing in Kubernetes: A New Era of Efficiency",
+              "speakers": "Jiaxin Shan, Clayton Coleman",
+              "room": "Level 0 | ICC Auditorium",
+              "url": "https://kccnceu2025.sched.com/event/1txC7",
+              "description": "Traditional load balancing approaches, including round robin or those relying on metrics like QPS are often ineffective when applied to LLM serving. LLM requests vary significantly in computational demands due to prompt length, the model differences and their autoregressive nature, leading to unpredictable request running times. Moreover, the emergence of model multiplexing techniques (e.g., LoRA) introduces new complexities that necessitate LLM-aware load balancing strategies.\nIn this talk, we introduce a new set of Kubernetes APIs for routing to LLM workloads that allow configuration of serving objectives and priorities for each use case. These APIs integrate seamlessly with Gateway API, and an included extension means that support for these APIs can easily be plugged into many Gateway API implementations to enable turnkey LLM routing support.\nThis talk will show this project in action, demonstrating the significant improvements it can enable across a variety of real world examples.",
+              "recording": "https://www.youtube.com/watch?v=BBqDpqATcI0"
+            }
+          ]
+        },
+        {
+          "start": "2025-04-04T09:28:00+01:00",
+          "end": "2025-04-04T09:38:00+01:00",
+          "startLabel": "9:28 AM",
+          "endLabel": "9:38 AM",
+          "talks": [
+            {
+              "id": "1vUeb",
+              "title": "Keynote: Cloud Native Evolution in Telecom : 5G, 6G and Beyond!",
+              "speakers": "Faseela K, Philippe Ensarguet, Tom Kivlin, Joel Studler",
+              "room": "Level 0 | ICC Auditorium",
+              "url": "https://kccnceu2025.sched.com/event/1vUeb",
+              "description": "Cloud-native technology plays a crucial role in unlocking the full potential of Telco 5G networks and is essential for the development of 6G and beyond. Telecommunications networks, which are fundamental to our safety, social stability, and economic well-being, have been designed and maintained with a focus on minimizing risks and ensuring maximum reliability and uptime. The Telecom industry is working to match the pace of the enterprise sector, and cloud-native practices have become an integral part of ongoing standardization efforts, including within 3GPP and other forums. Significant progress has been made in the technological domain over recent years for the cloud-native transformation. While this transformation promises many advantages, it also brings challenges that extend beyond the technology itself, impacting organizational culture, operational processes, and skill development. In this talk, Faseela will reflect on the evolution of Cloud-native in Telecom with an expert panel of Telco end users and CNCF community members, raising the critical question: are we there yet, what lies ahead and how can we support each other ? Moving beyond the hype, we will candidly assess the progress of LF and CNCF initiatives aimed at accelerating cloud-native adoption in Telecom and examine the ongoing challenges and available solutions in creating an open telco cloud infrastructure as we start the next decade of cloud-native journey.",
+              "recording": "https://www.youtube.com/watch?v=qj9q_-S91L8"
+            }
+          ]
+        },
+        {
+          "start": "2025-04-04T10:01:00+01:00",
+          "end": "2025-04-04T10:11:00+01:00",
+          "startLabel": "10:01 AM",
+          "endLabel": "10:11 AM",
+          "talks": [
+            {
+              "id": "1vUfo",
+              "title": "Keynote: 221B Cloud Native Street",
+              "speakers": "Ricardo Rocha, Katie Gamanji",
+              "room": "Level 0 | ICC Auditorium",
+              "url": "https://kccnceu2025.sched.com/event/1vUfo",
+              "description": "While we’re not as famous as Holmes and Watson, the CNCF’s Technical Oversight Committee is charged with investigating and evaluating projects and technologies within and around the cloud native ecosystem. Tagalong as we walk through navigating the hype cycle of tech trends, anticipating adopters movements, and dive deep into our understanding of the current gaps and innovations in the ecosystem. Uncover the clues that indicate a great project and reveal the power source of cloud native in this session!",
+              "recording": "https://www.youtube.com/watch?v=jUChVGvSB5g"
+            }
+          ]
+        },
+        {
+          "start": "2025-04-04T10:12:00+01:00",
+          "end": "2025-04-04T10:27:00+01:00",
+          "startLabel": "10:12 AM",
+          "endLabel": "10:27 AM",
+          "talks": [
+            {
+              "id": "1txCJ",
+              "title": "Keynote: Science at Light Speed: Cloud Native Infrastructure for Astronomy Workloads",
+              "speakers": "Carolina Lindqvist",
+              "room": "Level 0 | ICC Auditorium",
+              "url": "https://kccnceu2025.sched.com/event/1txCJ",
+              "description": "The Square Kilometre Array (SKA) project is a global collaboration for constructing the world’s largest radio telescope. This presentation shows how the Swiss SKA Regional Center (CHSRC) unit within the global SKA Regional Center Network (SRCNet) collaboration uses Kubernetes as a service management plane and leverages its ecosystem to build a novel infrastructure to support data- and compute-intensive astronomy use cases. The main focus is on an example setup of a Kubernetes cluster, showing how cloud-native tools are leveraged to interact with external storage and compute services, and demonstrating how to build infrastructure suitable for multiple sites. It is applicable both for beginners who seek guidance for where to start their cloud-native journey as well as intermediate Kubernetes users who wish to see examples of cloud-native use cases from within a scientific organisation.",
+              "recording": "https://www.youtube.com/watch?v=GyvARSG3_ws"
+            }
+          ]
+        },
+        {
+          "start": "2025-04-04T11:00:00+01:00",
+          "end": "2025-04-04T11:30:00+01:00",
+          "startLabel": "11:00 AM",
+          "endLabel": "11:30 AM",
+          "talks": [
+            {
+              "id": "1td0w",
+              "title": "Cortex: Insights, Updates and Roadmap",
+              "speakers": "Friedrich Gonzalez, Alolita Sharma, Charlie Le, Daniel Blando, Daniel Sabsay",
+              "room": "Level 3 | ICC Capital Suite 10-12",
+              "url": "https://kccnceu2025.sched.com/event/1td0w",
+              "description": "Join us for an in-depth session on Cortex, where we’ll guide you through a hands-on walkthrough for getting started with this powerful open-source metrics system. We'll share real-world challenges we've encountered within the Cortex community and how collaboration led to innovative solutions.\n\nThis session will also cover significant updates, including key enhancements in the upcoming Cortex 1.19 release. Whether you’re a new adopter or a seasoned contributor, this talk will provide valuable insights into the future of Cortex. We’ll conclude with a live Q&A, offering you a chance to engage directly with the maintainers.\n\nBring your questions, your feedback, and your enthusiasm as we explore what’s next for Cortex!",
+              "recording": "https://www.youtube.com/watch?v=3aUg2qxfoZU"
+            },
+            {
+              "id": "1td0z",
+              "title": "CubeFS in Action: Empowering Users Through Case Studies",
+              "speakers": "Leon Chang",
+              "room": "Level 3 | ICC Capital Suite 14-16",
+              "url": "https://kccnceu2025.sched.com/event/1td0z",
+              "description": "In this presentation, we will explore real-world applications of CubeFS through detailed end user case studies. CubeFS is a cloud-native distributed file system designed to meet the demands of modern data workloads. We will showcase how various organizations have successfully implemented CubeFS to address their unique challenges, including media processing, big data analytics, and machine learning.\n\nParticipants will learn about specific use cases, the challenges these organizations faced, the solutions they implemented using CubeFS, and the measurable results achieved. Additionally, user testimonials will provide insights into the transformative impact of CubeFS on their operations.\n\nThis session aims to highlight the versatility and efficiency of CubeFS, encouraging attendees to consider its application in their own projects. Join us for an engaging discussion on how CubeFS can enhance data management and drive innovation in your organization.",
+              "recording": "https://www.youtube.com/watch?v=_rDE1PD5Z5I"
+            },
+            {
+              "id": "1tx7l",
+              "title": "Quantum-Ready Kubernetes: How Do We Get There?",
+              "speakers": "Ricardo Rocha, Nikhita Raghunath, Tomas Gustavsson, Nigel Jones, Natalie Fisher",
+              "room": "Level 1 | Hall Entrance S10 | Room B",
+              "url": "https://kccnceu2025.sched.com/event/1tx7l",
+              "description": "As AI continues to evolve, quantum computing is poised to disrupt Kubernetes in ways we can’t ignore. By 2035, the US government will only procure quantum-safe solutions, and if our infrastructure isn’t ready soon we’ll be scrambling to catch up.\n\nThis panel brings together experts to explore:\n- What quantum computing is & why it’s a game changer\n- How to orchestrate quantum workloads on Kubernetes\n- Middleware needed to bridge classical and quantum resources\n- Redesigning infrastructure to meet NIST’s quantum-safe standards with an agile long-term strategy\n- Building infrastructure for real-world use cases like scientific simulations\n- How quantum machine learning can help run AI workloads\n\nYou don’t need to be a quantum expert to join! You’ll walk away with actionable insights on architectural trade-offs for running quantum workloads and learn how to implement quantum-safe security. This is your chance to spark fresh ideas & take the lead in shaping the next decade of technology!",
+              "recording": "https://www.youtube.com/watch?v=OAb54JRIS6M"
+            },
+            {
+              "id": "1tx9b",
+              "title": "Empowering AI-Driven Drug Discovery: Overcoming Challenges in Building a ML Platform on Kubernetes",
+              "speakers": "Gustav Rasmussen, Marius Tanawa Tsamo",
+              "room": "Level 1 | Hall Entrance S10 | Room A",
+              "url": "https://kccnceu2025.sched.com/event/1tx9b",
+              "description": "In the era of AI-driven innovation, Kubernetes is fundamental for enabling medical scientists to execute machine learning tasks within a containerized environment. However, building a scalable ML platform on Kubernetes presents challenges, especially with advanced on-premise GPU-accelerated hardware optimized for large language model (LLM) training and inference.\n\nThis session will explore the obstacles faced by ML engineers and data scientists at Novo Nordisk in creating a robust platform for AI-driven drug discovery. The presentation will discuss enabling access to GPU resources at scale, orchestrating extensive data planes, efficiently running high-performance computing (HPC) jobs, and using GPU sharing strategies and different batch scheduling job software.\n\nInsight about experiences with GPU sharing strategies, batch scheduling job software, overcoming operational challenges, and empowering ML engineers in accelerating drug discovery will be shared.",
+              "recording": "https://www.youtube.com/watch?v=FC5TAGsBbRQ"
+            },
+            {
+              "id": "1txHC",
+              "title": "Zero Trust at Shopify Scale: Automating MTLS Across Thousands of Services",
+              "speakers": "Dani Santos, Michelle Mali",
+              "room": "Level 1 | Hall Entrance N10 | Room H",
+              "url": "https://kccnceu2025.sched.com/event/1txHC",
+              "description": "Certificate management at scale presents critical challenges for securing service-to-service communication in zero trust architectures. We will demonstrate how Shopify automates mTLS across thousands of services, addressing certificate rotation without interruption, renewal failures, and cross-cluster distribution. Drawing from production experience, we'll explore our evolution from custom admission controllers to versatile patterns working across Kubernetes and non-Kubernetes environments, including mounting CA certificates at container startup with periodic Cronjob renewals. We'll share code examples for resilient rotation mechanisms, graceful certificate rollover, and RBAC. Attendees will learn practical patterns for scaling mTLS, with examples of monitoring certificate lifecycles and troubleshooting common failure modes.",
+              "recording": "https://www.youtube.com/watch?v=T-nN86wTebM"
+            }
+          ]
+        },
+        {
+          "start": "2025-04-04T11:45:00+01:00",
+          "end": "2025-04-04T12:15:00+01:00",
+          "startLabel": "11:45 AM",
+          "endLabel": "12:15 PM",
+          "talks": [
+            {
+              "id": "1td1K",
+              "title": "Contributing To Kubernetes in Its Second Decade - How ContribEx Enhances the Journey!",
+              "speakers": "Nabarun Pal, Priyanka Saggu, Madhav Jivrajani, Mario Fahlandt",
+              "room": "Platinum Suite | Level 3 | Room 3-4",
+              "url": "https://kccnceu2025.sched.com/event/1td1K",
+              "description": "SIG Contributor Experience has been wildly successful in helping grow the contributor base of Kubernetes in the first ten years of the project via New Contributor Workshops. We stressed on the importance of growing existing contributors in our last maintainer track session. However, the other side of the sustainability coin is ensuring that contributors who get started with contributing to Kubernetes, actually stick around. A lot has changed in the last decade, and we also need to change how we teach folks to contribute and interact with the community. Join us as we give a comprehensive overview of the Kubernetes governance and community structure, where you can seek help and what some pitfalls are that you will unexpectedly but inadvertently face in your contributor journey. We will highlight areas that are suited for folks from all backgrounds: marketing, content creation, event planning, community elections, automation and so much more!",
+              "recording": "https://www.youtube.com/watch?v=ksKOPx99rIE"
+            },
+            {
+              "id": "1tx7o",
+              "title": "Testing AI Containers for Digital Twins in Science: A Cloud-HPC Workflow",
+              "speakers": "Diego Ciangottini, Matteo Bunino",
+              "room": "Level 1 | Hall Entrance S10 | Room B",
+              "url": "https://kccnceu2025.sched.com/event/1tx7o",
+              "description": "CERN is advancing the development of AI-based digital twins in science through projects like interTwin, an EC-funded project to develop a digital twin engine for science. These digital twins rely on HPC resources for training multi-node, multi-GPU models using containerized workflows.\nDeveloping such containers for HPC systems presents unique challenges, including accessing restricted HPC resources and integrating with HPC software stacks, while ensuring the interoperability between different container runtimes.\nWe introduce a CI/CD workflow that bridges cloud and HPC and enables automated testing of AI/ML containers on the same SLURM-managed clusters where they will be deployed. By integrating Dagger’s reproducible CI runtime with HPC offloading, this approach validates both the software in the containers and their compatibility with HPC environments. This ensures the seamless deployment of AI-based digital twins, addressing the critical need for robust testing in hybrid environments.",
+              "recording": "https://www.youtube.com/watch?v=bIxw1uK0QRQ"
+            },
+            {
+              "id": "1tx8j",
+              "title": "Data Gravity and Kubernetes: Managing Large-Scale Data Ingest With Minimal Latency",
+              "speakers": "Abhishek Bhattacharjee, Arya Soni",
+              "room": "Level 1 | Hall Entrance S10 | Room C",
+              "url": "https://kccnceu2025.sched.com/event/1tx8j",
+              "description": "Kubernetes environments, particularly in the context of large-scale data ingest across APIs, suffer from unique challenges posed by data gravity. This presentation aims to explore the newer avenues to overcome these challenges such as local storage layer optimizations, integration of edge computing, and/or network efficiencies that can help reduce latency. Participants will be exposed to ways of reducing data transfer costs, increasing data transfer rates and improving data storage characteristics without loss of scalability of the system. Many of the provided examples will relate to the real situations which will help the audience to use those techniques effectively in the real-life complex Kubernetes environments.",
+              "recording": "https://www.youtube.com/watch?v=4Pei4LMigQE"
+            },
+            {
+              "id": "1tx9e",
+              "title": "Extending Kubernetes for AI | Lessons Learned From Platform Engineering",
+              "speakers": "Tim Wickberg, Susan Wu, Andrea Giardini, Lucy Sweet, Etienne Dilocker",
+              "room": "Level 1 | Hall Entrance S10 | Room A",
+              "url": "https://kccnceu2025.sched.com/event/1tx9e",
+              "description": "Kubernetes and the open-source ecosystem are becoming the universal control plane not only for conventional app orchestration but also for building AI applications. Yet, developers and cluster operators struggle with cost optimization for the specialized compute and customizing Kubernetes.\n\nIn this session, hear from the platform engineers for Uber, Overstory, Weaviate, SchedMD and learn how they designed shared platforms with infrastructure across cloud providers to support both business-critical apps and accelerated workloads.\n\nYou can expect to come away with guidance, hear of pitfalls to watch out for and learn how they extended Kubernetes with custom controls and other cloud native projects and built efficient, self-service interfaces to enable developer velocity and researcher experimentation.",
+              "recording": "https://www.youtube.com/watch?v=d9K5PSsHtDg"
+            },
+            {
+              "id": "1txAZ",
+              "title": "Kubernetes Meets Climate Science: Building Large-scale Feature Detection From Climate Data Records",
+              "speakers": "Roope Tervo, Armagan Karatosun",
+              "room": "Level 0 | ICC Capital Hall | Room J",
+              "url": "https://kccnceu2025.sched.com/event/1txAZ",
+              "description": "The Exponential growth of Earth Observation (EO) data volumes in the past decade has made downloading and processing EO data locally impractical. In response, the European public space sector launched initiatives to provide private cloud infrastructure, like the European Weather Cloud (EWC), allowing users to provision computing resources close to the data.\n\nLeveraging these new possibilities introduced by cloud services and machine learning, the hydro-meteorological community has initiated projects to identify features from remote sensing data, including satellite imagery, to enhance early weather warnings and climate science. EUMETSAT and its Member States are now developing a collaborative environment within EWC for manual annotation, model development, and analyses to provide reliable feature identification from EO data.\n\nJoin us in our session to learn more about our solution, involving an environment for data preparation, community annotation tools, and a features database.",
+              "recording": "https://www.youtube.com/watch?v=pvTRjsSXMi0"
+            },
+            {
+              "id": "1txEg",
+              "title": "Into the Shopfloor: Moving Manufacturing Execution Systems To Kubernetes",
+              "speakers": "Andrei, Manuel Peuster",
+              "room": "Level 1 | Hall Entrance N10 | Room E",
+              "url": "https://kccnceu2025.sched.com/event/1txEg",
+              "description": "Kubernetes is breaking boundaries, entering the manufacturing sector and powering mission-critical systems on production floors. This case study explores Bosch Connected Industry’s journey to modernize a manufacturing execution system (MES) into a cloud-native ecosystem. From containerization to evolving from Docker-Compose and Ansible-driven Kubernetes manifests to a a streamlined Helm-based setup, we’ll share how we overcame challenges step by step.\n\nThe operator pattern became our secret weapon, automating workflows and enabling scalability. However, no two plants are identical, making versatile parameterization crucial. Manufacturing setups demand support for diverse environments, from public cloud to air-gapped, on-premise edge clusters, often managed by engineers with limited DevOps expertise.\n\nThis session is for DevOps engineers, architects, and tech enthusiasts eager to tackle the real-world challenges of bringing Kubernetes into diverse and demanding operational contexts.",
+              "recording": "https://www.youtube.com/watch?v=GgxRHpQIEfg"
+            },
+            {
+              "id": "1txFb",
+              "title": "Enhancing Software Composition Analysis Resilience Against Container Image Obfuscation",
+              "speakers": "Agathe Blaise, Jacopo Bufalino",
+              "room": "Level 1 | Hall Entrance S10 | Room D",
+              "url": "https://kccnceu2025.sched.com/event/1txFb",
+              "description": "Malicious compliance has been highlighted in previous KubeCon talks as a challenge for software composition analysis, as it conceals OS and package information in container images and hides vulnerabilities. In this talk, we analyze how the landscape evolved over the past two years and propose improvements for SBOM generation. We found that open-source and cloud providers' tools remain vulnerable, which is even more visible in compressed images from public container registries. We uncover another form of malicious compliance with no standardization of package identifier format, resulting in inconsistencies in detected vulnerabilities between SBOM tools. To address this, we introduce an open-source methodology for layer-by-layer container image analysis, reconstructing complete history of file modifications and retrieving package metadata and package-related content, improving file coverage and SBOM accuracy. We finally outline concrete steps for advancing SBOM resilience and accuracy.",
+              "recording": "https://www.youtube.com/watch?v=G24upbAXVd8"
+            },
+            {
+              "id": "1txIA",
+              "title": "The State of Prometheus and OpenTelemetry Interoperability",
+              "speakers": "Juraj Michálek, Arthur Silva Sens",
+              "room": "Level 1 | Hall Entrance N10 | Room G",
+              "url": "https://kccnceu2025.sched.com/event/1txIA",
+              "description": "Prometheus and OpenTelemetry are two CNCF projects focusing on observability and truly excelling at their main purposes. However, they take slightly different approaches, and making both projects work well together has been challenging.\n\nIn this talk, Arthur and Juraj, both active contributors to Prometheus and OpenTelemetry communities, will present all the usual frustrations that a user would face when integrating Prometheus and OTel, and all the work done by the OpenTelemetry-Prometheus SIG (Special Interest Group) in the past year to transform Prometheus+OTel into a love story.\n\nYou'll leave this session understanding the core philosophical differences between the two projects that make interoperability so difficult, the progress made to improve the situation, and what to expect in the near future.",
+              "recording": "https://www.youtube.com/watch?v=JFS0lSfHtMI"
+            }
+          ]
+        },
+        {
+          "start": "2025-04-04T13:45:00+01:00",
+          "end": "2025-04-04T14:15:00+01:00",
+          "startLabel": "1:45 PM",
+          "endLabel": "2:15 PM",
+          "talks": [
+            {
+              "id": "1tx7r",
+              "title": "Thousands of Virtual Kubelets: 1-to-1 Mapping a Supercomputer To Kubernetes With Supernetes",
+              "speakers": "Dennis Marttinen",
+              "room": "Level 1 | Hall Entrance S10 | Room B",
+              "url": "https://kccnceu2025.sched.com/event/1tx7r",
+              "description": "Bridging the gap between High-Performance Computing (HPC) and the cloud is an ongoing challenge in the cloud-native ecosystem. Most projects migrate some parts of the batch job scheduling from Slurm to Kubernetes. However, with many HPC systems rigidly tied to Slurm and its features, where is the integration limit?\n\nIntroducing Supernetes: an open source HPC-to-cloud bridge that bidirectionally reconciles all Slurm tasks to v1/Pods, and all Slurm nodes to v1/Nodes, 1-to-1. Supernetes tolerates the strictest HPC limitations: tight firewalls, no root, no fakeroot, no namespaces, no slurmrestd API. If you can run sbatch and scontrol, you can run Supernetes.\n\nIn this session, Dennis presents his quest to integrate LUMI, a global top-10 supercomputer, with Kubernetes. Starting from HPC-to-cloud bridge basics, the talk evolves into running thousands of virtual kubelet instances and hacking FluxCD to reconcile from a gRPC tunnel. The session concludes with a live demo of Supernetes on LUMI.",
+              "recording": "https://www.youtube.com/watch?v=QbR908kgk1Y"
+            },
+            {
+              "id": "1tx9h",
+              "title": "From Chaos To Control: Building ML Platform",
+              "speakers": "Steve Larkin, George Markhulia",
+              "room": "Level 1 | Hall Entrance S10 | Room A",
+              "url": "https://kccnceu2025.sched.com/event/1tx9h",
+              "description": "One of the most significant challenges facing the ML community in large organizations is the fragmentation of the data ecosystem, compounded by organizational silos and an inconsistent technology landscape. Tackling these barriers is critical to enabling efficient, scalable, and impactful machine learning solutions. At Volvo Cars, George and Steve are deeply committed to breaking silos, empowering users and enabling collaboration via the MLOps.\n\nIn this session, they will share their experience of designing and implementing ML platform on Kubernetes that bridges these gaps. The talk will cover architectural choices, key lessons learned, and best practices to address data accessibility, streamline workflows, and ensure seamless integration across diverse teams. Attendees will also gain insights into how this cloud-native platform enables faster experimentation, greater reproducibility, knowledge sharing and scalable deployment of ML models across the organization.",
+              "recording": "https://www.youtube.com/watch?v=fnt3f8sWJLA"
+            },
+            {
+              "id": "1txGf",
+              "title": "Taming the Beast: Advanced Resource Management With Kubernetes",
+              "speakers": "Dawn Chen, Lucy Sweet",
+              "room": "Level 1 | Hall Entrance N10 | Room F",
+              "url": "https://kccnceu2025.sched.com/event/1txGf",
+              "description": "Are you struggling to optimize resource utilization for demanding workloads like databases?\n\nKubernetes 1.30 to 1.32 introduced a list of powerful new features to help you tame resource-hungry applications and achieve peak cluster efficiency. In this session, Dawn Chen (Software Engineer at Google & Tech Lead SIG Node) and Lucy Sweet (Software Engineer at Uber) will guide you through the latest advancements in pod resource management, including in-place pod resizing, pod-level resource limits, and node swap memory.\n\nLearn how to leverage these features to reduce infrastructure costs, improve application performance, and prevent resource contention in your clusters. Discover best practices for resource allocation, QoS configuration, and troubleshooting, and get a glimpse into the future of pod resource management in Kubernetes.",
+              "recording": "https://www.youtube.com/watch?v=AYxjk8ZZclo"
+            }
+          ]
+        },
+        {
+          "start": "2025-04-04T13:45:00+01:00",
+          "end": "2025-04-04T14:10:00+01:00",
+          "startLabel": "1:45 PM",
+          "endLabel": "2:10 PM",
+          "talks": [
+            {
+              "id": "1txHI",
+              "title": "How Millennium Bcp Leverages Radius To Empower Developer + Operator Collaboration",
+              "speakers": "Nuno Guedes, Jonathan Smith",
+              "room": "Level 1 | Hall Entrance N10 | Room H",
+              "url": "https://kccnceu2025.sched.com/event/1txHI",
+              "description": "Collaboration between developers and operators is essential to building scalable, resilient application platforms, but achieving this alignment is often easier said than done. In this session, learn how Millennium bcp, Portugal’s largest privately-owned bank, has successfully bridged this gap using Radius, a CNCF sandbox project. By adopting Radius as a universal language for their application platform, Millennium bcp has streamlined the application lifecycle and enhanced team collaboration.\n\nWe’ll explore how Radius helps decouple applications from infrastructure to foster operational flexibility and how GitOps tools like Flux complement Radius to enable declarative management of resources, ensuring consistency and reliability across environments.\n\nWhether you’re a developer, operator, or platform engineer, this session will provide practical strategies, actionable insights, and inspiration for building cohesive, future-ready application platforms.",
+              "recording": "https://www.youtube.com/watch?v=ZmcZlDCYDgE"
+            }
+          ]
+        },
+        {
+          "start": "2025-04-04T14:30:00+01:00",
+          "end": "2025-04-04T15:00:00+01:00",
+          "startLabel": "2:30 PM",
+          "endLabel": "3:00 PM",
+          "talks": [
+            {
+              "id": "1tx9k",
+              "title": "From High Performance Computing To AI Workloads on Kubernetes: MPI Runtime in Kubeflow TrainJob",
+              "speakers": "Andrey Velichkevich, Yuki Iwai",
+              "room": "Level 1 | Hall Entrance S10 | Room A",
+              "url": "https://kccnceu2025.sched.com/event/1tx9k",
+              "description": "Message Passing Interface (MPI) is a foundational technology in distributed computing essential for ML frameworks like MLX, DeepSpeed, and NVIDIA NeMo. It powers efficient communication for large-scale AI workloads using high-speed interconnects via InfiniBand. However, running MPI on Kubernetes presents challenges, such as ensuring high-throughput pod-to-pod communication, managing MPI Job initialization in containerized environments, and supporting diverse MPI implementations, including OpenMPI, IntelMPI, and MPICH.\n\nThis talk will introduce the Kubeflow MPI Runtime integrated with Kubeflow TrainJob, featuring distributed training with MLX and LLMs fine-tuning with DeepSpeed on Kubernetes. Speakers will highlight SSH-based optimization to boost MPI performance. Attendees will discover how this solution simplifies, scales, and optimizes AI workloads while addressing key challenges and combining MPI's efficiency with Kubernetes' orchestration power.",
+              "recording": "https://www.youtube.com/watch?v=Fnb1a5Kaxgo"
+            },
+            {
+              "id": "1wM3j",
+              "title": "Public End User Technical Advisory Board (TAB) Town Hall",
+              "speakers": "Ricardo Rocha, Katie Gamanji, Ahmed Bebars, Mike Bowen, Joseph Sandoval, Alolita Sharma, Henrik Blixt",
+              "room": "Level 1 | Hall Entrance N10 | Room E",
+              "url": "https://kccnceu2025.sched.com/event/1wM3j",
+              "description": "This session is a panel discussion moderated by Bob Killen with members of the Public End User Technical Advisory Board. Feel free to come with questions, but we'll be doing an overview of the Public End User Technical Advisory Board's governance structure, scope, mission and processes.\n\nTo learn more about the TAB, visit https://github.com/cncf/tab",
+              "recording": "https://www.youtube.com/watch?v=VU_vj2r3BgI"
+            }
+          ]
+        },
+        {
+          "start": "2025-04-04T15:15:00+01:00",
+          "end": "2025-04-04T15:45:00+01:00",
+          "startLabel": "3:15 PM",
+          "endLabel": "3:45 PM",
+          "talks": [
+            {
+              "id": "1txHO",
+              "title": "Stateful Connections in Kubernetes: The Scaling Secrets Nobody Talks About",
+              "speakers": "Rodrigo Fior Kuntzer, André Mocke",
+              "room": "Level 1 | Hall Entrance N10 | Room H",
+              "url": "https://kccnceu2025.sched.com/event/1txHO",
+              "description": "Dive into how Miro scales real-time collaboration with long-living TCP connections at its core. Learn how we built and deployed a custom a WebSocket manager in Kubernetes, leveraging connection rebalancing, draining, and graceful shutdown techniques, while maintaining enterprise level compliance. Discover the k8s operators that made it possible, the design decisions we nailed (and the ones we regretted), and how we tackled unforeseen challenges. This is your backstage pass to engineering the intelligent canvas!",
+              "recording": "https://www.youtube.com/watch?v=h1AyaAIf3HA"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
