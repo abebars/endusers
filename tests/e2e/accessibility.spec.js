@@ -213,11 +213,31 @@ const NAVBAR_VIOLATIONS = ['label-content-name-mismatch'];
 // same self-retiring contract: an entry that stops being reported fails the
 // state's light-mode scan and has to be deleted.
 const KNOWN_STATE_VIOLATIONS = {
-  'member profile dialog': [...NAVBAR_VIOLATIONS],
-  'TAB profile dialog': [...NAVBAR_VIOLATIONS],
+  // Each dialog opens over a page whose card headings already skip a level,
+  // and axe scans the whole document, so the underlying list is still in the
+  // scan. These retire with the route entries above.
+  'member profile dialog': [...NAVBAR_VIOLATIONS, 'heading-order'],
+  'TAB profile dialog': [...NAVBAR_VIOLATIONS, 'heading-order'],
+  // The drawer replaces the navbar links it would otherwise report on, so
+  // this state records the heading skip alone.
+  'mobile navigation drawer': ['heading-order'],
 };
 
 const WCAG_TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'];
+
+// Rules axe does not carry a WCAG tag for, enabled by id so WCAG_TAGS alone
+// does not decide what this spec can see. axe tags `heading-order`
+// cat.semantics/best-practice rather than wcag2a, so the tag filter above
+// dropped it and the "heading level skipped" regression this file's header
+// promises to catch was never evaluated on any route. Enabling a rule by id
+// adds just that rule: `best-practice` as a tag would pull in the whole
+// advisory set at once.
+//
+// Keep this list to rules that describe a defect a visitor meets. A skipped
+// level breaks heading-by-heading navigation in a screen reader, which is how
+// the member directory and the radar report list are read at all -- both are
+// one long run of sibling headings under the page title.
+const EXTRA_RULES = ['heading-order'];
 
 // Rules that cannot be evaluated meaningfully here, each with the reason it is
 // off. Keep this list empty unless a rule is genuinely inapplicable — a rule
@@ -231,15 +251,42 @@ const DISABLED_RULES = Object.create(null);
 //
 // Every route carries the navbar, so every route starts from
 // NAVBAR_VIOLATIONS; route-specific entries are appended per path.
+//
+// HEADING_ORDER_ROUTES are the pages whose first card heading skips a level:
+// a card list rendered at h3 under the page h1 (member directory, radar
+// reports, award winners, the home and community landing pillars), a person
+// card rendered at h4 under an h2 section (TAB roster), and the blog
+// archive's year headings. The markup lives in src/components and in the
+// authored pages, not in this spec, so the entries are recorded here and
+// retire themselves when that markup is fixed.
+const HEADING_ORDER_ROUTES = [
+  '/',
+  '/community',
+  '/community/members',
+  '/community/technical-advisory-board',
+  '/community/awards',
+  '/resources/radar-reports',
+  '/blog/archive',
+];
+
 const KNOWN_VIOLATIONS = Object.fromEntries(
-  ROUTES.map((route) => [route.path, [...NAVBAR_VIOLATIONS]]),
+  ROUTES.map((route) => [
+    route.path,
+    [
+      ...NAVBAR_VIOLATIONS,
+      ...(HEADING_ORDER_ROUTES.includes(route.path) ? ['heading-order'] : []),
+    ],
+  ]),
 );
 
 // Route-specific violations on CONTENT_ROUTES, keyed by path, with the same
 // self-retiring contract. The navbar entry is implied for every content route
 // and retired through the template sample in KNOWN_VIOLATIONS, so only what
 // a page adds of its own belongs here.
-const KNOWN_CONTENT_VIOLATIONS = Object.create(null);
+const KNOWN_CONTENT_VIOLATIONS = Object.assign(Object.create(null), {
+  // The staff person cards render at h4 directly under the page h1.
+  '/community/get-involved': ['heading-order'],
+});
 
 // Both halves of the baseline contract against one scan's results. `allowed`
 // is every rule id the scan may report without failing; `recorded` is the
@@ -266,9 +313,19 @@ function expectBaselined(results, { allowed, recorded, mode, where, list }) {
 }
 
 function scanner(page) {
-  const builder = new AxeBuilder({ page }).withTags(WCAG_TAGS);
-  const disabled = Object.keys(DISABLED_RULES);
-  return disabled.length > 0 ? builder.disableRules(disabled) : builder;
+  // Order matters, and so does which builder method sets what. options()
+  // replaces the builder's entire option object and disableRules() replaces
+  // its `rules` map, while withTags() only adds `runOnly` to whatever is
+  // already there. Setting the rule map first and tagging last is the only
+  // arrangement that keeps both; chaining options() after withTags() silently
+  // drops runOnly and scans every rule axe ships, advisory ones included.
+  const rules = {
+    ...Object.fromEntries(EXTRA_RULES.map((rule) => [rule, { enabled: true }])),
+    ...Object.fromEntries(
+      Object.keys(DISABLED_RULES).map((rule) => [rule, { enabled: false }]),
+    ),
+  };
+  return new AxeBuilder({ page }).options({ rules }).withTags(WCAG_TAGS);
 }
 
 // axe reports one violation object per rule, each carrying the nodes it
