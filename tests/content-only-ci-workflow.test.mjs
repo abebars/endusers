@@ -154,7 +154,7 @@ test('keeps content contracts and the production build on the focused path', () 
   );
 });
 
-test('limits focused lint to changed documents and skips browsers only after validation', () => {
+test('limits focused lint to changed documents and skips browsers on the classification alone', () => {
   assert.equal(
     step('lint', 'Check changed-document formatting, spelling, and Markdown')
       .if,
@@ -177,17 +177,24 @@ test('limits focused lint to changed documents and skips browsers only after val
     );
   }
 
-  const e2e = workflow.jobs.e2e;
-  assert.deepEqual(e2e.needs, ['validate', 'lint']);
-  assert.match(e2e.if, /needs\.validate\.result != 'success'/u);
-  assert.match(e2e.if, /needs\.lint\.result != 'success'/u);
-  assert.match(e2e.if, /needs\.validate\.outputs\.document_only != 'true'/u);
-
-  const coverage = workflow.jobs['e2e-coverage'];
-  assert.deepEqual(coverage.needs, ['classify', 'validate', 'lint']);
-  assert.match(coverage.if, /needs\.classify\.result != 'success'/u);
-  assert.match(coverage.if, /needs\.validate\.result != 'success'/u);
-  assert.match(coverage.if, /needs\.lint\.result != 'success'/u);
+  // The browser jobs wait on classify alone (ADR 0011, amendment of
+  // 2026-11-01) so they run alongside validate and lint rather than after
+  // them; a dependency on either would put the unit coverage gate back on
+  // their critical path. They skip only on a positive document-only
+  // classification: a failed classify sets no output, so the inequality
+  // below runs them, as the full-validation path does in validate.
+  for (const id of ['e2e', 'e2e-coverage']) {
+    const job = workflow.jobs[id];
+    assert.equal(job.needs, 'classify', `${id} must depend on classify alone`);
+    assert.match(job.if, /!cancelled\(\)/u);
+    assert.match(job.if, /needs\.classify\.outputs\.document_only != 'true'/u);
+    assert.doesNotMatch(job.if, /needs\.(?:validate|lint)\./u);
+    assert.doesNotMatch(
+      job.if,
+      /document_only == 'true'/u,
+      `${id} must not require a successful classification to run`,
+    );
+  }
 });
 
 // The focused-validation split gated most of `validate`, `lint` and the browser

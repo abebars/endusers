@@ -564,9 +564,21 @@ process.exit(step.status);
 // without making the suite wait a minute for each timed-out attempt.
 // AUDIT_STUB_FIX_TIMEOUT times out the scratch `npm audit fix` run instead,
 // which the gate does not retry.
+//
+// The retry delay is intercepted the same way. The gate sleeps between
+// attempts with Atomics.wait, which no fake timer reaches, so the preload
+// replaces it with a stub that records the requested duration and returns at
+// once. The tests then assert the recorded delays rather than paying them:
+// each three-attempt failure path otherwise spent four seconds asleep, and
+// the ten such paths in this file were the whole unit suite's critical path.
 const SPAWN_PRELOAD = `import childProcess from 'node:child_process';
 import { appendFileSync } from 'node:fs';
 import { syncBuiltinESMExports } from 'node:module';
+
+Atomics.wait = (_array, _index, _value, ms) => {
+  appendFileSync(process.env.AUDIT_STUB_SLEEPS, ms + '\\n');
+  return 'timed-out';
+};
 
 const spawn = childProcess.spawnSync;
 let timeouts = Number(process.env.AUDIT_STUB_TIMEOUTS);
@@ -616,9 +628,11 @@ syncBuiltinESMExports();
  *   with, through a wrapper entry that calls main(); omitted, the script runs
  *   as the CLI does with its shipped allowlist
  * @returns {{status: number, stdout: string, stderr: string,
- *   attempts: number, argv: string[], spawns: object[], work: string}} `argv`
- *   holds the invocations that reached npm; `spawns` includes timed-out
- *   attempts; `work` is the (since removed) sandbox the gate ran in.
+ *   attempts: number, argv: string[], spawns: object[], sleeps: number[],
+ *   work: string}} `argv` holds the invocations that reached npm; `spawns`
+ *   includes timed-out attempts; `sleeps` is the retry delay requested before
+ *   each retry, in milliseconds, without the gate having actually waited;
+ *   `work` is the (since removed) sandbox the gate ran in.
  */
 function runGate({
   stdout = '',
@@ -664,6 +678,7 @@ function runGate({
 
     const argvLog = join(work, 'npm-argv');
     const spawnLog = join(work, 'npm-spawns');
+    const sleepLog = join(work, 'retry-sleeps');
     const preload = join(work, 'spawn-preload.mjs');
     writeFileSync(preload, SPAWN_PRELOAD);
     const result = spawnSync(
@@ -678,6 +693,7 @@ function runGate({
           PATH: binDir,
           AUDIT_STUB_ARGV: argvLog,
           AUDIT_STUB_SPAWNS: spawnLog,
+          AUDIT_STUB_SLEEPS: sleepLog,
           AUDIT_STUB_TIMEOUTS: String(timeouts),
           AUDIT_STUB_FIX_TIMEOUT: fixTimeout ? '1' : '0',
           AUDIT_STUB_RESPONSES: JSON.stringify(
@@ -694,6 +710,9 @@ function runGate({
     const spawns = existsSync(spawnLog)
       ? readFileSync(spawnLog, 'utf8').trim().split('\n').map(JSON.parse)
       : [];
+    const sleeps = existsSync(sleepLog)
+      ? readFileSync(sleepLog, 'utf8').trim().split('\n').map(Number)
+      : [];
     return {
       status: result.status ?? 1,
       stdout: result.stdout ?? '',
@@ -701,6 +720,7 @@ function runGate({
       attempts: spawns.length,
       argv,
       spawns,
+      sleeps,
       work,
     };
   } finally {
@@ -1148,6 +1168,7 @@ test('cli: a transient no-report answer is retried and the next report decides',
   });
   assert.equal(result.status, 0);
   assert.equal(result.attempts, 2);
+  assert.deepEqual(result.sleeps, [2000]);
   assert.match(result.stderr, /retrying \(attempt 2 of 3\)/);
   assert.match(result.stdout, /audit-gate: ok/);
 });
@@ -1161,6 +1182,8 @@ test('cli: retrying stops at the attempt limit and still fails closed', () => {
   });
   assert.equal(result.status, 1);
   assert.equal(result.attempts, 3);
+  // One delay before each retry, none after the last attempt.
+  assert.deepEqual(result.sleeps, [2000, 2000]);
   assert.match(result.stderr, /did not return a report/);
   assert.match(result.stderr, /in 3 attempts/);
   assert.doesNotMatch(result.stdout, /audit-gate: ok/);
@@ -1183,6 +1206,7 @@ test('cli: a report naming a new advisory is never retried away', () => {
   });
   assert.equal(result.status, 1);
   assert.equal(result.attempts, 1);
+  assert.deepEqual(result.sleeps, []);
   assert.match(result.stderr, new RegExp(`newdep \\(critical\\): ${NEW_BAD}`));
 });
 
