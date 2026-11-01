@@ -53,12 +53,13 @@ and fintechs such as Banco Mercantil, Beneva, Coinbase, CopperPoint, Credit
 Karma, GEICO, ING, Itaú Unibanco, Juspay and State Farm; public bodies and
 non-profits such as the American Red Cross, Child Rescue Coalition, Insee,
 Open Healthcare Network and the United Nations; media, retail and consumer
-companies such as ByteDance, Disney+ Hotstar, DoorDash, Egmont, Hinge, The
-Home Depot, Mailchimp, Nike, Pinterest, TikTok and Whatnot; and technology,
-gaming and research organizations such as CyberAgent, Electronic Arts, Ford,
-GE HealthCare, Meta, Netflix, Niantic, NTT, OpenAI, Take-Two Interactive, The
-Trade Desk, Zynga, Auburn University, Cornell University, TU Wien, UC Santa
-Cruz, the University of Chicago and the University of Illinois, among others.
+companies such as ByteDance, Careem, Comcast, Disney+ Hotstar, DoorDash,
+Egmont, Hinge, The Home Depot, Mailchimp, Nike, Pinterest, TikTok and Whatnot;
+and technology, gaming and research organizations such as CyberAgent,
+Electronic Arts, Ford, GE HealthCare, Meta, Netflix, Niantic, NTT, OpenAI,
+Take-Two Interactive, The Trade Desk, Zynga, Auburn University, Cornell
+University, TU Wien, UC Santa Cruz, the University of Chicago, the University
+of Edinburgh and the University of Illinois, among others.
 
 <EndUserTalkSchedule schedule={schedule} />
 
