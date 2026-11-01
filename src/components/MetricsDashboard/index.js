@@ -50,6 +50,15 @@ function Sparkline({ values = [] }) {
   );
 }
 
+// Card units are published as plain English plurals ("days"), so a median of
+// exactly one would read "1 days". Only an exact 1 takes the singular: 0 and
+// a fraction such as 0.5 are plural in English, and a unit that is not an
+// "-s" plural is left alone.
+function cardUnit(value, suffix) {
+  if (!suffix) return '';
+  return value === 1 && suffix.endsWith('s') ? suffix.slice(0, -1) : suffix;
+}
+
 function LifecycleSection() {
   const lifecycle = metricsData.referenceArchitectureLifecycle;
   return (
@@ -73,7 +82,7 @@ function LifecycleSection() {
               {card.sampleSize === 0 ? (
                 <span className={styles.noTrend}>No data yet</span>
               ) : (
-                `${card.value.toLocaleString()} ${card.suffix || ''}`
+                `${card.value.toLocaleString()} ${cardUnit(card.value, card.suffix)}`
               )}
             </strong>
             <small>{card.note}</small>
