@@ -10,7 +10,6 @@
  * axe's heading-order rule (see tests/e2e/accessibility.spec.js). The
  * years are the archive's sections, so they render as <h2> here.
  */
-import React from 'react';
 import Link from '@docusaurus/Link';
 import { translate } from '@docusaurus/Translate';
 import { PageMetadata } from '@docusaurus/theme-common';
