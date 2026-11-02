@@ -10,6 +10,9 @@
       "pattern": "^https://endusers\\.cncf\\.io"
     },
     {
+      "pattern": "^https://[^/]*sched\\.com"
+    },
+    {
       "pattern": "^/"
     },
     {
