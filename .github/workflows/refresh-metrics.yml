@@ -1,17 +1,21 @@
 name: Refresh metrics
 
 on:
-  # Weekly, offset from the other scheduled workflows so they do not contend
+  # Daily, offset from the other scheduled workflows so they do not contend
   # for runners. Everything this lane collects (metrics, the case study
   # catalog, the End User Talks schedule) is rendered on the live site and
-  # goes visibly stale when it is only refreshed by hand. The end user member
-  # list is refreshed by refresh-members.yml: it is the only refresh that
-  # mirrors third-party binary assets, and an upstream logo that breaks the
-  # 2 MB publish limit must not hold these datasets back (#1980).
+  # goes visibly stale when it is only refreshed by hand. Each collector
+  # rewrites its file only when the content changed (ADR 0009), so a quiet
+  # day commits nothing; the daily cadence exists so a conference's schedule
+  # is stamped final the morning after its last day rather than up to a week
+  # later, when the event page would still say the schedule may change. The
+  # end user member list is refreshed by refresh-members.yml: it is the only
+  # refresh that mirrors third-party binary assets, and an upstream logo that
+  # breaks the 2 MB publish limit must not hold these datasets back (#1980).
   # A maintainer can still trigger it from the Actions tab or `gh workflow
   # run` when upstream changes should land sooner.
   schedule:
-    - cron: '17 3 * * 2'
+    - cron: '17 3 * * *'
   workflow_dispatch:
 
 permissions:

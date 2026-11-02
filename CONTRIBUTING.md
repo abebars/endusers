@@ -200,7 +200,7 @@ Rules:
   America publishes) or a curated list of session ids (`select.sessionIds`)
   when the conference has no end user track; a Sched event always curates
   ids. An event page renders its snapshot by importing it and passing it to
-  `EndUserTalkSchedule`. The weekly "Refresh metrics" workflow re-runs
+  `EndUserTalkSchedule`. The daily "Refresh metrics" workflow re-runs
   `npm run collect:end-user-talks` (no `GH_TOKEN` needed) and opens a pull
   request with the result. A conference schedule is final once the event has
   run, so the collector stamps a snapshot `final: true` the first time its last

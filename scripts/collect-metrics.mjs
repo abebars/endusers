@@ -164,7 +164,7 @@ try {
   };
   // Only bump generatedAt and rewrite the file when the metrics themselves
   // changed (ADR 0009). The counts and series are stable for weeks at a
-  // time, so touching the envelope on every weekly refresh-metrics.yml run
+  // time, so touching the envelope on every daily refresh-metrics.yml run
   // would open a no-op PR each time (#1935). generatedAt, each metric's
   // collectedAt, the lifecycle observedAt, the upstream source revisions and
   // the as-of date stamped on the single-point member series are this run's

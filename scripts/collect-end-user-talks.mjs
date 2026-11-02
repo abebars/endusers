@@ -6,7 +6,7 @@
 // publishes on Sched instead -- and written to data/end-user-talks/<slug>.json.
 //
 // A schedule is final once its event has run, so an event whose snapshot ends
-// before today is skipped, and the weekly refresh-metrics.yml run fetches only
+// before today is skipped, and the daily refresh-metrics.yml run fetches only
 // upcoming conferences. Name an event's slug (or pass --all) to refresh it
 // anyway, as after curating a past event's slides and recording links.
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
@@ -115,7 +115,7 @@ async function loadSessionize(event) {
 
 // Sched answers some requests with a maintenance page, under a 503 and under
 // a 200 alike, for a few seconds at a time; a refresh must outlast that
-// rather than fail a weekly run or, worse, parse the interstitial. The
+// rather than fail a daily run or, worse, parse the interstitial. The
 // environment override keeps the retry path testable without the waits.
 const SCHED_RETRY_DELAYS_MS = (
   process.env.ENDUSERS_SCHED_RETRY_DELAYS_MS ?? '2000,5000,10000'
@@ -295,7 +295,7 @@ function withFinal(snapshot) {
 
 // Only bump generatedAt and rewrite a schedule when its talks themselves
 // changed (ADR 0009). A conference schedule is fixed once published, so
-// touching generatedAt on every weekly refresh-metrics.yml run would open a
+// touching generatedAt on every daily refresh-metrics.yml run would open a
 // no-op PR each time (#1935).
 const contentOnly = (value) =>
   JSON.stringify(value, (key, field) =>
@@ -312,7 +312,7 @@ if (unknown.length) {
     `no such event in data/end-user-talk-events.json: ${unknown.join(', ')}`,
   );
 }
-// A snapshot the weekly run would skip is stamped `final: true` the first time
+// A snapshot the daily run would skip is stamped `final: true` the first time
 // its last day has passed, without a fetch and without touching generatedAt:
 // no talk was re-verified, the event page just learns the conference is over.
 // Once stamped, the file is left alone so the run opens no no-op PR.

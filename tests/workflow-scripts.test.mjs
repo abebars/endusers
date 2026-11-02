@@ -489,7 +489,7 @@ const REFRESH_SCRIPT_PATTERN = /^(?:collect|fetch):/;
 // regression.
 const REFRESH_SCRIPTS_NOT_RUN_BY_CI = new Map([
   // Empty since refresh-metrics.yml started running every collector on its
-  // weekly schedule. Add an entry here, with the file that records the
+  // daily schedule. Add an entry here, with the file that records the
   // decision, before taking a collector back out of a workflow.
 ]);
 

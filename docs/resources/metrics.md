@@ -27,7 +27,7 @@ import MetricsDashboard from '@site/src/components/MetricsDashboard';
   </figcaption>
 </figure>
 
-Metrics are refreshed weekly from public CNCF sources by the scheduled
+Metrics are refreshed daily from public CNCF sources by the scheduled
 [`refresh-metrics.yml`](https://github.com/cncf/endusers/blob/main/.github/workflows/refresh-metrics.yml)
 workflow, which a maintainer can also run on demand from the Actions tab, and
 are validated before each site build. Values unavailable from authoritative
