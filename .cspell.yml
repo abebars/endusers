@@ -16,6 +16,9 @@ ignorePaths:
   - '**/*.json'
   # Rendered from git history on every build; gitignored and not editable.
   - docs/resources/changelog.md
+ignoreRegExpList:
+  # GitHub Security Advisory identifiers, such as GHSA-gcqx-w48m-w2h4.
+  - /GHSA(?:-[0-9a-z]{4}){3}/g
 words:
   - geolocation
   - SAMEORIGIN

@@ -147,19 +147,23 @@ it to merge once the required checks, including `npm run check:audit`, pass (see
 pull request before hand-filing a lockfile bump. A fix that needs a
 `package.json` change or a major version still waits for a maintainer.
 
-## Accepted moderate-risk advisories
+## Accepted moderate- and low-risk advisories
 
 The register above lists high and critical advisories the audit gate
-suppresses. Moderate advisories never trip that gate, so they need no
+suppresses. Moderate and low advisories never trip that gate, so they need no
 allowlist entry — but one with no reachable fix still deserves a written
-decision. This section records the moderate advisories the project has
+decision. This section records the moderate and low advisories the project has
 reviewed and accepted. An entry here changes nothing in CI: it records the
 reasoning so the Dependabot security-update runs that keep failing on it are
 understood, and states what would make the acceptance expire.
+`tests/security-advisory-register.test.mjs` binds each row to the lockfile: the
+versions it names must be installed and inside the advisory's range, and an
+installed vulnerable version with no row fails the suite.
 
-| Advisory                                                                 | Package     | Installed     | Reached through                                                                                 | Exposure                                                                                                                                          |
-| ------------------------------------------------------------------------ | ----------- | ------------- | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [GHSA-g3hv-75wg-m249](https://github.com/advisories/GHSA-g3hv-75wg-m249) | `minimatch` | 3.1.5, 10.2.6 | `serve-handler` (exact pin), `@stryker-mutator/*`, `markdownlint-cli`, `eslint` and its plugins | Build-time and developer tooling only — every glob pattern `minimatch` reads here is authored in this repository, not supplied by untrusted input |
+| Advisory                                                                 | Package     | Installed     | Reached through                                                                                  | Exposure                                                                                                                                                        |
+| ------------------------------------------------------------------------ | ----------- | ------------- | ------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [GHSA-g3hv-75wg-m249](https://github.com/advisories/GHSA-g3hv-75wg-m249) | `minimatch` | 3.1.5, 10.2.6 | `serve-handler` (exact pin), `@stryker-mutator/*`, `markdownlint-cli`, `eslint` and its plugins  | Build-time and developer tooling only — every glob pattern `minimatch` reads here is authored in this repository, not supplied by untrusted input               |
+| [GHSA-gcqx-w48m-w2h4](https://github.com/advisories/GHSA-gcqx-w48m-w2h4) | `deepmerge` | 4.3.1         | `@docusaurus/preset-classic` → `@docusaurus/plugin-svgr` → `@svgr/webpack` → `@svgr/plugin-svgo` | Build-time only — `deepmerge` merges the SVGO plugin configuration the Docusaurus preset and this repository author; it never sees input from outside the build |
 
 GHSA-g3hv-75wg-m249 is a denial of service via glob-pattern amplification,
 patched only in `minimatch` 11.0.1 — outside every consumer's declared
@@ -173,3 +177,16 @@ floor, per the override rule above), verify `npm run check:lint` and
 today crashes `eslint-plugin-jsx-a11y` (`_minimatch.default is not a
 function`), so accepting the moderate risk is preferred over weakening lint
 coverage.
+
+GHSA-gcqx-w48m-w2h4 (low) is prototype poisoning of the object `deepmerge`
+returns when a merged input carries a `__proto__` key. The advisory covers
+every release from 4.2.0 through 4.3.1 and names no patched version, so
+Dependabot can open no security update and the alert stays open. The only
+copy here is a transitive dependency of `@svgr/plugin-svgo`, which uses it to
+merge its own SVGO configuration with the options the Docusaurus preset passes
+at build time; neither side is attacker-controlled. Accepted 2026-11-01. The
+acceptance expires when `deepmerge` publishes a release the advisory database
+marks as fixed: then widen the installed version through a lockfile bump (or an
+`overrides` floor, per the override rule above), confirm `npm run build`
+passes, and remove this row together with its rule in
+`tests/security-advisory-register.test.mjs`.
