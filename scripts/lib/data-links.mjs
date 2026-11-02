@@ -33,6 +33,7 @@ export const RENDERED_DATA_FILES = [
   'data/end-user-talks/kubecon-eu-2026.json',
   'data/end-user-talks/kubecon-india-2025.json',
   'data/end-user-talks/kubecon-india-2026.json',
+  'data/end-user-talks/kubecon-japan-2025.json',
   'data/end-user-talks/kubecon-japan-2026.json',
   'data/end-user-talks/kubecon-na-2025.json',
   'data/end-user-talks/kubecon-na-2026.json',

@@ -1,0 +1,465 @@
+{
+  "description": "Generated from the official Sched listing by npm run collect:end-user-talks. Do not hand-edit.",
+  "source": "sched",
+  "sourceUrl": "https://kccncjpn2025.sched.com/",
+  "apiUrl": "https://kccncjpn2025.sched.com/list/descriptions",
+  "selection": "presented by speakers from organizations that meet the CNCF End User definition",
+  "location": "Tokyo",
+  "generatedAt": "2026-11-02T11:53:28.948Z",
+  "timezone": "JST (UTC+9)",
+  "talkCount": 29,
+  "final": true,
+  "days": [
+    {
+      "date": "2025-06-16",
+      "id": "monday-june-16",
+      "label": "Monday, June 16",
+      "slots": [
+        {
+          "start": "2025-06-16T09:42:00+09:00",
+          "end": "2025-06-16T09:52:00+09:00",
+          "startLabel": "9:42 AM",
+          "endLabel": "9:52 AM",
+          "talks": [
+            {
+              "id": "1x6zt",
+              "title": "Keynote: Platform Alchemy: Transforming Kubernetes Into Generative AI Gold",
+              "speakers": "Mauricio Salatino, Alexa Griffith",
+              "room": "Level 1 | Pegasus A-B1",
+              "url": "https://kccncjpn2025.sched.com/event/1x6zt",
+              "description": "As Generative AI reshapes the tech landscape, its tools and solutions often feel overwhelming and disconnected - like scattered elements waiting to be forged into something greater. What does a complete GenAI platform look like? And how does it differ from application-focused platforms many organizations already run?\n\nWe’ll guide you through a practical transmutation of your platforms to add GenAI features. We’ll first define the base elements needed to deploy LLM inference on Kubernetes. We’ll then blend key elements into the MVP stage, adding core enterprise AI components like an AI Gateway, shared interfaces via Dapr, and KServe-based deployment strategies. Finally, we’ll tackle advanced features - intelligent load balancing for LLMs, observability patterns, and cost optimizations.\n\nMore than a tools showcase, this session is packed with real lessons from enterprise GenAI platform engineers, to help transmute your platform into the philosopher’s stone for AI innovation.",
+              "recording": "https://www.youtube.com/watch?v=TSub3PFwXPk"
+            }
+          ]
+        },
+        {
+          "start": "2025-06-16T10:01:00+09:00",
+          "end": "2025-06-16T10:11:00+09:00",
+          "startLabel": "10:01 AM",
+          "endLabel": "10:11 AM",
+          "talks": [
+            {
+              "id": "1x6zw",
+              "title": "Keynote: From ECS To Kubernetes (and Sometimes Back Again): A Pragmatist's Guide To Migration",
+              "speakers": "Marc Hildenbrand",
+              "room": "Level 1 | Pegasus A-B1",
+              "url": "https://kccncjpn2025.sched.com/event/1x6zw",
+              "description": "Migrating to Kubernetes offers numerous benefits, but few organizations start from \"greenfields\" circumstances. Many have critical services running on existing platforms, each leveraging unique capabilities. Transitioning these services to Kubernetes can be a complex and non-trivial challenge.\n\nAt Canva—a leading design and collaboration platform serving 220 million monthly active users—we recently undertook an ambitious project to migrate over 400 services from Amazon Elastic Container Service (ECS) to Kubernetes (EKS). These services now span 15,000 pods across two clusters on a typical day.\n\nIn this talk, we’ll share the strategies, tools, and processes Canva developed to achieve a (mostly) seamless migration with minimal disruption to our teams and users. Whether you're planning your own migration or just curious about what it takes to migrate at this scale, this session will provide practical insights and lessons learned.",
+              "recording": "https://www.youtube.com/watch?v=EwZtBtOEbgQ"
+            }
+          ]
+        },
+        {
+          "start": "2025-06-16T10:20:00+09:00",
+          "end": "2025-06-16T10:30:00+09:00",
+          "startLabel": "10:20 AM",
+          "endLabel": "10:30 AM",
+          "talks": [
+            {
+              "id": "1x74h",
+              "title": "Keynote: Cloud Native Darwinism: Continuous Evolution of Platforms for Competitive Edge",
+              "speakers": "Masaya Aoyama",
+              "room": "Level 1 | Pegasus A-B1",
+              "url": "https://kccncjpn2025.sched.com/event/1x74h",
+              "description": "In the rapidly evolving world of cloud native technologies, new projects and paradigms are constantly emerging. To keep up with this momentum, platforms built on Kubernetes and cloud native ecosystem must continuously evolve as well. Choosing technologies and architectures is no longer a one-time decision—it requires continuous reevaluation and adaptability. By embracing flexibility and continuously adopting better solutions as they become available, end-users can maintain the competitive edge. This session will highlight the importance of continuously evolving platforms within the open-source ecosystem and introduce the powerful extensibility of Kubernetes that enables such evolution. Attendees will gain insights into how to keep competitive through continuous evolution, and we'll explore the next actions of early adopters and the trends in the upstream Just as the sun continues to rise in the Land of the Rising Sun, the evolution of your platform will illuminate the path to a brighter future for you, your company and your country.",
+              "recording": "https://www.youtube.com/watch?v=aJ9o4WOXazE"
+            }
+          ]
+        },
+        {
+          "start": "2025-06-16T12:10:00+09:00",
+          "end": "2025-06-16T12:40:00+09:00",
+          "startLabel": "12:10 PM",
+          "endLabel": "12:40 PM",
+          "talks": [
+            {
+              "id": "1x708",
+              "title": "New Cache Hierarchy for Container Images and OCI Artifact in Kubernetes Clusters Using Containerd",
+              "speakers": "Toru Komatsu, Hidehito Yabuuchi",
+              "room": "Level 1 | Pegasus B2-C",
+              "url": "https://kccncjpn2025.sched.com/event/1x708",
+              "description": "One of the key bottlenecks in Kubernetes pod startup is the time taken to pull container images and OCI artifacts. It’s also costly to fetch large container images from the registry often. To tackle this problem, we developed a cache system with the following features:\n\n* New Cache Hierarchy: Images pulled by pods are shared across the entire cluster, enabling cluster-wide optimization, not only cluster-local cache.\n* Ninja: Users experience faster container image pulls without any changes on their part. Just like a ninja, the system stealthily enhances performance.\n* Preheating: It supports pushing images to preheat the cache for subsequent pulls.\n\nDeployed in a production cluster, the cache system has achieved a cache hit rate of around 95%, significantly reducing pod startup times and network communication with registries. Attendees will learn practical insights into leveraging cache and CRI to optimize image and OCI artifact pulls, ultimately enhancing cluster efficiency.",
+              "recording": "https://www.youtube.com/watch?v=trFILyK6mPw"
+            }
+          ]
+        },
+        {
+          "start": "2025-06-16T14:10:00+09:00",
+          "end": "2025-06-16T14:40:00+09:00",
+          "startLabel": "2:10 PM",
+          "endLabel": "2:40 PM",
+          "talks": [
+            {
+              "id": "1x70B",
+              "title": "Access AI Models Anywhere: Scaling AI Traffic With Envoy AI Gateway",
+              "speakers": "Dan Sun, Takeshi Yoneda",
+              "room": "Level 1 | Orion",
+              "url": "https://kccncjpn2025.sched.com/event/1x70B",
+              "description": "As Generative AI adoption increases, organizations face accelerating challenges in deploying, scaling, and managing access to diverse AI models across cloud and on-prem environments. Envoy AI Gateway utilizes Envoy Proxy’s powerful filter architecture and extensibility through ext-proc to deliver key features such as centralized credential management, intelligent model routing, and LLM token usage control.\nAs the first CNCF-backed open source AI gateway, Envoy AI Gateway is built on top of a robust, high performance Envoy Gateway to help democratize AI infrastructure for organizations of all sizes.\n\nIn this talk, we will dive into the architecture of Envoy AI Gateway to learn how it extends Envoy’s capabilities to efficiently manage AI-driven workloads for enterprise needs, while providing robustness, scalability, and adaptability in the rapidly-changing generative AI landscape. We will also showcase a demo of an AI agent seamlessly accessing models anywhere through a unified API.",
+              "recording": "https://www.youtube.com/watch?v=xk1HsvVHMtA"
+            },
+            {
+              "id": "1x70E",
+              "title": "No More Disruption: PlayStation Network’s Approaches To Avoid Outages on Kubernetes Platform",
+              "speakers": "Shuhei Nagata, Tomoyuki Ehira",
+              "room": "Level 1 | Pegasus B2-C",
+              "url": "https://kccncjpn2025.sched.com/event/1x70E",
+              "description": "At PlayStation Network, our Kubernetes platform with 50+ clusters handles massive amounts of user traffic every day, and the platform team consists of engineers in several global locations with different technological and cultural backgrounds.\nDespite such scale and organizational complexity, we achieved remarkable stability in FY2024 so far, maintaining a notable 99.995% uptime for our platform.\nIn this session, we will share the key practices behind this success, including a controlled deployment strategy, robust scaling techniques, minimized manual intervention, and 24/7 operations spanning global regions. While these approaches may not be special individually, their consistent and disciplined application has been the foundation of our platform's stability.\nThose who strive to achieve stable platform operation and organizations looking to expand or consolidate their platforms will leave with actionable strategies to enhance the reliability of their platform.",
+              "recording": "https://www.youtube.com/watch?v=xxSPRdwjuqE"
+            }
+          ]
+        },
+        {
+          "start": "2025-06-16T14:24:00+09:00",
+          "end": "2025-06-16T14:29:00+09:00",
+          "startLabel": "2:24 PM",
+          "endLabel": "2:29 PM",
+          "talks": [
+            {
+              "id": "1x70N",
+              "title": "⚡ Lightning Talk: From Kernel To Kubernetes: Mapping eBPF-Detected Processes To Pods",
+              "speakers": "Yuki Nakamura",
+              "room": "Level 1 | Pegasus A-B1",
+              "url": "https://kccncjpn2025.sched.com/event/1x70N",
+              "description": "When a process like /usr/bin/curl runs in a pod (e.g., xwing in the default namespace), Tetragon detects it like bellow:\n\n```\n🚀 process default/xwing /bin/bash -c \"curl https://ebpf.io/applications/#tetragon\"\n🚀 process default/xwing /usr/bin/curl https://ebpf.io/applications/#tetragon\n💥 exit default/xwing /usr/bin/curl https://ebpf.io/applications/#tetragon 60\n```\n\nBut how does it map that process to its pod?\n\nThis Lightning Talk explores how Tetragon connects the Linux kernel to Kubernetes by enriching eBPF-detected process data with Kubernetes metadata. I’ll break down how it extracts cgroup information from task_struct in kernel space and maps it to pod details using the Kubernetes API.",
+              "recording": "https://www.youtube.com/watch?v=wQfvjJQzNdQ"
+            }
+          ]
+        },
+        {
+          "start": "2025-06-16T14:38:00+09:00",
+          "end": "2025-06-16T14:43:00+09:00",
+          "startLabel": "2:38 PM",
+          "endLabel": "2:43 PM",
+          "talks": [
+            {
+              "id": "1x70T",
+              "title": "⚡ Lightning Talk: Practical Monitoring for Knative Serving",
+              "speakers": "Kazuki Higashiguchi",
+              "room": "Level 1 | Pegasus A-B1",
+              "url": "https://kccncjpn2025.sched.com/event/1x70T",
+              "description": "Knative is a widely adopted CNCF-hosted software for running serverless applications using Kubernetes. Knative Serving consists of many system components, such as Activator, Autoscaler, Controller, Webhook, and Istio or Kourier as an ingress gateway. Therefore, end users need to implement monitors for common error patterns and best metrics from many metrics. However, there is relatively little knowledge and resources for Knative end users.\n\nThis talk will present a production case study of monitoring for Knative Service. Specifically, it will explain how we can monitor Knative control plane efficiency, reconciliation operations, pod scaling health, concurrency observation, HTTP request success rate, and more.\nThat includes how Knative components implement Prometheus metrics, metrics pipelines (on Google Kubernetes Engine), dashboards and alerts.\n\nThis case study will benefit existing Knative users and potential users considering employing Knative in their Kubernetes clusters.",
+              "recording": "https://www.youtube.com/watch?v=GXlnSqYGHyA"
+            }
+          ]
+        },
+        {
+          "start": "2025-06-16T14:45:00+09:00",
+          "end": "2025-06-16T14:50:00+09:00",
+          "startLabel": "2:45 PM",
+          "endLabel": "2:50 PM",
+          "talks": [
+            {
+              "id": "1x70W",
+              "title": "⚡ Lightning Talk: Providing Sufficient PVCs for Your StatefulSets: Creating New Volumes Larger Than the PVCTemplate",
+              "speakers": "Kaoru Esashika",
+              "room": "Level 1 | Pegasus A-B1",
+              "url": "https://kccncjpn2025.sched.com/event/1x70W",
+              "description": "Have you ever used automatic PVC resizing tools in Kubernetes? Have you ever encountered a situation where newly created PVCs remained at the small, template-defined size, causing capacity shortages during restores or clones?\n\nTo address this challenge, this session introduces a new approach in pvc-autoresizer, one of the tools for automatically resizing PVCs. By aligning newly created PVCs with the largest capacity in the same group, it ensures that PVCs have sufficient space right from creation time. Using annotations and a Mutating Webhook, we avoid capacity shortages during restores by provisioning enough volume capacity immediately after a PVC is generated. We will also explain why we chose a Webhook-based method over a Controller-based one, along with the design trade-offs involved.\n\nAnyone seeking to enhance reliability for stateful workloads should not miss this session. Learn how a new PVC management strategy can deliver more stable Kubernetes storage.",
+              "recording": "https://www.youtube.com/watch?v=-xqdoMinBek"
+            }
+          ]
+        },
+        {
+          "start": "2025-06-16T14:50:00+09:00",
+          "end": "2025-06-16T15:20:00+09:00",
+          "startLabel": "2:50 PM",
+          "endLabel": "3:20 PM",
+          "talks": [
+            {
+              "id": "1x70i",
+              "title": "Streamlined Baremetal Deployment: A Journey of Custom Controllers Integrated With OpenStack",
+              "speakers": "Mitsuhiro Tanino, Masanori Kuroha",
+              "room": "Level 1 | Pegasus B2-C",
+              "url": "https://kccncjpn2025.sched.com/event/1x70i",
+              "description": "As LY Corporation transitioned to developing a new private cloud infrastructure, we confronted significant challenges in managing over 6,000 baremetal servers through Kubernetes integrated with OpenStack, resulting in increased complexity, extended deployment times, and excessive resource consumption.\n\nThis session delivers how our custom controllers enhanced our approach, automating complex configurations and addressing disruptions in ArgoCD and Ansible, Kubernetes resource shortages, and scalability constraints.\n\nWe will focus on:\n\n- Challenges in Existing Baremetal Provisioning: Explore the operational complexities and inefficiencies caused by scale, including deployment delays.\n\n- Implementation of Custom Controllers: How we automated configurations and leading to faster, more reliable deployments with Helm.\n\n- Enhancements in Resource Management: Techniques that streamlined processes and enhanced OpenStack integration, ultimately boosting operational simplicity and efficiency.",
+              "recording": "https://www.youtube.com/watch?v=ToXzudYQ8Es"
+            }
+          ]
+        },
+        {
+          "start": "2025-06-16T14:52:00+09:00",
+          "end": "2025-06-16T14:57:00+09:00",
+          "startLabel": "2:52 PM",
+          "endLabel": "2:57 PM",
+          "talks": [
+            {
+              "id": "1x70Z",
+              "title": "⚡ Lightning Talk: What's New in Prometheus-Operator?",
+              "speakers": "S Ashwin",
+              "room": "Level 1 | Pegasus A-B1",
+              "url": "https://kccncjpn2025.sched.com/event/1x70Z",
+              "description": "Join us for an exciting overview of the latest developments in Prometheus-Operator! This lightning talk will explore game-changing features, including the new ScrapeClasses for simplified monitoring configuration, DaemonSet Mode in PrometheusAgent for enhanced deployment flexibility, and expanded Service Discovery support across multiple cloud providers.\n\nWe'll explore how these additions, along with our improved documentation and new Scale Subresource capabilities, are making Prometheus-Operator more powerful and user-friendly than ever. You'll also learn about \"poctl\", our new command-line tool that is designed to handle Prometheus-Operator custom resources.\n\nPlus, get a sneak peek into our roadmap and upcoming features that will shape the future of Kubernetes monitoring. Perfect for anyone interested in Kubernetes monitoring, this talk will equip you with knowledge about the latest tools to enhance your observability stack.",
+              "recording": "https://www.youtube.com/watch?v=alLOIDTZjrg"
+            }
+          ]
+        },
+        {
+          "start": "2025-06-16T14:59:00+09:00",
+          "end": "2025-06-16T15:04:00+09:00",
+          "startLabel": "2:59 PM",
+          "endLabel": "3:04 PM",
+          "talks": [
+            {
+              "id": "1x70c",
+              "title": "⚡ Lightning Talk: VexLLM: Silence Negligible CVE Alerts Using LLM",
+              "speakers": "Akihiro Suda",
+              "room": "Level 1 | Pegasus A-B1",
+              "url": "https://kccncjpn2025.sched.com/event/1x70c",
+              "description": "When using container image vulnerability scanners like Trivy, a large number of vulnerabilities may be detected. However, not all of them necessarily require an action. This is because not all libraries or command-line tools included in the container image are actually utilized.\n\nFor example, the `python:3.12.4` image includes a `git` binary with the vulnerability CVE-2024-32002. This vulnerability does not need an immediate action if it is known that the Python application being run does not execute `git` commands.\n\nVEX (Vulnerability-Exploitability eXchange) formats such as OpenVEX can be used to suppress such false alarms.\nHowever, VEX is still not widely adopted due to the difficulty of manual analysis and classification of vulnerabilities.\n\nThis presentation introduces VexLLM, a tool that helps writing VEX by leveraging LLMs. VexLLM is available as a plugin for Trivy.\n\nGitHub: https://github.com/AkihiroSuda/vexllm",
+              "recording": "https://www.youtube.com/watch?v=ac8L42e64y0"
+            }
+          ]
+        },
+        {
+          "start": "2025-06-16T15:50:00+09:00",
+          "end": "2025-06-16T16:20:00+09:00",
+          "startLabel": "3:50 PM",
+          "endLabel": "4:20 PM",
+          "talks": [
+            {
+              "id": "1x70o",
+              "title": "The Grand Adventure of Production Apps: Build, Break, and Survive! ~ A Kawaii Manga Journey Through",
+              "speakers": "Aoi Takahashi",
+              "room": "Level 1 | Pegasus B2-C",
+              "url": "https://kccncjpn2025.sched.com/event/1x70o",
+              "description": "\"I've started to understand the basics of Kubernetes, but when it comes to running it in production, I can't quite imagine what kind of issues might arise...\"\nTo ease these concerns, this session will use original characters, illustrations, and animations in a “cute manga” style to visually demonstrate how production applications can break and how to troubleshoot them.\nIn our story, the main application as a character takes center stage as the hero, venturing out on a grand journey—only to be \"suddenly attacked by a monster\" at the most inopportune moment. By following this storyline, you will learn both how applications fail and how to fix them. Additionally, just as an adventurer equips better armor to prepare for future battles, we will explore common issues and explain how to prevent them from happening in the first place.\nJoin us on an exciting adventure in \"manga-style troubleshooting\" and gain the confidence to tackle production Kubernetes challenges head-on!",
+              "recording": "https://www.youtube.com/watch?v=MU_oEAuLGxQ"
+            }
+          ]
+        },
+        {
+          "start": "2025-06-16T16:30:00+09:00",
+          "end": "2025-06-16T17:00:00+09:00",
+          "startLabel": "4:30 PM",
+          "endLabel": "5:00 PM",
+          "talks": [
+            {
+              "id": "1x70x",
+              "title": "Breaking Limits: Highly-Isolated and Low-Overhead Wasm Container",
+              "speakers": "Ai Nozaki, Soichiro Ueda",
+              "room": "Level 1 | Pegasus B2-C",
+              "url": "https://kccncjpn2025.sched.com/event/1x70x",
+              "description": "Wasm is touted as the next generation of containers, offering a smaller, more secure, and more portable application format. However, challenges remain, particularly in achieving enough isolation for public clouds where multi-tenancy exists. This is because Wasm shares the host kernel between workloads like containers. To take full advantage of Wasm, there is still insufficient discussion on this problem.\n\nTo address the issue, we've developed a new Wasm runtime, Mewz. It runs a single Wasm module within a dedicated VM while also having a lightweight and specialized kernel (unikernel). This revolutionary execution model enables more secure and low-overhead Wasm containers. We've open-sourced the implementation, and Mewz is listed in the CNCF cloud native landscape! In this session, we'll explain the architecture of Mewz and why it's more isolated and low-overhead than ordinary Wasm runtimes. Building on this presentation, let’s discuss the future of cloud workloads powered by Wasm!",
+              "recording": "https://www.youtube.com/watch?v=fV_SDqzRAG4"
+            },
+            {
+              "id": "1x710",
+              "title": "Exploring Tenant-centric Strategies To Simplify Multi-cluster and Multi-cloud Complexities",
+              "speakers": "Wei Huang, Fan Yang",
+              "room": "Level 1 | Orion",
+              "url": "https://kccncjpn2025.sched.com/event/1x710",
+              "description": "Kubernetes is widely recognized as a platform for building platforms, but even with modern platform engineering techniques, managing an end-to-end release and deployment lifecycle remains challenging.\n\nThis talk will first analyze key pain points in platform engineering and propose a new perspective on infrastructure code by separating different personas’ views. We advocate for a tenant-centric API that prioritizes user experience—minimizing input, reducing learning curves, and abstracting cloud provider details to decouple desired resources from underlying specs.\n\nNext, we’ll introduce a design for fanning out tenant resource claims, enhancing flexibility and extensibility through a code generation component and a Kubernetes-like labeling system. Finally, we’ll cover the glue that binds everything together: Pkl for templating and validation, Prow for GitHub event-driven automation, and Crossplane + ArgoCD as the claim realization engine.",
+              "recording": "https://www.youtube.com/watch?v=RnjRIOTdhhA"
+            }
+          ]
+        },
+        {
+          "start": "2025-06-16T17:10:00+09:00",
+          "end": "2025-06-16T17:40:00+09:00",
+          "startLabel": "5:10 PM",
+          "endLabel": "5:40 PM",
+          "talks": [
+            {
+              "id": "1x719",
+              "title": "Standardizing on Multi-Cluster App Topologies for Platforms With Linkerd",
+              "speakers": "Erick Bourgeois, William Rizzo",
+              "room": "Level 1 | Orion",
+              "url": "https://kccncjpn2025.sched.com/event/1x719",
+              "description": "As organizations scale their Kubernetes adoption, multi-cluster architectures are becoming the backbone of resilience, scalability, and compliance. However, building a unified developer experience across these clusters while abstracting operational complexities is a significant challenge.\nIn this session we’ll demonstrate how Cluster-API (CAPI), a declarative tool for Kubernetes lifecycle management and Linkerd, the powerful yet lightweight service mesh, can work together to simplify multi-cluster topologies for Internal Developer Platforms (IDP). By combining CAPI's robust cluster management with Linkerd’s seamless cross-cluster service communication, platform teams can deliver a streamlined and intuitive experience for developers, enabling them to focus on building and deploying applications without worrying about underlying infrastructure.",
+              "recording": "https://www.youtube.com/watch?v=IRQMQBEh0YY"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2025-06-17",
+      "id": "tuesday-june-17",
+      "label": "Tuesday, June 17",
+      "slots": [
+        {
+          "start": "2025-06-17T09:49:00+09:00",
+          "end": "2025-06-17T09:54:00+09:00",
+          "startLabel": "9:49 AM",
+          "endLabel": "9:54 AM",
+          "talks": [
+            {
+              "id": "253C1",
+              "title": "Keynote: From Legacy to Lift-Off: How Tokyo Gas Accelerated Innovation with Kubernetes, Argo CD, and Istio",
+              "speakers": "Yusuke Sugiyama",
+              "room": "Level 1 | Pegasus A-B1",
+              "url": "https://kccncjpn2025.sched.com/event/253C1",
+              "description": "Tokyo Gas reimagined its largest digital membership platform to accelerate innovation after market deregulation, moving from a lift-and-shift cloud approach, taking its first step towards a truly cloud native architecture.\n\nIn this talk, the myTOKYOGAS team shares how they adopted Kubernetes, Argo CD, and Istio to transition to microservices—achieving 4x faster deployments, 30% lower costs, and 30% less operational effort. With a small team, they launched their first microservice in just months, dramatically cutting down release times and building a scalable foundation for future growth. Learn how open source helped Tokyo Gas fuel agility and sustainability at scale.",
+              "recording": "https://www.youtube.com/watch?v=KdmFcGBbqao"
+            }
+          ]
+        },
+        {
+          "start": "2025-06-17T09:56:00+09:00",
+          "end": "2025-06-17T10:01:00+09:00",
+          "startLabel": "9:56 AM",
+          "endLabel": "10:01 AM",
+          "talks": [
+            {
+              "id": "21YtH",
+              "title": "Keynote: Engineering Without Limits: A Decade of Kubernetes Powering PlayStation’s Evolution",
+              "speakers": "Chris McEniry, Swathi Somanchi",
+              "room": "Level 1 | Pegasus A-B1",
+              "url": "https://kccncjpn2025.sched.com/event/21YtH",
+              "description": "8 year ago, we started to release Playstation products powered on top of Kubernetes. At the time, it was focused on accelerating our time to market. Little did we know that it would also provide the rallying flag for bringing together multiple parts of the organization to work in a consistent manner. With common features available to all application teams, they could focus on improving the game and game developer experience, instead of re-inventing toiling wheels.\n\nAs we look to the future, we're once again able to use the Kubernetes ecosystem as a rallying point. It's enabling us to expand our availability and capabilities into new hosting environments. We're moving up the value chain by replacing once novel but now bespoke components with modern and now commodity logic.\n\nIn this talk, we'll summarize our experience bringing a common platform to Sony Interactive Entertainment, what the future holds, and how the past, present and future help Playstation to continue to provide a gaming world where Play has no Limit.",
+              "recording": "https://www.youtube.com/watch?v=goaBGk9wt0c"
+            }
+          ]
+        },
+        {
+          "start": "2025-06-17T10:10:00+09:00",
+          "end": "2025-06-17T10:20:00+09:00",
+          "startLabel": "10:10 AM",
+          "endLabel": "10:20 AM",
+          "talks": [
+            {
+              "id": "1x74z",
+              "title": "Keynote: Spirit of Wa : Let’s Upstream",
+              "speakers": "Akihiro Suda, Kohei Ota, Yuiko Mori, Naoki Oguchi",
+              "room": "Level 1 | Pegasus A-B1",
+              "url": "https://kccncjpn2025.sched.com/event/1x74z",
+              "description": "“Wa” is a traditional way of behavior embedded in most of Japanese, meaning harmony, behaving for others etc. Under the spirit of “Wa”, Let’s see project maintainer, local community leader, enterprise developer and business strategist in Japan and hear their opinions to facilitate collaboration with global community and increase contributions from Japan.",
+              "recording": "https://www.youtube.com/watch?v=PESyL2reHxY"
+            }
+          ]
+        },
+        {
+          "start": "2025-06-17T11:30:00+09:00",
+          "end": "2025-06-17T12:00:00+09:00",
+          "startLabel": "11:30 AM",
+          "endLabel": "12:00 PM",
+          "talks": [
+            {
+              "id": "1x6zb",
+              "title": "Kubeflow Ecosystem: Unleash the Power of Cloud Native AI",
+              "speakers": "Andrey Velichkevich, Valentina Rodriguez Sosa, Yuki Iwai, Luciano Resende",
+              "room": "Level 1 | Appollon",
+              "url": "https://kccncjpn2025.sched.com/event/1x6zb",
+              "description": "Since 2017, the Kubeflow community has embraced Kubernetes as the foundation technology for AI/ML workloads. Over the years, Kubeflow and Kubernetes communities have worked closely to make cloud native tools more accessible for AI/ML.\n\n​​Today, Kubeflow ecosystem of projects covers entire AI/ML lifecycle - from data processing and feature engineering to large-scale LLM fine-tuning, optimization, and serving.\n\nIts modular, microservice-based architecture gives organizations the flexibility to adopt specific tools or deploy the full Kubeflow distribution as a comprehensive ML platform.\n\nIn this session, speakers will share key updates from the latest Kubeflow 1.10 release, including new additions to the Kubeflow ecosystem, like Feast and community-driven initiatives to enhance the GenAI on Kubernetes with ML Experience working group, Kubeflow SDK, and LLM fine-tuning blueprints. Join us to see how the Kubeflow community continues to drive innovation in cloud native AI and LLMOps.",
+              "recording": "https://www.youtube.com/watch?v=mgxLS22swm4"
+            }
+          ]
+        },
+        {
+          "start": "2025-06-17T12:10:00+09:00",
+          "end": "2025-06-17T12:40:00+09:00",
+          "startLabel": "12:10 PM",
+          "endLabel": "12:40 PM",
+          "talks": [
+            {
+              "id": "1x6ze",
+              "title": "WG-Batch Updates: What’s New and What Is Next?",
+              "speakers": "Michał Woźniak, Yuki Iwai",
+              "room": "Level 1 | Appollon",
+              "url": "https://kccncjpn2025.sched.com/event/1x6ze",
+              "description": "Join WG Batch maintainers for an in-depth look at the latest improvements in the Kubernetes ecosystem for HPC, AI/ML, and large-scale data analytics.\n\nYuki and Michał will present Kueue, a Kubernetes subproject enabling multi-tenant workload scheduling and advanced resource management, highlighting the new enhancements such as Topology-Aware Scheduling, Multi-Cluster Job dispatching, and Fair Sharing. They will also share updates on the Kubernetes Job API, as well as the JobSet API which is going to be the foundation for the Kubeflow Trainer v2. Additionally they present the new CLI tools, kjob and kueuectl, to make it easier for ML researchers to iterate running their workloads using Kubernetes with Kueue.\n\nThe WG Batch was created in 2022 to address the rapidly growing need for the first-class support of batch workloads in Kubernetes. It unites experts from multiple SIGs and diverse communities with the objective to define roadmaps and to collaborate on designs and implementations.",
+              "recording": "https://www.youtube.com/watch?v=jeRhDmp_i2M"
+            },
+            {
+              "id": "1x71O",
+              "title": "Cloud Native Scalability for Internal Developer Platforms",
+              "speakers": "Hiroshi Hayakawa",
+              "room": "Level 1 | Orion",
+              "url": "https://kccncjpn2025.sched.com/event/1x71O",
+              "description": "Platform Engineering enables developers to focus on business value-aligned tasks by providing internal developer platforms (IDPs) that automate non-essential tasks. Kubernetes is widely used as a foundation for IDPs thanks to its scalability and flexibility.\n\nHowever, Kubernetes was designed as a general workload orchestrator, not a platform component. As a result, IDP builders must integrate additional Cloud Native technologies and customizations, which can create scalability bottlenecks. At LY Corporation, his team has developed a Kubernetes-based, multi-tenant IDP running over 140K pods, and they faced such scalability challenges.\n\nIn this session, he will discuss scalability bottlenecks faced in the IDP, including observability pipelines, access control, etc. He will also explore scaling strategies for IDPs and how they address real-world scalability issues. By the end of this session, you will gain deeper insights into scalability challenges from a platform builder’s perspective.",
+              "recording": "https://www.youtube.com/watch?v=H_YBukBJ_kU"
+            }
+          ]
+        },
+        {
+          "start": "2025-06-17T14:10:00+09:00",
+          "end": "2025-06-17T14:40:00+09:00",
+          "startLabel": "2:10 PM",
+          "endLabel": "2:40 PM",
+          "talks": [
+            {
+              "id": "1x71X",
+              "title": "BGP Peering Patterns for Kubernetes Networking at Preferred Networks",
+              "speakers": "Sho Shimizu, Yutaro Hayakawa",
+              "room": "Level 1 | Pegasus A-B1",
+              "url": "https://kccncjpn2025.sched.com/event/1x71X",
+              "description": "BGP (Border Gateway Protocol) is increasingly being used to connect Kubernetes networking with the rest of the IT estate, especially in large-scale and on-premises environments. However, the complexity of many network architectures requires users to have more flexibility and control over how they deploy BGP. Based on the experience at Preferred Networks, this session introduces key BGP peering patterns that enhance Kubernetes networking while maintaining operational simplicity, including:\n\n1. The Sidecar BGP Peering Pattern: A method of running a dedicated BGP speaker alongside Kubernetes networking components, balancing automation with fine-grained control.\n2. Native Routing over IP Clos Networks – A tunneling-free approach that integrates Kubernetes with large-scale BGP-based datacenter fabrics for better performance.\n\nBased on real-world experience, we will share best practices and lessons learned, helping attendees design scalable and reliable Kubernetes networking with BGP.",
+              "recording": "https://www.youtube.com/watch?v=n7_I4zu6f_M"
+            },
+            {
+              "id": "26Fka",
+              "title": "🔁 Encore Presentation: No More Disruption: PlayStation Network’s Approaches To Avoid Outages on Kubernetes Platform",
+              "speakers": "Shuhei Nagata, Tomoyuki Ehira",
+              "room": "Level 1 | Orion",
+              "url": "https://kccncjpn2025.sched.com/event/26Fka",
+              "description": "At PlayStation Network, our Kubernetes platform with 50+ clusters handles massive amounts of user traffic every day, and the platform team consists of engineers in several global locations with different technological and cultural backgrounds.\nDespite such scale and organizational complexity, we achieved remarkable stability in FY2024 so far, maintaining a notable 99.995% uptime for our platform.\nIn this session, we will share the key practices behind this success, including a controlled deployment strategy, robust scaling techniques, minimized manual intervention, and 24/7 operations spanning global regions. While these approaches may not be special individually, their consistent and disciplined application has been the foundation of our platform's stability.\nThose who strive to achieve stable platform operation and organizations looking to expand or consolidate their platforms will leave with actionable strategies to enhance the reliability of their platform.",
+              "recording": "https://www.youtube.com/watch?v=a5WCyqySlw4"
+            }
+          ]
+        },
+        {
+          "start": "2025-06-17T14:50:00+09:00",
+          "end": "2025-06-17T15:20:00+09:00",
+          "startLabel": "2:50 PM",
+          "endLabel": "3:20 PM",
+          "talks": [
+            {
+              "id": "1x6zk",
+              "title": "Rook: Intro and Deep Dive With Ceph",
+              "speakers": "Satoru Takeuchi",
+              "room": "Level 1 | Appollon",
+              "url": "https://kccncjpn2025.sched.com/event/1x6zk",
+              "description": "The Rook project will be introduced to attendees of all levels and experience. Rook is an open source cloud-native storage operator for Kubernetes. Rook integrates Ceph, a famous open source distributed storage, with Kubernetes. This session will cover various scenarios to show how Rook configures Ceph to provide stable block, shared file system, and object storage for your production data. Rook was accepted as a graduated project by the Cloud Native Computing Foundation in October 2020.",
+              "recording": "https://www.youtube.com/watch?v=LmL2wyMWTXo"
+            }
+          ]
+        },
+        {
+          "start": "2025-06-17T16:30:00+09:00",
+          "end": "2025-06-17T17:00:00+09:00",
+          "startLabel": "4:30 PM",
+          "endLabel": "5:00 PM",
+          "talks": [
+            {
+              "id": "1x6zq",
+              "title": "Containerd: Project Update and Deep Dive",
+              "speakers": "Akihiro Suda, Kohei Tokunaga, Akhil Mohan, Kirtana Ashok",
+              "room": "Level 1 | Appollon",
+              "url": "https://kccncjpn2025.sched.com/event/1x6zq",
+              "description": "containerd is a CNCF-graduated container runtime project widely used in the ecosystem to manage containers and other workloads in Kubernetes, Docker, and more.\n\nJoin containerd maintainers for an update and deep dive into the latest developments in containerd. This panel will feature discussion of the launch and adoption of containerd 2.0, what’s next in 2.1, 1.7’s transition into Extended support, and how LTS is going with 1.6. There will also be highlights into the new release cadence of the project . Topics will also include how the containerd project is involved with the Kubernetes Enhancement Proposal (KEP) process and highlight how the broader cloud native ecosystem is enhanced through extension points in containerd.",
+              "recording": "https://www.youtube.com/watch?v=52KuYYllO2E"
+            },
+            {
+              "id": "1x71y",
+              "title": "From Moon Prism Power To eBPF Super Saiyan: A Guide To Cloud Native Security & Observability",
+              "speakers": "Carla Gaggini, Kenta Tada",
+              "room": "Level 1 | Pegasus A-B1",
+              "url": "https://kccncjpn2025.sched.com/event/1x71y",
+              "description": "Join us on an anime-powered journey to explore the power of eBPF in cloud native. Inspired by Sailor Moon and Dragon Ball GT, this talk breaks down how eBPF enhances observability, networking, and security, using the Sailor Guardians and Gohan to make eBPF approachable. We’ll break down topics like real-time observability by comparing it to psychic flames.\nAnd just as unchecked power in anime can lead to chaos, eBPF’s immense capabilities need to be used wisely. Drawing from Dragon Ball GT's arc where the Dragon Balls become a threat, we’ll examine best practices for safe deployment of eBPF (e.g., LSM, verifier constraints, Linux Capability restrictions). Spoiler alert: our Sailor Guardians and Gohan will come out victorious, worry not!\n\nBy the end, you’ll gain a clear understanding of how to wield eBPF safely and effectively in cloud native environments, no Super Saiyan transformation required!",
+              "recording": "https://www.youtube.com/watch?v=SqD8jNJGweU"
+            },
+            {
+              "id": "1x721",
+              "title": "Your SBOM Is Lying To You – Let’s Make It Honest",
+              "speakers": "Justin Cappos, Yuchen Zhang",
+              "room": "Level 1 | Pegasus B2-C",
+              "url": "https://kccncjpn2025.sched.com/event/1x721",
+              "description": "SBOMs (Software Bills of Material) are essential for improving visibility and security in the software supply chain. As open-source code drives modern development, organizations face growing security risks due to limited transparency in software dependencies. Attacks like SolarWinds (2020) and Kaseya (2021) highlight the urgent need for stronger software supply chain security.\nHowever, SBOMs are often inaccurate. This talk explores why these inaccuracies occur, how attackers exploit them, and how to address these issues. A key challenge is dependency management file analysis (e.g., cargo.toml for Rust), which struggles to track components effectively.\nEnter SBOMit, an OpenSSF sandbox project leveraging in-toto attestations to create cryptographically verifiable SBOMs. By capturing supply chain steps as they occur, SBOMit enhances accuracy, mitigates tampering risks, and strengthens security. This talk examines SBOMit’s role in improving SBOM reliability across the CNCF ecosystem.",
+              "recording": "https://www.youtube.com/watch?v=zsaFTtRSnXI"
+            },
+            {
+              "id": "1x724",
+              "title": "Dynamic Provisioning and Capacity-Aware Scheduling for Local Storage",
+              "speakers": "Yuma Ogami",
+              "room": "Level 1 | Orion",
+              "url": "https://kccncjpn2025.sched.com/event/1x724",
+              "description": "In this session, the speaker presents TopoLVM, a CSI plugin for local storage, and introduces an upcoming Kubernetes feature for local storage that he and his team are working on.\n\nLocal storage is promising for applications that require high I/O performance, like Elasticsearch and MySQL. TopoLVM provides many features like raw block volumes, resizing, and dynamic provisioning to manage local storage in Kubernetes easily. It also includes a capacity-aware pod scheduling feature that considers each node's local storage capacity.\n\nCurrently, this capacity-aware feature is achieved by a scheduler extender, which has two main issues:\n\n1. Many admins don't have the right to install scheduler extenders.\n2. The scheduler extender is TopoLVM specific.\n\nTo address these issues, he will introduce a KEP titled \"KEP-4049: Storage Capacity Scoring of Nodes for Dynamic Provisioning.\" to be able to TopoLVM's scheduling logic for all CSI drivers without using scheduler extenders.",
+              "recording": "https://www.youtube.com/watch?v=HXDIukPX6AY"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
