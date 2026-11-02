@@ -437,6 +437,44 @@
       }
     },
     {
+      "slug": "kubecon-india-2025",
+      "source": "sched",
+      "sourceUrl": "https://kccncind2025.sched.com/",
+      "apiUrl": "https://kccncind2025.sched.com/list/descriptions",
+      "sessionUrl": "https://kccncind2025.sched.com/event/{id}",
+      "location": "Hyderabad",
+      "timezone": "IST (UTC+5:30)",
+      "utcOffset": "+05:30",
+      "selection": "presented by speakers from organizations that meet the CNCF End User definition",
+      "select": {
+        "sessionIds": [
+          "23Esv",
+          "23Et1",
+          "23EtD",
+          "23EtG",
+          "23Etq",
+          "23EtY",
+          "23Eu5",
+          "23EuE",
+          "23Eui",
+          "23EuN",
+          "23EuQ",
+          "23Ev9",
+          "23Eva",
+          "23EvC",
+          "23EvF",
+          "23EvI",
+          "23Evm",
+          "23Evp",
+          "23Evs",
+          "23EvX",
+          "23FG5",
+          "27ezh",
+          "27gJD"
+        ]
+      }
+    },
+    {
       "slug": "kubecon-eu-2025",
       "source": "sched",
       "sourceUrl": "https://kccnceu2025.sched.com/",
