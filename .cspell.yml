@@ -228,7 +228,6 @@ words:
   # docs/architectures/bank-of-ningbo/index.md (organization and project names)
   - Ningbo
   - Higress
-  - higress
   - Spiderpool
   - kyverno
   - MGMT
