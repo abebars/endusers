@@ -32,6 +32,10 @@ const FULL_PATH_ONLY = new Map([
     'blog/authors.yml is data, not a Markdown document',
   ],
   [
+    'tests/check-data-links.test.mjs',
+    'reads docs/ for @site/data imports; an unlisted data file can only arrive with a data/ change, which takes the full path',
+  ],
+  [
     'tests/content-only-ci.test.mjs',
     'classifier fixtures name documents as inputs, not as contracts',
   ],

@@ -10,11 +10,17 @@
 /**
  * Data files whose string values reach the page as link or image targets.
  *
+ * Every file a page or component imports as `@site/data/<path>.json` belongs
+ * here: this list is the whole input to the weekly rot gate, and a file left
+ * off it ships its links to readers with nothing resolving them. The list is
+ * hand-written, so `tests/check-data-links.test.mjs` holds it against the
+ * imports in `docs/` and `src/`.
+ *
  * `data/enduser-landscape.json` is deliberately absent: it is the raw
  * landscape snapshot, and most of its entries never render (only the end user
  * members in `members.json` do), so a rotten URL there is not a defect an end
  * user can see. `community-roster.json` is curated input to
- * `community-people.json`, which is checked instead.
+ * `community-people.json`, which is checked instead. Neither is imported.
  */
 export const RENDERED_DATA_FILES = [
   'data/architectures/catalog.json',
@@ -23,9 +29,12 @@ export const RENDERED_DATA_FILES = [
   'data/community-groups.json',
   'data/community-people.json',
   'data/end-user-talks/kubecon-china-2026.json',
+  'data/end-user-talks/kubecon-eu-2025.json',
   'data/end-user-talks/kubecon-eu-2026.json',
+  'data/end-user-talks/kubecon-india-2025.json',
   'data/end-user-talks/kubecon-india-2026.json',
   'data/end-user-talks/kubecon-japan-2026.json',
+  'data/end-user-talks/kubecon-na-2025.json',
   'data/end-user-talks/kubecon-na-2026.json',
   'data/members.json',
   'data/metrics.json',
