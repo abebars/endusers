@@ -321,6 +321,25 @@
       "membershipStatus": "member"
     },
     {
+      "id": "bank-of-ningbo",
+      "name": "Bank of Ningbo",
+      "slug": "bank-of-ningbo",
+      "logo": "/img/architectures/bank-of-ningbo/logo.png",
+      "industries": ["Financial Services"],
+      "projects": ["HAMi", "Higress", "Kubernetes"],
+      "architectures": [
+        {
+          "id": "bank-of-ningbo",
+          "title": "Cloud Native AI Resource Management and Inference Service Governance with Kubernetes, HAMi and Higress at Bank of Ningbo",
+          "sourceUrl": "https://github.com/cncf/tab/issues/141"
+        }
+      ],
+      "awards": [],
+      "sourceAttribution": ["https://github.com/cncf/tab/issues/141"],
+      "membershipSources": [],
+      "membershipStatus": "unknown"
+    },
+    {
       "id": "beneva",
       "name": "Beneva",
       "slug": "beneva",
