@@ -82,7 +82,7 @@ The development and delivery of the new «Kubernetes Service» is done at within
 The layered approach allows Swisscom to manage technological aspects distinctly by segregating the cloud native infrastructure (managed by the Pathfinders team) from the Kubernetes platform (managed by the Guardians team). 
 This strategy ensures considerable flexibility, permitting each layer to be combined or integrated with other technologies in the future.
 
-![Kubernetes Service is a combination of CNIP & SKP deliverables](./images/kubernetes-service-team-deliverables.png)
+![Kubernetes Service is a combination of CNIP and SKP deliverables](./images/kubernetes-service-team-deliverables.png)
 
 ## Brief overview of your architecture and any potential goals you are trying to achieve with it?
 
