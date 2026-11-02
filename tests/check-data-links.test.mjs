@@ -1,6 +1,8 @@
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { readFileSync, readdirSync } from 'node:fs';
+import { join, relative } from 'node:path';
 import test from 'node:test';
+import { fileURLToPath } from 'node:url';
 
 import {
   KNOWN_BROKEN_URLS,
@@ -206,6 +208,54 @@ test('the rendered file list leaves out the raw landscape snapshot and curated r
     assert.match(url, /^https?:\/\//);
     assert.match(reason, /#\d+/, `${url} must cite a tracking issue`);
   }
+});
+
+// The list in data-links.mjs is hand-written while the pages that render the
+// data keep arriving: three KubeCon 2025 talk snapshots were added to docs/
+// after the list existed and none reached it, so the session and recording
+// links on /events/2025/* were published with nothing resolving them.
+// Docusaurus gives the imports away - a page or component reaches a data file
+// only through `@site/data/...`, so the imports under docs/ and src/ are the
+// full set of files whose URLs a reader can click.
+const SITE_DATA_IMPORT = /@site\/(data\/[\w./-]+\.json)/g;
+const IMPORTING_TREES = ['docs', 'src'];
+const repoRoot = fileURLToPath(new URL('..', import.meta.url));
+
+function importedDataFiles() {
+  const imported = new Map();
+  for (const tree of IMPORTING_TREES) {
+    const dir = join(repoRoot, tree);
+    for (const entry of readdirSync(dir, {
+      recursive: true,
+      withFileTypes: true,
+    })) {
+      if (!entry.isFile()) continue;
+      const source = join(entry.parentPath, entry.name);
+      for (const [, file] of readFileSync(source, 'utf8').matchAll(
+        SITE_DATA_IMPORT,
+      )) {
+        imported.set(file, relative(repoRoot, source));
+      }
+    }
+  }
+  return imported;
+}
+
+test('every data file a page imports is on the rendered file list', () => {
+  const imported = importedDataFiles();
+  assert.ok(
+    imported.has('data/end-user-talks/kubecon-na-2025.json'),
+    'expected the docs tree to still import talk snapshots by year',
+  );
+  const missing = [...imported]
+    .filter(([file]) => !RENDERED_DATA_FILES.includes(file))
+    .map(([file, source]) => `${file} (imported by ${source})`);
+  assert.deepEqual(
+    missing,
+    [],
+    'add these to RENDERED_DATA_FILES in scripts/lib/data-links.mjs so the ' +
+      'weekly link check resolves the URLs they put on the page',
+  );
 });
 
 const FIXTURE_FILES = Object.fromEntries(
