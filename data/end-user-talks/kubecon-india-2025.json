@@ -1,0 +1,395 @@
+{
+  "description": "Generated from the official Sched listing by npm run collect:end-user-talks. Do not hand-edit.",
+  "source": "sched",
+  "sourceUrl": "https://kccncind2025.sched.com/",
+  "apiUrl": "https://kccncind2025.sched.com/list/descriptions",
+  "selection": "presented by speakers from organizations that meet the CNCF End User definition",
+  "location": "Hyderabad",
+  "generatedAt": "2026-11-02T04:01:12.478Z",
+  "timezone": "IST (UTC+5:30)",
+  "talkCount": 23,
+  "final": true,
+  "days": [
+    {
+      "date": "2025-08-06",
+      "id": "wednesday-august-6",
+      "label": "Wednesday, August 6",
+      "slots": [
+        {
+          "start": "2025-08-06T09:59:00+05:30",
+          "end": "2025-08-06T10:09:00+05:30",
+          "startLabel": "9:59 AM",
+          "endLabel": "10:09 AM",
+          "talks": [
+            {
+              "id": "23EuN",
+              "title": "Keynote: Pushing the Limits: Scaling ArgoCD’s Repo-Server To Handle 30K Applications",
+              "speakers": "Isha Gusai, Aditya Sharma",
+              "room": "Hall 3",
+              "url": "https://kccncind2025.sched.com/event/23EuN",
+              "description": "Expedia Group’s RCP platform is transitioning to ArgoCD as its control plane. As part of this journey, we are adapting ArgoCD’s industry-leading technology to meet our current and future needs. A critical component of this effort involves fine-tuning the repo-server, originally optimized for GitOps workflows, to manage over 4,000 unique Helm charts at a scale of 12,000 applications, with a forecasted future scale of 30,000 applications.\n\nThis talk delves into our deep-dive scalability testing of the repo-server component, exploring memory usage patterns, troubleshooting performance bottlenecks, and addressing memory burst issues. We share our solutions to stabilize the repo-server under heavy load, and provide actionable recommendations based on configurations and parameters that worked for us. These insights aim to benefit the broader community in their own scalability endeavors.",
+              "recording": "https://www.youtube.com/watch?v=IvgHucOQrBE"
+            }
+          ]
+        },
+        {
+          "start": "2025-08-06T10:23:00+05:30",
+          "end": "2025-08-06T10:26:00+05:30",
+          "startLabel": "10:23 AM",
+          "endLabel": "10:26 AM",
+          "talks": [
+            {
+              "id": "27gJD",
+              "title": "Keynote: From Grass to Glass: Chitale Dairy's App Transformation with Kubernetes",
+              "speakers": "Vishvas Parshuram Chitale, Dilpreet Bindra",
+              "room": "Hall 3",
+              "url": "https://kccncind2025.sched.com/event/27gJD",
+              "description": "Chitale Dairy digitized every aspect of operations by transitioning all software to modern containerized applications. Working with Sunfire, a Broadcom Advantage Partner, Chitale Dairy leveraged vSphere Kubernetes Service, a component in VMware Cloud Foundation, to accelerate their transformation. Infusing digital technology in every step of production the company also added a business-to-consumer delivery model at cloud speed.",
+              "recording": "https://www.youtube.com/watch?v=0KFbH64ykiI"
+            }
+          ]
+        },
+        {
+          "start": "2025-08-06T11:30:00+05:30",
+          "end": "2025-08-06T12:00:00+05:30",
+          "startLabel": "11:30 AM",
+          "endLabel": "12:00 PM",
+          "talks": [
+            {
+              "id": "23EvX",
+              "title": "Supercharge Backstage: Self-Service GitOps Staging Environments With VCluster and FluxCD",
+              "speakers": "Farhaan Shamsee, Rakesh Reddy",
+              "room": "Hall 1",
+              "url": "https://kccncind2025.sched.com/event/23EvX",
+              "description": "What if developers could create fully isolated, production-like environments—directly from Backstage—with just a click?\n\nThis talk showcases Backstage as a powerful self-service platform to spin up vClusters representing Dev, Test, and Prod environments. Each virtual cluster is fully GitOps-managed with FluxCD, automatically pulling from specific Git branches to mirror real deployment stages.\n\nThe environments can be provisioned on-demand—whether on a developer’s local laptop (using WSL), a centralized server, or a remote EKS cluster—offering flexibility and production-like confidence at every stage.\n\nWe’ll deep-dive into building this “staging system” where code is tested safely before ever reaching customers, while giving developers the speed and autonomy they crave—all powered by Backstage.\n\nBy the end of the session, you’ll learn how to build a practical, cloud-native staging system to test, validate, and promote code safely—before your customers ever see it.",
+              "recording": "https://www.youtube.com/watch?v=_U_SNgVznzw"
+            }
+          ]
+        },
+        {
+          "start": "2025-08-06T12:10:00+05:30",
+          "end": "2025-08-06T12:40:00+05:30",
+          "startLabel": "12:10 PM",
+          "endLabel": "12:40 PM",
+          "talks": [
+            {
+              "id": "23Eva",
+              "title": "To Succeed in Platform Engineering, Build Infrastructure Knowledge Graphs",
+              "speakers": "Safeer CM",
+              "room": "Hall 1",
+              "url": "https://kccncind2025.sched.com/event/23Eva",
+              "description": "Platform engineering continues to evolve as a critical discipline for modern software development. However, infrastructure complexity is slowing down its momentum. The software infrastructure is a complex web of interrelated entities that spans much beyond a simple software catalog and cloud resources. Such infrastructure management is often driven by a team’s understanding of the implicit relationship between these entities. This is not scalable and often leads to operational challenges and loss of developer productivity. Knowledge graphs can build relationships between entities from diverse infrastructure sources and make explicit what was previously implicit knowledge. It elevates the developer productivity and its neglected counterpart - operational excellence. This talk will discuss the importance of knowledge graphs and the strategies and mental models that will help in building knowledge graphs around the software infrastructure.",
+              "recording": "https://www.youtube.com/watch?v=uNCfd114rB8"
+            }
+          ]
+        },
+        {
+          "start": "2025-08-06T14:50:00+05:30",
+          "end": "2025-08-06T15:20:00+05:30",
+          "startLabel": "2:50 PM",
+          "endLabel": "3:20 PM",
+          "talks": [
+            {
+              "id": "23Etq",
+              "title": "Who Let the Pods Out? Extending Kubernetes with Custom Controllers and CRDs",
+              "speakers": "Ria Bhatia",
+              "room": "Hall 6",
+              "url": "https://kccncind2025.sched.com/event/23Etq",
+              "description": "Kubernetes is powerful, but its true strength lies in extensibility. Many developers struggle to adapt it to their needs, often resorting to workarounds instead of leveraging built-in extension mechanisms. What if Kubernetes worked for you, not the other way around?\n\nThis beginner-friendly session will introduce you to Custom Resource Definitions (CRDs) and custom controllers, guiding you through their design, implementation, and deployment. You'll learn how to create Kubernetes-native abstractions that automate workflows, simplify operations, and enhance the developer experience. We'll cover best practices, automation strategies, and performance optimizations to ensure scalable and maintainable extensions that integrate seamlessly with Kubernetes.\n\nGet ready to move beyond workarounds and let your pods thrive with clean, scalable, and native Kubernetes extensions!",
+              "recording": "https://www.youtube.com/watch?v=b6DCTjighPQ"
+            }
+          ]
+        },
+        {
+          "start": "2025-08-06T15:50:00+05:30",
+          "end": "2025-08-06T16:20:00+05:30",
+          "startLabel": "3:50 PM",
+          "endLabel": "4:20 PM",
+          "talks": [
+            {
+              "id": "23EtG",
+              "title": "Scaling AI Like a Pro-PepsiCo’s LLM Deployment Strategy on Kubernetes for AI-Driven Business Impact",
+              "speakers": "Dhanashree Shetty, Praseed Naduvath",
+              "room": "Hall 6",
+              "url": "https://kccncind2025.sched.com/event/23EtG",
+              "description": "As PepsiCo continues to push the boundaries of AI-driven innovation, multiple 70-billion-parameter Llama model has been deployed within our Kubernetes-based AI platform, showcasing our ability to operationalize large-scale LLMs efficiently while optimizing performance, cost, and scalability.\n\nThis session will explore our journey of deploying and managing a high-performance LLM on Kubernetes. We’ll share insights on architectural decisions, GPU provisioning, and fine-tuning techniques for efficient inferencing. Attendees will learn how we tackled memory optimization, high availability, cost-performance balancing, and Responsible AI practices.\n\nWe’ll also discuss how our infrastructure, orchestration, and resource management evolved to meet large-scale inferencing demands, ensuring AI-driven innovation remains scalable, responsible, and efficient at PepsiCo.",
+              "recording": "https://www.youtube.com/watch?v=0L6ATOhZuFY"
+            }
+          ]
+        },
+        {
+          "start": "2025-08-06T16:30:00+05:30",
+          "end": "2025-08-06T17:00:00+05:30",
+          "startLabel": "4:30 PM",
+          "endLabel": "5:00 PM",
+          "talks": [
+            {
+              "id": "23Eu5",
+              "title": "Unlocking the Power of Kuma Service Mesh: Enhancing Reliability and Developer Productivity",
+              "speakers": "Arpit Mishra, Deepak Verma",
+              "room": "Hall 2",
+              "url": "https://kccncind2025.sched.com/event/23Eu5",
+              "description": "This session delves into Zomato's journey of adopting Kuma Service Mesh to manage over 500 microservices with 10,000 dataplanes. The session begins by addressing common challenges in service communication, such as observability gaps, insecure traffic, and inconsistent configurations across environments, and explore how Kuma Service Mesh resolves these issues.\n\nThe presentation highlights how Kuma standardises configurations, minimises debugging efforts, and improves application performance, thereby reducing developer overhead. A key focus is on leveraging Kuma to enhance developer workflows through local-preview environments, allowing dynamic traffic routing to local services based on headers. This facilitates rapid iteration and debugging.\n\nAdditionally, we will discuss our roadmap for utilising Kuma's zone-aware routing to reduce cross-zone data transfer, lowering costs and enhancing efficiency.",
+              "recording": "https://www.youtube.com/watch?v=W98f23NjodU"
+            },
+            {
+              "id": "23Eui",
+              "title": "Redefining Inclusion: Building Truly Global Cloud Native Communities",
+              "speakers": "Josh Berkus, Priyanka Saggu, Sandeep Kanabar",
+              "room": "G.01 - G.06",
+              "url": "https://kccncind2025.sched.com/event/23Eui",
+              "description": "True inclusivity in open source goes beyond accessibility-it embraces cultural, linguistic, and geographic diversity. This session redefines inclusivity by spotlighting regional contributors and underrepresented voices. Together, we'll share real-world lessons from Cloud Native projects across Asia-like shifting meeting times to better serve regional Time Zone (e.g. SIG Contribex, CHAOSS Asia), navigating connectivity barriers, and amplifying non-Western perspectives in community leadership.\n\nWe'll explore what global inclusion looks like in practice: not just inviting participation, but enabling it meaningfully. By addressing time zone inequity, cultural nuance, and infrastructure gaps, we unlock richer collaboration and long-term sustainability. This talk is a call to move beyond checkboxes—toward an inclusiveness rooted in empathy, cultural awareness, and action. Let's build a Cloud Native ecosystem where contributors everywhere can truly belong—and thrive.",
+              "recording": "https://www.youtube.com/watch?v=TqRM3Uxn0VU"
+            },
+            {
+              "id": "23Evm",
+              "title": "Building a Cloud Native IaC Platform for an Enterprise by Leveraging the Kubernetes Ecosystem",
+              "speakers": "Yury Tsarev, Florian Hopfensperger",
+              "room": "Hall 1",
+              "url": "https://kccncind2025.sched.com/event/23Evm",
+              "description": "Infrastructure teams have long been a staple of large enterprises, responsible for creating and managing cloud and on-premises resources. However, each team often operates with its own user interface, making it difficult for developers to access the infrastructure they need efficiently. How can we enhance the developer experience while enabling infrastructure teams to offer products more effectively?\n\nThis talk will showcase how Allianz Technology leverages the Kubernetes ecosystem and open-source software to build an infrastructure-as-code platform powered by over 1,000 Kubernetes control planes. This approach simplifies the developer experience through customized APIs while providing infrastructure engineers with a scalable framework for delivering infrastructure products and gaining insights for continuous improvement.",
+              "recording": "https://www.youtube.com/watch?v=TlVXDbrsU-w"
+            }
+          ]
+        },
+        {
+          "start": "2025-08-06T16:51:00+05:30",
+          "end": "2025-08-06T16:56:00+05:30",
+          "startLabel": "4:51 PM",
+          "endLabel": "4:56 PM",
+          "talks": [
+            {
+              "id": "23Esv",
+              "title": "⚡ Lightning Talk: OpenKruise: Advancing Kubernetes Workload Automation for Scalable, Disruption-Free Operations",
+              "speakers": "Husni Alhamdani, Herbert Sianturi",
+              "room": "Hall 3",
+              "url": "https://kccncind2025.sched.com/event/23Esv",
+              "description": "Kubernetes has become the de facto standard for container orchestration, yet managing complex workloads—particularly stateful applications and large-scale deployments—often requires extensions beyond its native capabilities. OpenKruise, addresses these gaps by introducing powerful and enhancements to streamline application lifecycle management.\n\nThis presentation explores how OpenKruise augments Kubernetes with features like in-place pod updates (reducing downtime by updating containers without restarting pods), advanced workload controllers (CloneSet, Advanced StatefulSet). These innovations enable DevOps teams to optimize deployments, minimize operational overhead, and scale stateful applications seamlessly.\n\nWe’ll delve into real-world use cases from our experiences, plus, how OpenKruise can be plugged to any complex systems/apps.\n\nAttendees will leave with actionable insights into leveraging OpenKruise to enhance deployment strategies and achieve zero-downtime operations.",
+              "recording": "https://www.youtube.com/watch?v=W2-Uy3AU810"
+            }
+          ]
+        },
+        {
+          "start": "2025-08-06T17:05:00+05:30",
+          "end": "2025-08-06T17:10:00+05:30",
+          "startLabel": "5:05 PM",
+          "endLabel": "5:10 PM",
+          "talks": [
+            {
+              "id": "23Et1",
+              "title": "⚡ Lightning Talk: Solving Multi-Region K8s Challenges: Improving Pod Startup Time & Reducing NAT Costs With Zot",
+              "speakers": "Tamil Vanan Karuppannan",
+              "room": "Hall 3",
+              "url": "https://kccncind2025.sched.com/event/23Et1",
+              "description": "Managing a multi-region Kubernetes deployment comes with significant challenges, especially around container image distribution. In our setup, we had a central container registry in a public cloud, but as the number of clusters grew across regions, our NAT transfer costs skyrocketed— a staggering 10x increase\n\nA major contributor to this cost was cross-region image pulls, which also impacted pod startup times. We explored multiple solutions and found Zot (a CNCF sandbox project) to be an ideal fit due to its lightweight architecture and pull-through cache capabilities\n\nBy configuring Zot as a regional caching layer, we:\n\nReduced NAT data transfer costs significantly by keeping frequently pulled images closer to the clusters.\nImproved pod startup times by eliminating long fetch delays from a central registry.\nSimplified registry management without adding unnecessary complexity.",
+              "recording": "https://www.youtube.com/watch?v=kOPaTV8LGqQ"
+            }
+          ]
+        },
+        {
+          "start": "2025-08-06T17:10:00+05:30",
+          "end": "2025-08-06T17:40:00+05:30",
+          "startLabel": "5:10 PM",
+          "endLabel": "5:40 PM",
+          "talks": [
+            {
+              "id": "23Evp",
+              "title": "A Journey To Ephemeral Test Environments With EKS and ArgoCD",
+              "speakers": "Tatiana Selezneva, Gazal Gafoor",
+              "room": "Hall 1",
+              "url": "https://kccncind2025.sched.com/event/23Evp",
+              "description": "In today's fast-paced development landscape, maintaining reliable and up-to-date test environments is crucial yet challenging. Join us as we share our journey of evolving from traditional long-running test environments to testing directly in production, and eventually achieving scalable and ephemeral test environments for platform builders as well as application teams.\n\n- Are you content with the current state of your test environments?\n- Do you find yourself relying on outdated, long-running staging and test environments?\n- How do you handle the risks of data staleness and unexpected environment corruption?\n\nIn this talk, we will go into the strategies and tools that helped us to transition to ephemeral test environments, highlighting the benefits and challenges encountered along the way. We aim to provide you with practical steps to improve the scalability and reliability of your own testing frameworks.",
+              "recording": "https://www.youtube.com/watch?v=LpEruG5Lcsw"
+            }
+          ]
+        },
+        {
+          "start": "2025-08-06T17:33:00+05:30",
+          "end": "2025-08-06T17:38:00+05:30",
+          "startLabel": "5:33 PM",
+          "endLabel": "5:38 PM",
+          "talks": [
+            {
+              "id": "23EtD",
+              "title": "⚡ Lightning Talk: Mission: Impossible - Building Self-Healing Disaster Recovery With OpenFeature",
+              "speakers": "Prerit Munjal",
+              "room": "Hall 3",
+              "url": "https://kccncind2025.sched.com/event/23EtD",
+              "description": "Imagine presenting to your dream clients when your primary region decides to take a coffee break. That's exactly what happened to us - 25 minutes of unexpected manual failover, and watching hope drain from our team's & audience's faces. Our multi-region setup was more \"disaster\" than \"recovery\".\n\nJoin this talk as Prerit walk us over how they build an intelligent feature flag orchestration platform using OpenFeature which now processes 1k flag evaluations/second across 3 global regions, reduced infrastructure incident risk by 90% & DR time from 25 minutes to 125 seconds and has successfully handled 15 regional incidents without a single lost transaction.\n\nWe will also see they built the \"infrastructure gates\" to control traffic shifting with millisecond precision, feature state synchronization, and WARM-HOT-COLD DR strategies with just a toggle.",
+              "recording": "https://www.youtube.com/watch?v=P71398vjWgE"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2025-08-07",
+      "id": "thursday-august-7",
+      "label": "Thursday, August 7",
+      "slots": [
+        {
+          "start": "2025-08-07T09:34:00+05:30",
+          "end": "2025-08-07T09:44:00+05:30",
+          "startLabel": "9:34 AM",
+          "endLabel": "9:44 AM",
+          "talks": [
+            {
+              "id": "23EuQ",
+              "title": "Keynote: From Outage To Observability: Lessons From a Kubernetes Meltdown",
+              "speakers": "Saiyam Pathak, Arnab Chatterjee",
+              "room": "Hall 3",
+              "url": "https://kccncind2025.sched.com/event/23EuQ",
+              "description": "Is basic monitoring and logging using prometheus and ELK stack enough? Our DevOps automation platform suffered a major Kubernetes outage due to weak observability despite having the basic setup in place.\n\nWhat Went Wrong?\nOur \"good enough\" setup fell apart when it mattered most. Logs were a mess with no correlation, & tracing was half-baked, leaving us clueless during debugging. One customer’s CI/CD pipeline overwhelmed shared resources and brought everyone down. Aggressive autoscaling overloaded the control plane. Worst of all, a single tenant’s failure affected the entire cluster.\n\nHow did we fix it?\nWe swapped basic Prometheus for a distributed setup that could handle the scale. Workloads got isolated per tenant and team, with multi-tenancy baked in and dedicated monitoring to match. Fine-grained autoscaling & experimentation with tracing tools(Parca/Odigos). The result? A cluster that bends but doesn’t break.\n\nIf you want to avoid your own outage horror story, this talk is for you.",
+              "recording": "https://www.youtube.com/watch?v=7JCZ688cWpY"
+            }
+          ]
+        },
+        {
+          "start": "2025-08-07T09:46:00+05:30",
+          "end": "2025-08-07T09:49:00+05:30",
+          "startLabel": "9:46 AM",
+          "endLabel": "9:49 AM",
+          "talks": [
+            {
+              "id": "23FG5",
+              "title": "Keynote: Intuit’s AI-Native Platform: Scaling to 8x Velocity for 8,000 Developers",
+              "speakers": "Jimil Patel",
+              "room": "Hall 3",
+              "url": "https://kccncind2025.sched.com/event/23FG5",
+              "description": "Intuit leveraged CNCF projects like Kubernetes, Argo, Istio, and Prometheus to create an AI-native development platform. By simplifying infrastructure and adopting smart operational patterns, Intuit scaled to 8,000+ developers and 2,500 services—achieving 8x faster development and reducing MTTR from 45 to 5 minutes.",
+              "recording": "https://www.youtube.com/watch?v=qehrzi_b1_c"
+            }
+          ]
+        },
+        {
+          "start": "2025-08-07T09:51:00+05:30",
+          "end": "2025-08-07T09:56:00+05:30",
+          "startLabel": "9:51 AM",
+          "endLabel": "9:56 AM",
+          "talks": [
+            {
+              "id": "27ezh",
+              "title": "Keynote: Unifying Developer Experience at Zepto with Backstage: A Journey from Chaos to Clarity",
+              "speakers": "Abhishek BVS, Sandesh Gupta",
+              "room": "Hall 3",
+              "url": "https://kccncind2025.sched.com/event/27ezh",
+              "description": "At Zepto, we faced rapid microservice sprawl, siloed tooling, and increasing developer friction. To overcome these challenges, we adopted Backstage, Kubernetes, and Argo to build a unified developer portal. In this keynote, we’ll share how we transformed our developer experience by visualizing service dependencies, automating onboarding, and accelerating deployments/rollbacks, all while improving reliability and team productivity. Whether you're just starting or scaling your platform engineering journey, this talk will highlight actionable insights and real-world lessons from our implementation.",
+              "recording": "https://www.youtube.com/watch?v=meIaYBKVQCA"
+            }
+          ]
+        },
+        {
+          "start": "2025-08-07T11:30:00+05:30",
+          "end": "2025-08-07T12:00:00+05:30",
+          "startLabel": "11:30 AM",
+          "endLabel": "12:00 PM",
+          "talks": [
+            {
+              "id": "23Evs",
+              "title": "Handling Node Churn in Karpenter: Efficient Scaling for Large EKS Clusters",
+              "speakers": "Shivani Mehrotra, Chetan Saini",
+              "room": "Hall 6",
+              "url": "https://kccncind2025.sched.com/event/23Evs",
+              "description": "Managing node churn in large Amazon EKS clusters posed challenges due to fluctuating workloads, leading to instability and high costs. In this session, we’ll share how we leveraged Karpenter, an open-source K8s autoscaler, to optimize node provisioning and minimize churn across multiple EKS clusters. We’ll explore strategies like Pod Priority, PDBs, and node pools, improving scheduling efficiency and reducing resource waste thereby reducing cloud costs. Additionally, we’ll discuss reducing do-not-disrupt annotations, tightening affinity rules, aligning Karpenter nodes with EC2 savings plans and using latest features of karpenter like reserved instances to enhance performance and cost savings. One can gain insights into understanding node churning and its impact on costs and stability, optimizing Karpenter to scale nodes efficiently, achieving cost savings through spot instances and refined scaling policies. Join us to learn how to make EKS clusters more efficient and cost-effective!",
+              "recording": "https://www.youtube.com/watch?v=u1fTJRUeouE"
+            }
+          ]
+        },
+        {
+          "start": "2025-08-07T12:10:00+05:30",
+          "end": "2025-08-07T12:40:00+05:30",
+          "startLabel": "12:10 PM",
+          "endLabel": "12:40 PM",
+          "talks": [
+            {
+              "id": "23EuE",
+              "title": "Running Databases Efficiently at Scale - Case Study of Flipkart's Local PV Journey on K8s",
+              "speakers": "Akif Ahmed Khan, Yashpal Choudhary",
+              "room": "Hall 2",
+              "url": "https://kccncind2025.sched.com/event/23EuE",
+              "description": "Running large-scale, performance-sensitive distributed databases on K8s requires balancing between latency, reliability, and cost efficiency. At Flipkart, we tackled this challenge by leveraging K8s Local Persistent Volumes (Local PVs) to optimize both performance and infrastructure costs for our stateful workloads.\n\nWith a storage footprint of 4PB of directly attached SSDs, 15PB of directly attached HDDs, comprising 1000 K8s stateful nodes spanning across 3 clusters (2 on-prem & 1 on public cloud infrastructure) LocalPV storage currently powers various internal database platforms (Aerospikes, HBase, TiDB) leveraged by critical business applications at Flipkart.\n\nIn this talk, we’ll share practical insights from our journey of scaling database infrastructure with Local PVs. We’ll dive into key challenges and solutions, including dynamic provisioning, workload scheduling, and automating maintenance workflows to ensure operational efficiency at scale.",
+              "recording": "https://www.youtube.com/watch?v=dnF9H6X69EM"
+            }
+          ]
+        },
+        {
+          "start": "2025-08-07T14:10:00+05:30",
+          "end": "2025-08-07T14:40:00+05:30",
+          "startLabel": "2:10 PM",
+          "endLabel": "2:40 PM",
+          "talks": [
+            {
+              "id": "23Ev9",
+              "title": "Containerized Time Travel: Replicating Production Performance",
+              "speakers": "Hari Babu Volli, Sravanthi Naga",
+              "room": "Hall 1",
+              "url": "https://kccncind2025.sched.com/event/23Ev9",
+              "description": "One of the significant challenges faced by Kubernetes-based applications is that performance issues often only manifest in production environments, making them difficult to reproduce in development or staging settings. Imagine if we could \"time travel\" and recreate real-world production conditions within a controlled environment.\n\nThis session explores how a leading global bank (200M customers in 150+ countries) successfully recreated production workloads in controlled settings. By leveraging synthetic data generation, trace playback, and workload simulation, we tackled most performance issues without compromising sensitive data. This approach not only enhanced system reliability and reduced downtime but also improved the bank's ROI by decreasing operational costs by 30% and increasing transaction efficiency by 25%, resulting in significant annual savings.\n\nJoin us as we unravel the secrets of \"time travel\" to replicate production performance and resolve issues effectively.",
+              "recording": "https://www.youtube.com/watch?v=iVxbou19tys"
+            }
+          ]
+        },
+        {
+          "start": "2025-08-07T14:50:00+05:30",
+          "end": "2025-08-07T15:20:00+05:30",
+          "startLabel": "2:50 PM",
+          "endLabel": "3:20 PM",
+          "talks": [
+            {
+              "id": "23EtY",
+              "title": "How Intuit Streamlined AI/ML Inference Workflows on K8s",
+              "speakers": "Sreekanth P R, Yashash H L",
+              "room": "Hall 3",
+              "url": "https://kccncind2025.sched.com/event/23EtY",
+              "description": "Building ML systems that operate on real-time data streams is no easy feat, especially when dealing with complex messaging systems, scaling requirements, and the need for seamless inference. At Intuit, we saw firsthand how these challenges slowed down our ML teams and hindered innovation. That’s why we created Numaflow, a Kubernetes-native open-source platform that empowers teams to easily connect to streaming sources, apply transformations, and run inference at scale—without the typical overhead. In this talk, we’ll share how Numaflow enhances the developer experience, reduces boilerplate, and accelerates deployment of ML workflows. Whether you're a data scientist, ML engineer, or platform builder, this session will offer practical insights into running real-time inference on streaming data, the Intuit way.",
+              "recording": "https://www.youtube.com/watch?v=3o3D7V4zMRc"
+            },
+            {
+              "id": "23EvC",
+              "title": "Observability at Scale With Monitoring as Code: Grafana, Prometheus, & Tempo",
+              "speakers": "Sai Abhinay Bommakanti, Vipin GopalaKrishnapillai",
+              "room": "Hall 1",
+              "url": "https://kccncind2025.sched.com/event/23EvC",
+              "description": "We built an enterprise-wide observability platform using CNCF & open-source tools (Grafana, Prometheus, and Tempo) to address APM needs for Ops, AppDev, CloudFinOps, and Management. This self-service, automated platform offers dashboards, alerts, and notifications.\n\nChallenges:\n\n1️⃣ Flexibility—Observing diverse tech stacks (Java, Node, Python, and Go) with standard & custom metrics and tracing.\n2️⃣ Scaling—Observing workloads across multiple Kubernetes clusters and regions.\n3️⃣ Cost—Fully managed solutions like MarketplaceAPM Tools were expensive.\n\nSolution:\n\nHub & Spoke Model: Centralized tooling observing global workloads.\n✅ Metrics: AWS Managed Prometheus for metrics, self-hosted Grafana for dashboards and alerts.\n✅ Traces: Self-hosted Grafana Tempo with S3 storage for cost optimization.\n✅ MAC: Fully automated infrastructure with AWS CDK and TypeScript for self-service configuration.",
+              "recording": "https://www.youtube.com/watch?v=3nHnGjTmgNk"
+            }
+          ]
+        },
+        {
+          "start": "2025-08-07T15:50:00+05:30",
+          "end": "2025-08-07T16:20:00+05:30",
+          "startLabel": "3:50 PM",
+          "endLabel": "4:20 PM",
+          "talks": [
+            {
+              "id": "23EvF",
+              "title": "Building a Scalable Observability Platform for Edge Compute Nodes",
+              "speakers": "Naveen Kumar S P, Karthik A",
+              "room": "Hall 1",
+              "url": "https://kccncind2025.sched.com/event/23EvF",
+              "description": "Unlock edge observability at scale. Tackle distributed node chaos with robust monitoring, logging, and security. Dive into architectural patterns for aggregating data across challenging networks. Discover how to build resilient, multi-tenant observability for your edge deployments.\nPresentation leverages a real-world case study to illustrate the architectural design patterns and best practices for building scalable edge observability, emphasizing the application of core cloud-native principles and technologies",
+              "recording": "https://www.youtube.com/watch?v=z5ef-4fS5xs"
+            }
+          ]
+        },
+        {
+          "start": "2025-08-07T16:30:00+05:30",
+          "end": "2025-08-07T17:00:00+05:30",
+          "startLabel": "4:30 PM",
+          "endLabel": "5:00 PM",
+          "talks": [
+            {
+              "id": "23EvI",
+              "title": "Unlocking Kubernetes Observability: Secure, Tenant-Centric Metrics for GPU Workloads",
+              "speakers": "Ramkumar Nagaraj, Bingi Narasimha Karthik",
+              "room": "Hall 1",
+              "url": "https://kccncind2025.sched.com/event/23EvI",
+              "description": "The Tenant Exporter enhances observability in multi-tenant Kubernetes clusters by delivering curated namespace metrics for GPU workloads at Adobe. Built on Prometheus, it exposes metrics like ingress requests, container CPU/memory, GPU utilization, and quotas. Users can select metrics via a ConfigMap, with quotas managing load.\n\nThe architecture features a Prometheus instance for metric collection, an Nginx proxy for load balancing, and secure authentication using prom-label-proxy with kube-rbac-proxy. A live demo will showcase configuring self-service metrics for a GPU namespace, integrated with Prometheus.\n\nAttendees will learn to deploy this system, manage quotas, and scale metric delivery across clusters. Drawing from Adobe's experience with thousands of namespaces, this session offers best practices for observability using CNCF tools to reduce overhead and improve insights. Join us to elevate your Kubernetes observability strategy and optimize GPU workload management.",
+              "recording": "https://www.youtube.com/watch?v=gI40zpbES5w"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
