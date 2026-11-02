@@ -72,7 +72,10 @@
     "sourceUrl": "https://github.com/cncf/tab/issues/141",
     "published": "2026-11-02",
     "updated": "2026-11-02",
-    "assets": ["/img/architectures/bank-of-ningbo/architecture.png"]
+    "assets": [
+      "/img/architectures/bank-of-ningbo/architecture.png",
+      "/img/architectures/bank-of-ningbo/logo.png"
+    ]
   },
   {
     "id": "capital-one",
