@@ -52,6 +52,29 @@
     ]
   },
   {
+    "id": "bank-of-ningbo",
+    "title": "Cloud Native AI Resource Management and Inference Service Governance with Kubernetes, HAMi and Higress at Bank of Ningbo",
+    "organization": "Bank of Ningbo",
+    "summary": "Bank of Ningbo, a regional city commercial bank, runs financial LLM inference across general-purpose GPUs and domestic accelerators on Kubernetes, with HAMi managing heterogeneous compute and Higress routing requests across models and clusters.",
+    "industries": ["Financial Services"],
+    "tags": [
+      "ai",
+      "llm inference",
+      "ai gateway",
+      "gpu scheduling",
+      "heterogeneous accelerators",
+      "multi-cluster",
+      "model routing",
+      "private cloud",
+      "platform engineering"
+    ],
+    "projects": ["Kubernetes", "HAMi", "Higress"],
+    "sourceUrl": "https://github.com/cncf/tab/issues/141",
+    "published": "2026-11-02",
+    "updated": "2026-11-02",
+    "assets": ["/img/architectures/bank-of-ningbo/architecture.png"]
+  },
+  {
     "id": "capital-one",
     "title": "Scaling to Petabytes: Inside Capital One’s OpenTelemetry Architecture",
     "organization": "Capital One",
