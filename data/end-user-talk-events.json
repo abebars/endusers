@@ -519,6 +519,42 @@
       }
     },
     {
+      "slug": "kubecon-china-2025",
+      "source": "sched",
+      "sourceUrl": "https://kccncchn2025.sched.com/",
+      "apiUrl": "https://kccncchn2025.sched.com/list/descriptions",
+      "sessionUrl": "https://kccncchn2025.sched.com/event/{id}",
+      "location": "Hong Kong",
+      "timezone": "HKT (UTC+8)",
+      "utcOffset": "+08:00",
+      "selection": "presented by speakers from organizations that meet the CNCF End User definition",
+      "select": {
+        "sessionIds": [
+          "1x5hf",
+          "1x5hK",
+          "1x5hl",
+          "1x5ho",
+          "1x5hr",
+          "1x5hx",
+          "1x5hZ",
+          "1x5i9",
+          "1x5ia",
+          "1x5im",
+          "1x5iv",
+          "1x5j4",
+          "1x5jD",
+          "1x5je",
+          "1x5jh",
+          "1x5jM",
+          "1x5k5",
+          "1x7F0",
+          "22JRk",
+          "23EWS",
+          "25EUK"
+        ]
+      }
+    },
+    {
       "slug": "kubecon-eu-2025",
       "source": "sched",
       "sourceUrl": "https://kccnceu2025.sched.com/",

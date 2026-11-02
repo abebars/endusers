@@ -1,0 +1,360 @@
+{
+  "description": "Generated from the official Sched listing by npm run collect:end-user-talks. Do not hand-edit.",
+  "source": "sched",
+  "sourceUrl": "https://kccncchn2025.sched.com/",
+  "apiUrl": "https://kccncchn2025.sched.com/list/descriptions",
+  "selection": "presented by speakers from organizations that meet the CNCF End User definition",
+  "location": "Hong Kong",
+  "generatedAt": "2026-11-02T12:23:34.885Z",
+  "timezone": "HKT (UTC+8)",
+  "talkCount": 21,
+  "final": true,
+  "days": [
+    {
+      "date": "2025-06-10",
+      "id": "tuesday-june-10",
+      "label": "Tuesday, June 10",
+      "slots": [
+        {
+          "start": "2025-06-10T09:55:00+08:00",
+          "end": "2025-06-10T10:00:00+08:00",
+          "startLabel": "9:55 AM",
+          "endLabel": "10:00 AM",
+          "talks": [
+            {
+              "id": "23EWS",
+              "title": "Keynote: Scaling Model Training with Volcano: iFlytek’s Kubernetes Breakthrough",
+              "speakers": "Xuzheng Chang, Dong Jiang",
+              "room": "Level 16 | Grand Ballroom I",
+              "url": "https://kccncchn2025.sched.com/event/23EWS",
+              "description": "Training massive AI models at scale is tough—but doing it efficiently in Kubernetes is even tougher. In this keynote, we’ll share how iFlytek tackled key challenges in large-scale model training, including low GPU utilization, fragile workflows, and resource contention across teams. By leveraging Volcano, they boosted GPU usage by over 40%, and cut failure recovery time by 70%. This talk offers a quick but powerful look at how intelligent scheduling and orchestration can unlock performance, reliability, and fairness in multi-tenant AI platforms.",
+              "recording": "https://www.youtube.com/watch?v=JfN73WyvPbE"
+            }
+          ]
+        },
+        {
+          "start": "2025-06-10T10:02:00+08:00",
+          "end": "2025-06-10T10:12:00+08:00",
+          "startLabel": "10:02 AM",
+          "endLabel": "10:12 AM",
+          "talks": [
+            {
+              "id": "1x7F0",
+              "title": "Keynote: The Future of AI in Hong Kong: From Local Innovation to Global Influence",
+              "speakers": "Roby Chen, Aaron Xu",
+              "room": "Level 16 | Grand Ballroom I",
+              "url": "https://kccncchn2025.sched.com/event/1x7F0",
+              "description": "The release of HKGAI V1 marks a new chapter in the development of AI in Hong Kong. Leveraging the strengths of both local connectivity and global outreach, the HKGAI team embraces the open-source community to tackle challenges ranging from optimizing high-performance computing clusters to exploring cutting-edge AI models. Looking ahead, Hong Kong aims to further integrate resources from mainland China and the international community, deepening technological innovation and application expansion, and contributing a \"Hong Kong Solution\" to global AI standards and use cases.",
+              "recording": "https://www.youtube.com/watch?v=iSlYsTIpiZ8"
+            }
+          ]
+        },
+        {
+          "start": "2025-06-10T11:00:00+08:00",
+          "end": "2025-06-10T11:30:00+08:00",
+          "startLabel": "11:00 AM",
+          "endLabel": "11:30 AM",
+          "talks": [
+            {
+              "id": "1x5hl",
+              "title": "AI Model Distribution Challenges and Best Practices",
+              "speakers": "Tao Peng, Xiaoya Xia, Wenbo Qi, Han Jiang, Wenpeng Li",
+              "room": "Level 19 | Crystal Court I",
+              "url": "https://kccncchn2025.sched.com/event/1x5hl",
+              "description": "As the demand for scalable AI/ML grows, efficiently distributing AI models in cloud-native infrastructure has become a pivotal challenge for enterprises. The panel dives into the technical and operational strategies for deploying models at scale -- from optimizing model storage and transfer to ensuring consistency across clusters and regions. Experts from different companies and CNCF projects will debate critical questions like: How can Kubernetes-native workflows automate and accelerate model distribution while minimizing latency and bandwidth costs? How to efficiently distribute huge models sizing hundreds of GBs or TBs? What are the challenges proposed by distributed inference and the prefilling-decoding architecture? How are models updated in the reinforcement learning post-training paradigm? What role do standards like OCI artifacts or specialized registries play in streamlining versioned model delivery?",
+              "recording": "https://www.youtube.com/watch?v=G1uH_RP3r54"
+            },
+            {
+              "id": "1x5ho",
+              "title": "An Alternative Metadata System for Large Kubernetes Clusters",
+              "speakers": "Yixiang Chen, Yingcai Xue",
+              "room": "Level 19 | Crystal Court II",
+              "url": "https://kccncchn2025.sched.com/event/1x5ho",
+              "description": "For an event-driven distributed system like Kubernetes, where components communicate by synchronizing incremental data through the KubeAPIServer, the metadata system is the most critical component. The ETCD is the only official supported metadata system, but some projects like kine explored alternative metadata storage, but they're either not open-sourced or have performance issues.\nThis talk covers ByteDance's work on high-performance Kubernetes metadata systems. It summarizes ETCD's production issues, analyzes Kubernetes' metadata storage requirements and introduces how we solve it with kubebrain.\nActual results from large-scale environments (over 20K nodes, 1M pods over years) show that KubeBrain enhances cluster performance and stability.\nThis talk helps understand the challenges of metadata systems in large-scale clusters and provides insights into an open-source solution that has been practiced in ByteDance's production environment.",
+              "recording": "https://www.youtube.com/watch?v=MGOa8Nn8_S0"
+            }
+          ]
+        },
+        {
+          "start": "2025-06-10T11:45:00+08:00",
+          "end": "2025-06-10T12:15:00+08:00",
+          "startLabel": "11:45 AM",
+          "endLabel": "12:15 PM",
+          "talks": [
+            {
+              "id": "1x5hr",
+              "title": "Defining a Specification for AI/ML Artifacts",
+              "speakers": "Tao Peng, Chenyu Zhang, Fog Dong, Xudong Wang",
+              "room": "Level 19 | Crystal Court I",
+              "url": "https://kccncchn2025.sched.com/event/1x5hr",
+              "description": "AI has become a prominent figure in the cloud native ecosystem and there continues to be massive adoption in this emerging field. As frameworks and approaches are introduced, a pattern has emerged which threatens the ability to manage at scale: each implementation introduces their own format, runtime, and different ways of working, fragmenting the ecosystem. On other hand, open standards are the backbone of cohesive and scalable ecosystems.\n\nThis panel discussion seeks to explore the importance of defining standards within the CNCF ecosystem, particularly focusing on AI/ML artifacts. Beyond the advantages of the standard in facilitating integration with existing cloud native tools, this conversation will delve into how the standards can serve as a foundation for innovation. Join us to understand how standardization with innovative approaches can advance the cloud native AI landscape.",
+              "recording": "https://www.youtube.com/watch?v=dYVgmr7S-rE"
+            }
+          ]
+        },
+        {
+          "start": "2025-06-10T13:45:00+08:00",
+          "end": "2025-06-10T14:15:00+08:00",
+          "startLabel": "1:45 PM",
+          "endLabel": "2:15 PM",
+          "talks": [
+            {
+              "id": "1x5hx",
+              "title": "Fast and Furious: Practice in Horizon Robotics on Large-scale End-to-end Model Training",
+              "speakers": "Zhihao Xu, Chen Yangxue",
+              "room": "Level 19 | Crystal Court I",
+              "url": "https://kccncchn2025.sched.com/event/1x5hx",
+              "description": "End-to-end large model training is crucial for advancing autonomous driving technology. Horizon Robotics leads in this field by leveraging deep learning algorithms and chip design. They efficiently train and deploy advanced perception models like Sparse4D using cloud-native technologies.\nTraining these models poses challenges, such as managing massive video data and numerous small files. Ensuring high-performance training with over 2000 GPUs on RDMA, quickly identifying different failures, and diagnosing issues in large-scale training.\nThis session covers how Horizon Robotics manages large-scale training on Kubernetes. It highlights the role of distributed data caching, network topology awareness, and job affinity scheduling in optimizing a 2000 GPU training job. We'll also discuss strategies for restoring interrupted training jobs through backup machine replacement to enhance task resilience. Furthermore, experiences with CNCF projects like Volcano, Fluid, and NPD will be shared.",
+              "recording": "https://www.youtube.com/watch?v=fESU-jZHpjg"
+            }
+          ]
+        },
+        {
+          "start": "2025-06-10T14:30:00+08:00",
+          "end": "2025-06-10T15:00:00+08:00",
+          "startLabel": "2:30 PM",
+          "endLabel": "3:00 PM",
+          "talks": [
+            {
+              "id": "1x5i9",
+              "title": "Unlocking Kyverno: Mastering Policy Management in Large-Scale Kubernetes Clusters",
+              "speakers": "Di Xu, Xu Liu",
+              "room": "Level 19 | Crystal Court II",
+              "url": "https://kccncchn2025.sched.com/event/1x5i9",
+              "description": "With the growing adoption of Kubernetes, managing configurations and ensuring compliance across extensive clusters becomes increasingly complex. Kyverno, a native Kubernetes policy engine, offers a streamlined solution to these challenges. In this session, we'll explore how adopting Kyverno can enhance efficiency, simplify operations, centralize control, and reduce maintenance in Kubernetes environments. We'll demonstrate how Kyverno empowers organizations to effectively manage policies and tackle the unique challenges of large-scale Kubernetes deployments. Drawing from real-world experiences, we will share valuable lessons and best practices that facilitate seamless policy integration and management. Attendees will gain practical insights and tools to optimize their Kubernetes environments using Kyverno.",
+              "recording": "https://www.youtube.com/watch?v=_KQijmHBk6E"
+            }
+          ]
+        },
+        {
+          "start": "2025-06-10T15:30:00+08:00",
+          "end": "2025-06-10T16:00:00+08:00",
+          "startLabel": "3:30 PM",
+          "endLabel": "4:00 PM",
+          "talks": [
+            {
+              "id": "1x5hK",
+              "title": "Simplifying the Networking and Security Stack With Cilium, Hubble, and Tetragon",
+              "speakers": "Liyi Huang, Kaixi Fan",
+              "room": "Level 21 | Pearl Pavilion",
+              "url": "https://kccncchn2025.sched.com/event/1x5hK",
+              "description": "Join us as we celebrate nearly a decade of Cilium, now the de-facto standard CNI for Kubernetes and a cornerstone of cloud native networking, observability, and security. This session provides updates on the latest Cilium release and showcases how its unified eBPF-powered stack is transforming Kubernetes environments by replacing fragmented toolchains with seamless, secure, scalable, and simplified solutions.\n\nHear about how Cilium is simplifying the cloud native stack and solidifying its role as the comprehensive networking and security solution for modern cloud native architectures from contributors and end users Bytedance and Isovalent.",
+              "recording": "https://www.youtube.com/watch?v=cKPW67D7X10"
+            }
+          ]
+        },
+        {
+          "start": "2025-06-10T16:05:00+08:00",
+          "end": "2025-06-10T16:10:00+08:00",
+          "startLabel": "4:05 PM",
+          "endLabel": "4:10 PM",
+          "talks": [
+            {
+              "id": "1x5ia",
+              "title": "⚡ Lightning Talk: Disaster Recovery - How IaCaC and Kubernetes Enables Cost Efficiency and Fast Recovery",
+              "speakers": "Pei (Sandy) Wang",
+              "room": "Level 16 | Grand Ballroom I",
+              "url": "https://kccncchn2025.sched.com/event/1x5ia",
+              "description": "Tech startup in early stage normally aim low running cost on infrastructure spend but fast development and delivery. When there are a first few clients onboard, disaster recovery plan is a must have. When DR is required and an agreed RTO is 6 hours for example, how to not only remain low running cost but also to meet agreed RTO and SLA, our DR plan and implementation is a success to share with the audience. We onboarded container orchestration platform Kubernetes, DevOps best practices, for example Infrastructure-and-Configuration-as-Code and Pipeline-as-Code. Our DR implementation only spends a minimum cost on always-on resources. When a DR incident happens, automated pipelines will bring up on-demand resources that include a Kubernetes cluster, and geo-recover database and storage, then deploy the latest applications into kubernetes cluster, production DR can be live within 2 hours.",
+              "recording": "https://www.youtube.com/watch?v=uhRoA_WcPsg"
+            }
+          ]
+        },
+        {
+          "start": "2025-06-10T16:15:00+08:00",
+          "end": "2025-06-10T16:45:00+08:00",
+          "startLabel": "4:15 PM",
+          "endLabel": "4:45 PM",
+          "talks": [
+            {
+              "id": "1x5im",
+              "title": "Introducing AIBrix: Cost-Effective and Scalable Kubernetes Control Plane for VLLM",
+              "speakers": "Jiaxin Shan, Liguang Xie",
+              "room": "Level 19 | Crystal Court I",
+              "url": "https://kccncchn2025.sched.com/event/1x5im",
+              "description": "Managing large-scale LLM inference workloads on Kubernetes requires more than just high-performance inference engines like vLLM. It demands a comprehensive control plane that integrates deeply with engines while addressing the complexities of large-scale operations. This need inspired the creation of AIBrix, a Kubernetes-native control plane designed to scale LLM inference with modularity, flexibility, and cutting-edge algorithms.\n\nAIBrix introduces a pluggable architecture with components for LLM specific autoscaling, high-density lora management, distributed KV cache, heterogenous serving, model loading etc. AIBrix emphasizes deep co-design with inference engines, enabling advanced features and optimizations. This talk will demonstrate AIBrix in action, showcasing its ability to improve scalability and optimize resource utilization. Additionally, we will present detailed benchmarks to evaluate the performance of these components, providing actionable insights for practitioners.",
+              "recording": "https://www.youtube.com/watch?v=QAhx8kdzvEI"
+            }
+          ]
+        },
+        {
+          "start": "2025-06-10T16:26:00+08:00",
+          "end": "2025-06-10T16:31:00+08:00",
+          "startLabel": "4:26 PM",
+          "endLabel": "4:31 PM",
+          "talks": [
+            {
+              "id": "1x5iv",
+              "title": "⚡ Lightning Talk: Kubernetes Isekai (異世界）：Transforming Kubernetes Education Into a Gamified Adventure",
+              "speakers": "Cyrus Wong, Hongyi Qian",
+              "room": "Level 16 | Grand Ballroom I",
+              "url": "https://kccncchn2025.sched.com/event/1x5iv",
+              "description": "Kubernetes Isekai (異世界） is an open-source RPG designed for hands-on Kubernetes learning through gamification. Ideal for junior to Higher Diploma students at Hong Kong Institute of Information Technology (HKIIT), it transforms Kubernetes education into an engaging adventure.\n\nRole-Playing Adventure: Students interact with NPCs who assign Kubernetes tasks.\nTask-Based Learning: Tasks involve setting up and managing Kubernetes clusters.\nFree Access: Uses AWS Academy Learner Lab with Minikube or Kubernetes.\nScalable Grading: AWS SAM application tests Kubernetes setups within AWS Lambda.\nProgress Tracking: Students track progress and earn rewards.\nThis game offers practical Kubernetes experience in a fun, cost-effective way.\nGenAI Chat: Integrates Generative AI to make NPC interactions more dynamic and fun, enhancing the overall learning experience.\nDemo\nhttps://www.youtube.com/watch?v=dIwNWwz681k",
+              "recording": "https://www.youtube.com/watch?v=Iew3tq1iDss"
+            }
+          ]
+        },
+        {
+          "start": "2025-06-10T16:40:00+08:00",
+          "end": "2025-06-10T16:45:00+08:00",
+          "startLabel": "4:40 PM",
+          "endLabel": "4:45 PM",
+          "talks": [
+            {
+              "id": "1x5j4",
+              "title": "⚡ Lightning Talk: Stateful Service Federation in Large-Scale Search, Ads, and Recommendation Scenarios at Xiaohongshu",
+              "speakers": "Vec Sun, Yang Song",
+              "room": "Level 16 | Grand Ballroom I",
+              "url": "https://kccncchn2025.sched.com/event/1x5j4",
+              "description": "Search, advertising, and recommendation services are among the primary business types within Xiaohongshu. Due to the strong dependency of these services on index table, each instance replica needs to maintain its own independent state. As a result, such services are deployed using the stateful workload.\nWith the rapid growth of Xiaohongshu's business scale, the size limit of a single Kubernetes cluster has made it impossible to further scale stateful services. To address daily traffic and business growth, the only solution was to migrate workloads to idle clusters. However, this migration approach has caused significant inconvenience and risks for developer.\nTo tackle this challenge, Xiaohongshu leveraged Karmada to implement the federation of stateful services. By designing scheduling and deployment capabilities for stateful services on federated clusters, This approach has seamlessly resolved the scaling limitations caused by single-cluster capacity constraints for stateful services.",
+              "recording": "https://www.youtube.com/watch?v=JV_G34Jwr7M"
+            }
+          ]
+        },
+        {
+          "start": "2025-06-10T17:00:00+08:00",
+          "end": "2025-06-10T17:30:00+08:00",
+          "startLabel": "5:00 PM",
+          "endLabel": "5:30 PM",
+          "talks": [
+            {
+              "id": "1x5jD",
+              "title": "Portrait Service: AI-Driven PB-Scale Data Mining for Cost Optimization and Stability Enhancement",
+              "speakers": "Yuji Liu, Zhiheng Sun",
+              "room": "Level 19 | Crystal Court I",
+              "url": "https://kccncchn2025.sched.com/event/1x5jD",
+              "description": "Kuaishou's Kubernetes-based platform manages 200,000+ machines and 10M+ Pods, generating 10TB+ daily data. AI-driven intelligent portrait service enhances stability and performance:\n● Stability Management: AI analyzes system and workload metrics to generate machine health scores, integrated into Kubernetes scheduling to evict/avoid unhealthy nodes. This reduced pod creation delays from 20 to 0.1 cases/day and boosted service availability from 90% to 99.99%.\n● Performance Optimization:\nServing 10,000+ services with diverse resource sensitivities (compute-, cache-, and IO-intensive), we combine AI with microarchitecture data to pinpoint bottlenecks and create application profiles. Optimizing resource allocation (compute, cache, memory bandwidth) has increased average IPC by 20% and reduced LLC miss rates for cache-sensitive services from over 50% to 10%.\nFuture plans include integrating AI Agent technology to automate anomaly detection and reduce manual operations by 80%.",
+              "recording": "https://www.youtube.com/watch?v=yczf87w0JDk"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2025-06-11",
+      "id": "wednesday-june-11",
+      "label": "Wednesday, June 11",
+      "slots": [
+        {
+          "start": "2025-06-11T09:12:00+08:00",
+          "end": "2025-06-11T09:22:00+08:00",
+          "startLabel": "9:12 AM",
+          "endLabel": "9:22 AM",
+          "talks": [
+            {
+              "id": "22JRk",
+              "title": "Keynote: Optimizing AI Workload Scheduling: Bilibili's Journey To an Efficient Cloud Native AI Platform",
+              "speakers": "Kevin Wang, Long Xu",
+              "room": "Level 16 | Grand Ballroom I",
+              "url": "https://kccncchn2025.sched.com/event/22JRk",
+              "description": "As China's leading video platform, Bilibili faces 4 key challenges in multi-cluster AI workloads management:\n1. Workload Diversity: Training/inference/video processing workloads have different scheduling requirements.\n2. Cross-Cluster Complexity: Managing workloads across multiple Kubernetes clusters in expanding IDCs with SLAs.\n3. Performance Demands: Minimal startup latency and best scheduling efficiency for short-running tasks e.g. video processing.\n4. Efficiency-QoS Balance: maximizing resource utilization while ensuring priority workload stability.\n\nThis talk will share experiences and delve specific optimization techniques:\n1. Leveraging and optimizing CNCF projects such as Karmada and Volcano to build a unified, high-performance AI workload scheduling platform.\n2. Integrating technologies such as KubeRay to schedule various AI online and offline workloads.\n3. Maximizing resource efficiency through online and offline hybrid scheduling, tidal scheduling and other technologies.",
+              "recording": "https://www.youtube.com/watch?v=akdwHaV_R5o"
+            }
+          ]
+        },
+        {
+          "start": "2025-06-11T09:36:00+08:00",
+          "end": "2025-06-11T09:46:00+08:00",
+          "startLabel": "9:36 AM",
+          "endLabel": "9:46 AM",
+          "talks": [
+            {
+              "id": "1x5jM",
+              "title": "Keynote: Who Owns Your Pod? Observing and Blocking Unwanted Behavior at eBay With eBPF",
+              "speakers": "Jianlin Lv, Liyi Huang",
+              "room": "Level 16 | Grand Ballroom I",
+              "url": "https://kccncchn2025.sched.com/event/1x5jM",
+              "description": "Kubernetes admins often struggle to understand pod activities, both for regular pods and those with various privileges. This session explores two use cases that highlight why Tetragon, an eBPF-based observability and enforcement tool, for pod security:\n1.Replacing Auditbeat with Tetragon: Learn how Auditbeat rules mapped to Tetragon tracing policies, identifying functionality gaps, and how eBay contributed back to the community\n2.Auditing Container Process Permissions: See how Tetragon helped analyze pod behavior and determine if applications could migrate to more restrictive pod security policies, ensuring adherence to the principle of least privilege\nWe also cover deployment challenges, such as integrating with SIEM platforms, resource utilization, and implementing runtime enforcement for unwanted pod behavior. This talk provides practical insights into using Tetragon for observability, policy refinement, and improving overall pod security posture in Kubernetes environments.",
+              "recording": "https://www.youtube.com/watch?v=xEa4KFf5FzY"
+            }
+          ]
+        },
+        {
+          "start": "2025-06-11T09:48:00+08:00",
+          "end": "2025-06-11T09:58:00+08:00",
+          "startLabel": "9:48 AM",
+          "endLabel": "9:58 AM",
+          "talks": [
+            {
+              "id": "1x5hf",
+              "title": "Keynote: How We Save $900 per Day with Self-Hosted AI: Building Scalable Local LLM Infrastructure",
+              "speakers": "Vivian Hu, Lv Yi",
+              "room": "Level 16 | Grand Ballroom I",
+              "url": "https://kccncchn2025.sched.com/event/1x5hf",
+              "description": "While SaaS AI providers like OpenAI offer convenient LLM services, they come with significant drawbacks: high costs, lack of customization, lack of privacy, and usage limitations that can throttle high-volume applications.\n\nThis presentation shows how a leading e-commerce web site deployed a highly customized suite of LLM applications on private cloud infra, reducing costs by 90% while maintaining complete control over scalability and quality of service. We'll discuss the technology stack for orchestrating inference workloads on cloud GPUs, and explore practical strategies for building stable, scalable, high-performance AI apps on your own private cloud infra.",
+              "recording": "https://www.youtube.com/watch?v=RyITa7SMnJ0"
+            }
+          ]
+        },
+        {
+          "start": "2025-06-11T11:45:00+08:00",
+          "end": "2025-06-11T12:15:00+08:00",
+          "startLabel": "11:45 AM",
+          "endLabel": "12:15 PM",
+          "talks": [
+            {
+              "id": "1x5je",
+              "title": "How Bloomberg Creates a Resilient Data Analytics Platform Using Karmada",
+              "speakers": "Ilan Filonenko, Michas Szacillo",
+              "room": "Level 19 | Crystal Court II",
+              "url": "https://kccncchn2025.sched.com/event/1x5je",
+              "description": "Bloomberg’s Data Analytics Platform Engineering team supports a wide-range of real-time streaming, large batch ETL, and data exploration use-cases by using Apache Flink, Apache Spark, and Trino across multi-cluster Kubernetes. However, deploying and managing these workflows at scale efficiently can be challenging due to varying resource requirements and uptime needs. For stateful applications like Apache Flink, ensuring recovery and state conservation after downtime is especially important.\n\nThis session will discuss how Bloomberg uses Karmada, a multi-cluster management system, to deploy and manage Apache Flink. We’ll also explore how Karmada’s capabilities can be expanded to handle additional data analytics workloads, including Apache Spark and Trino. The session will cover the unique requirements and real-life use-cases for each, including:\n\n- Resource-aware workload scheduling\n- Custom resource requirements and health interpretation\n- State conservation during application failover",
+              "recording": "https://www.youtube.com/watch?v=oQMJj5Mf7QA"
+            },
+            {
+              "id": "1x5jh",
+              "title": "China Mobile's Panji Platform: Observability Practices and Implementations for LLM Applications Base",
+              "speakers": "Casey Li, Jing Shang",
+              "room": "Level 16 | Grand Ballroom I",
+              "url": "https://kccncchn2025.sched.com/event/1x5jh",
+              "description": "As large language model (LLM) applications are widely deployed, their complex architectures challenge business observability. APM probes, which rely on instrumentation or proxy operation, consume system resources and impact traffic and performance, restricting their use in complex scenarios. Also, multiple teams handling different LLM instances make it hard to coordinate unified observability construction.\nTo solve this, China Mobile‘'s Panji platform collaborates with DeepFlow to achieve zero-intrusion (Zero Code) and full-stack (Full Stack) observability instantly, using eBPF and Wasm technologies. eBPF collects real-time data at the kernel level, while Wasm plugins parse streaming requests. By integrating existing data, the platform provides service universal map, distributed tracing, and multi-dimensional metric analysis, ensuring the stability and performance optimization of LLM applications.",
+              "recording": "https://www.youtube.com/watch?v=zN1j4EpVwjY"
+            }
+          ]
+        },
+        {
+          "start": "2025-06-11T14:30:00+08:00",
+          "end": "2025-06-11T15:00:00+08:00",
+          "startLabel": "2:30 PM",
+          "endLabel": "3:00 PM",
+          "talks": [
+            {
+              "id": "1x5hZ",
+              "title": "Building Custom GPU Clusters at Scale: Using Kubespray To Create High-Performance AI Infrastructure",
+              "speakers": "Rong Zhang, Kay Yan",
+              "room": "Level 21 | Pearl Pavilion",
+              "url": "https://kccncchn2025.sched.com/event/1x5hZ",
+              "description": "Kubespray, recognized by Kubernetes' SIG Cluster Lifecycle, deploys production-ready Kubernetes clusters on bare metal, enhancing performance for AI applications with robust GPU support. This session covers Kubespray's fundamentals, key features, and updates.\n\nAs AI workloads like LLMs grow, scalable GPU clusters are essential. Engineers will share insights from deploying custom GPU clusters at scale with Kubespray, discussing challenges and best practices. Attendees will learn to integrate Kubernetes technologies like LWS, Kueue, Gateway API Inference Extension, DRA, and tensor parallelism to enhance AI workloads like RAG and LoRA, improving resource utilization and performance.\n\nWe'll share Kubespray's inventory source code to customize AI clusters and use Kubernetes operators to define infrastructure in private clouds, enabling efficient cluster scaling.",
+              "recording": "https://www.youtube.com/watch?v=xj56NvrvN5A"
+            }
+          ]
+        },
+        {
+          "start": "2025-06-11T15:30:00+08:00",
+          "end": "2025-06-11T16:00:00+08:00",
+          "startLabel": "3:30 PM",
+          "endLabel": "4:00 PM",
+          "talks": [
+            {
+              "id": "1x5k5",
+              "title": "Stability in Large Model Training: Practices in Software and Hardware Fault Self-Healing",
+              "speakers": "Yang Cao",
+              "room": "Level 19 | Crystal Court II",
+              "url": "https://kccncchn2025.sched.com/event/1x5k5",
+              "description": "Training trillion-parameter AI models requires significant GPU resources, where any idle time leads to increased costs. Maintaining full-speed GPU utilization is crucial, yet hardware and software failures (such as firmware, kernel, or hardware issues) often disrupt large-scale training. For example, LLaMA3 experienced 419 interruptions over 54 days, with 78% due to hardware issues, underscoring the necessity for automated anomaly recovery.\nAt Ant Group, we will share:\nGPU Monitoring: Comprehensive monitoring from hardware to applications to ensure optimal performance.\nSelf-Healing for Large GPU Clusters: Automated fault isolation, recovery from kernel panics, and node reprovisioning for clusters with 10,000+ GPUs.\nCore Service Level Objectives (SLOs): Achieving over 98% GPU availability and more than 90% automatic fault isolation.\nPredictive Maintenance: Using failure pattern analysis to reduce downtime and improve reliability.",
+              "recording": "https://www.youtube.com/watch?v=Jdbvo5NSZ9U"
+            },
+            {
+              "id": "25EUK",
+              "title": "Heterogeneous Hybrid Distributed Training for Large-Scale Language Models",
+              "speakers": "Yanjun Chen",
+              "room": "Level 21 | Emerald Pavilion",
+              "url": "https://kccncchn2025.sched.com/event/25EUK",
+              "description": "With the development of AI technology, the demand for computing power for large model training has accelerated the deployment of AI infrastructure. Data centers often have a \"resource wall\" problem between AI acceleration hardware of different generations and manufacturers, which caused the incompatibility issue of software and hardware stack. Thus, it’s a big challenge for AI infra operators to maximize resource utilization. This topic focuses on technical solutions for collaborative training using chips of different architectures, sharing the practices on solving key problems such as heterogeneous training task splitting, heterogeneous training performance prediction, and heterogeneous hybrid communication and etc.. The project has been open sourced and will be further improved with better maturity through the community."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

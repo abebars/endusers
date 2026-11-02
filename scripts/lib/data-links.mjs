@@ -28,6 +28,7 @@ export const RENDERED_DATA_FILES = [
   'data/case-studies.json',
   'data/community-groups.json',
   'data/community-people.json',
+  'data/end-user-talks/kubecon-china-2025.json',
   'data/end-user-talks/kubecon-china-2026.json',
   'data/end-user-talks/kubecon-eu-2025.json',
   'data/end-user-talks/kubecon-eu-2026.json',
