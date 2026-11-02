@@ -1,7 +1,8 @@
 // The register binding: `ALLOWLISTED_ADVISORIES` in scripts/audit-gate.mjs
 // and the "Known unpatched dependency advisories" table in SECURITY.md must
-// describe the same set of suppressions, and the "Accepted moderate-risk
-// advisories" table must name the vulnerable versions package-lock.json holds.
+// describe the same set of suppressions, and the "Accepted moderate- and
+// low-risk advisories" table must name the vulnerable versions
+// package-lock.json holds.
 // These checks read authored documents and the lockfile and nothing else, so
 // they are cheap enough to run on the document-only CI path
 // (.github/workflows/ci.yml, "Check content contracts") -- SECURITY.md is an
@@ -98,9 +99,10 @@ test('every advisory in the SECURITY.md table is still allowlisted', () => {
   }
 });
 
-// Reads accepted moderate-risk rows as {advisory, package, installed} records.
+// Reads accepted moderate- and low-risk rows as {advisory, package,
+// installed} records.
 function acceptedModerateRows(securityMd) {
-  const heading = '## Accepted moderate-risk advisories';
+  const heading = '## Accepted moderate- and low-risk advisories';
   const start = securityMd.indexOf(heading);
   assert.notEqual(
     start,
@@ -125,10 +127,30 @@ function acceptedModerateRows(securityMd) {
   return rows;
 }
 
-// GitHub Advisory Database lists GHSA-g3hv-75wg-m249 as vulnerable below 11.0.1.
+// The GitHub Advisory Database range for each accepted advisory. An advisory
+// with a fix names `patchedVersion` (vulnerable below it); one with no fixed
+// release yet names `lastVulnerableVersion` (vulnerable up to and including
+// it), so a newer release the database has not assessed forces a review of
+// the row rather than passing silently.
+// GHSA-g3hv-75wg-m249: minimatch, vulnerable below 11.0.1.
+// GHSA-gcqx-w48m-w2h4: deepmerge, >= 4.2.0 and <= 4.3.1, no patched release.
 const MODERATE_ADVISORY_RULES = new Map([
   ['GHSA-g3hv-75wg-m249', { package: 'minimatch', patchedVersion: '11.0.1' }],
+  [
+    'GHSA-gcqx-w48m-w2h4',
+    { package: 'deepmerge', lastVulnerableVersion: '4.3.1' },
+  ],
 ]);
+
+const isVulnerable = (version, rule) =>
+  rule.patchedVersion === undefined
+    ? compareVersions(version, rule.lastVulnerableVersion) <= 0
+    : compareVersions(version, rule.patchedVersion) < 0;
+
+const describeRange = (rule) =>
+  rule.patchedVersion === undefined
+    ? `the advisory covers versions up to ${rule.lastVulnerableVersion}`
+    : `the advisory is patched in ${rule.patchedVersion}`;
 
 function compareVersions(left, right) {
   const parse = (version) => {
@@ -174,8 +196,9 @@ function assertModerateRegisterMatchesLockfile(rows, lockfile) {
     const actual = lockfileVersions(lockfile, row.package);
     assert.ok(
       row.installed.size > 0,
-      `the "${row.package}" row in SECURITY.md's "Accepted moderate-risk ` +
-        'advisories" table states no installed version; list versions ' +
+      `the "${row.package}" row in SECURITY.md's "Accepted moderate- and ` +
+        'low-risk advisories" table states no installed version; list ' +
+        'versions ' +
         'without copy counts, comma-separated',
     );
     for (const version of row.installed) {
@@ -185,16 +208,13 @@ function assertModerateRegisterMatchesLockfile(rows, lockfile) {
           'but that version is no longer installed; review or remove the row',
       );
       assert.ok(
-        compareVersions(version, rule.patchedVersion) < 0,
+        isVulnerable(version, rule),
         `SECURITY.md names ${row.package}@${version} for ${row.advisory}, ` +
-          `but the advisory is patched in ${rule.patchedVersion}; review or ` +
-          'remove the row',
+          `but ${describeRange(rule)}; review or remove the row`,
       );
     }
     const unlistedVulnerable = [...actual].filter(
-      (version) =>
-        compareVersions(version, rule.patchedVersion) < 0 &&
-        !row.installed.has(version),
+      (version) => isVulnerable(version, rule) && !row.installed.has(version),
     );
     assert.deepEqual(
       unlistedVulnerable,
@@ -206,7 +226,7 @@ function assertModerateRegisterMatchesLockfile(rows, lockfile) {
   for (const [advisory, rule] of MODERATE_ADVISORY_RULES) {
     const vulnerableVersions = [
       ...lockfileVersions(lockfile, rule.package),
-    ].filter((version) => compareVersions(version, rule.patchedVersion) < 0);
+    ].filter((version) => isVulnerable(version, rule));
     if (vulnerableVersions.length === 0) continue;
     assert.ok(
       rows.some((row) => row.advisory === advisory),
@@ -297,6 +317,38 @@ test('moderate register rejects a missing row for an installed vulnerability', (
   assert.throws(
     () => assertModerateRegisterMatchesLockfile([], lockfile),
     /does not document GHSA-g3hv-75wg-m249.*10\.2\.6/,
+  );
+});
+
+test('register bounds an advisory with no patched release by its last vulnerable version', () => {
+  const row = {
+    advisory: 'GHSA-gcqx-w48m-w2h4',
+    package: 'deepmerge',
+    installed: new Set(['4.3.1']),
+  };
+  const lockfile = (version) => ({
+    packages: { 'node_modules/deepmerge': { version } },
+  });
+  assert.doesNotThrow(() =>
+    assertModerateRegisterMatchesLockfile([row], lockfile('4.3.1')),
+  );
+  // A release the advisory database has not assessed is not assumed
+  // vulnerable: the row names a version that is gone and must be reviewed.
+  assert.throws(
+    () => assertModerateRegisterMatchesLockfile([row], lockfile('4.3.2')),
+    /names deepmerge@4\.3\.1.*no longer installed/,
+  );
+  assert.throws(
+    () =>
+      assertModerateRegisterMatchesLockfile(
+        [{ ...row, installed: new Set(['4.3.2']) }],
+        lockfile('4.3.2'),
+      ),
+    /covers versions up to 4\.3\.1/,
+  );
+  assert.throws(
+    () => assertModerateRegisterMatchesLockfile([], lockfile('4.2.0')),
+    /does not document GHSA-gcqx-w48m-w2h4.*4\.2\.0/,
   );
 });
 
