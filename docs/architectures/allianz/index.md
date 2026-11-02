@@ -29,11 +29,11 @@ import CNCFProjectCard from '@site/src/components/CNCFProjectCard';
 
 ## Relevant CNCF projects
 
-  <CNCFProjectCard name={"Kubernetes"} href={"https://www.cncf.io/projects/kubernetes/"} logo={"/img/cncf-projects/kubernetes-kubernetes-icon-color.svg"} since={"2021"} version={"1.29.6"} description={"- Kubernetes has been the foundation for our Internal Developer Platform and almost all of Adobe's containerized workloads run on Kubernetes clusters."} />
+  <CNCFProjectCard name={"Kubernetes"} href={"https://www.cncf.io/projects/kubernetes/"} logo={"/img/cncf-projects/kubernetes-kubernetes-icon-color.svg"} since={"2021"} version={"1.29.6"} description={"Kubernetes has been the foundation for our Internal Developer Platform."} />
 
-  <CNCFProjectCard name={"Helm"} href={"https://www.cncf.io/projects/helm/"} logo={"/img/cncf-projects/helm-helm-icon-color.svg"} since={"2021"} version={"v3.12.3"} description={"- Helm is our package manager and helps us abstract out some of the complexity by including them as dependencies and only exposing the values.yaml file."} />
+  <CNCFProjectCard name={"Helm"} href={"https://www.cncf.io/projects/helm/"} logo={"/img/cncf-projects/helm-helm-icon-color.svg"} since={"2021"} version={"v3.12.3"} description={"Helm is our package manager and helps us abstract out some of the complexity by including them as dependencies and only exposing the values.yaml file."} />
 
-  <CNCFProjectCard name={"Argo"} href={"https://www.cncf.io/projects/argo/"} logo={"/img/cncf-projects/argo-argo-icon-color.svg"} since={"2021"} description={"We are using all four projects under Argo: Argo CD: v2.9.22"} />
+  <CNCFProjectCard name={"Argo"} href={"https://www.cncf.io/projects/argo/"} logo={"/img/cncf-projects/argo-argo-icon-color.svg"} since={"2021"} description={"We are using Argo CD: v2.9.22."} />
 
 ## Platform Engineering  @ Allianz Direct
 Allianz Direct has been working on building Platform Engineering for the past several years. We have created a cloud-native future-proof platform which offers an organisation-wide-devops(orgOps) experience on top of public cloud. Business, Software Engineers, Security, Compliance, Architecture, Support and Cost Efficiency are few of our stakeholders.

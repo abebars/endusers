@@ -37,23 +37,23 @@ import CNCFProjectCard from '@site/src/components/CNCFProjectCard';
 
 ## Relevant projects
 
-  <CNCFProjectCard name={"Argo CD"} href={"https://www.cncf.io/projects/argo/"} logo={"/img/cncf-projects/argo-argo-horizontal-color.svg"} since={"2024"} version={"v3.3.6"} description={"- Argo CD is used here as our main infrastructure engine. We've configured it so it can manage Day 1 and Day 2 operations seamlessly: Cluster APIs primitives on the management cluster to manage control plane operations, and helm applications to manage tooling and configuration of workload clusters. This infrastructure Argo CD is centralized and dedicated to the platform team."} />
+  <CNCFProjectCard name={"Argo CD"} href={"https://www.cncf.io/projects/argo/"} logo={"/img/cncf-projects/argo-argo-horizontal-color.svg"} since={"2024"} version={"v3.3.6"} description={"Argo CD is used here as our main infrastructure engine. We've configured it so it can manage Day 1 and Day 2 operations seamlessly: Cluster APIs primitives on the management cluster to manage control plane operations, and helm applications to manage tooling and configuration of workload clusters. This infrastructure Argo CD is centralized and dedicated to the platform team."} />
 
-  <CNCFProjectCard name={"Cluster API"} since={"2024"} version={"v1.10.5"} description={"- Cluster API manages K8s control planes & machines at scale leaning on the ad hoc infrastructure providers (CAPO for OpenStack. CABPT and CACPPT for Talos), and serves as autoscaling & autohealing provider."} />
+  <CNCFProjectCard name={"Cluster API"} since={"2024"} version={"v1.10.5"} description={"Cluster API manages K8s control planes & machines at scale leaning on the ad hoc infrastructure providers (CAPO for OpenStack. CABPT and CACPPT for Talos), and serves as autoscaling & autohealing provider."} />
 
-  <CNCFProjectCard name={"ExternalDNS"} since={"2021"} version={"v2.0.1"} description={"- External-dns automates Designate DNS records management for workload Clusters."} />
+  <CNCFProjectCard name={"ExternalDNS"} since={"2021"} version={"v2.0.1"} description={"External-dns automates Designate DNS records management for workload Clusters."} />
 
-  <CNCFProjectCard name={"external-secrets"} href={"https://www.cncf.io/projects/external-secrets/"} logo={"/img/cncf-projects/external-secrets-operator-eso-horizontal-color.svg"} since={"2022"} version={"v1.3.2"} description={"- External Secrets Operator is the glue between Hashicorp Vault and workload clusters, allowing for secure and centralized secrets management."} />
+  <CNCFProjectCard name={"external-secrets"} href={"https://www.cncf.io/projects/external-secrets/"} logo={"/img/cncf-projects/external-secrets-operator-eso-horizontal-color.svg"} since={"2022"} version={"v1.3.2"} description={"External Secrets Operator is the glue between Hashicorp Vault and workload clusters, allowing for secure and centralized secrets management."} />
 
-  <CNCFProjectCard name={"Harbor"} href={"https://www.cncf.io/projects/harbor/"} logo={"/img/cncf-projects/harbor-harbor-horizontal-color.svg"} since={"2021"} version={"v2.14"} description={"- Harbor is the centralized registry: storing and distributing every image used on any container based infrastructure at SNCF."} />
+  <CNCFProjectCard name={"Harbor"} href={"https://www.cncf.io/projects/harbor/"} logo={"/img/cncf-projects/harbor-harbor-horizontal-color.svg"} since={"2021"} version={"v2.14"} description={"Harbor is the centralized registry: storing and distributing every image used on any container based infrastructure at SNCF."} />
 
-  <CNCFProjectCard name={"Kubernetes"} href={"https://www.cncf.io/projects/kubernetes/"} logo={"/img/cncf-projects/kubernetes-kubernetes-icon-color.svg"} since={"2018"} version={"v1.35"} description={"- SNCF's sole container orchestrator. Used across all hosting zones, including critical infrastructure like high-speed trains."} />
+  <CNCFProjectCard name={"Kubernetes"} href={"https://www.cncf.io/projects/kubernetes/"} logo={"/img/cncf-projects/kubernetes-kubernetes-icon-color.svg"} since={"2018"} version={"v1.35"} description={"SNCF's sole container orchestrator. Used across all hosting zones, including critical infrastructure like high-speed trains."} />
 
-  <CNCFProjectCard name={"OpenStack"} since={"2024"} version={"Yoga"} description={"- OpenStack provides Machines, DNS, Storage and Network to the platform, it is fully automated by CAPO and therefore abstracted from App Teams."} />
+  <CNCFProjectCard name={"OpenStack"} since={"2024"} version={"Yoga"} description={"OpenStack provides Machines, DNS, Storage and Network to the platform, it is fully automated by CAPO and therefore abstracted from App Teams."} />
 
-  <CNCFProjectCard name={"Renovate"} since={"2024"} version={"v43"} description={"- Renovate helps us automate OS and dependency patch management."} />
+  <CNCFProjectCard name={"Renovate"} since={"2024"} version={"v43"} description={"Renovate helps us automate OS and dependency patch management."} />
 
-  <CNCFProjectCard name={"Talos Linux"} since={"2024"} version={"v1.13.2"} description={"- Talos Linux provides an immutable OS and Kubernetes distribution combo."} />
+  <CNCFProjectCard name={"Talos Linux"} since={"2024"} version={"v1.13.2"} description={"Talos Linux provides an immutable OS and Kubernetes distribution combo."} />
 
 ## TLDR; Synopsis
 
