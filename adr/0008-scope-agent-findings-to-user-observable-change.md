@@ -1,6 +1,9 @@
 # ADR 0008: Scope agent findings to user-observable change
 
 - **Status**: Accepted
+- **Status note**: Amended 2026-11-01: `CSS_YAML_CLONE_CEILING` is 37, not 35,
+  after the member refresh moved into its own workflow lane (#1986); see
+  [Amendment: CSS and YAML clone ceiling](#amendment-css-and-yaml-clone-ceiling-2026-11-01).
 - **Date**: 2026-10-23
 - **Tracking issue**: [#1788](https://github.com/cncf/endusers/issues/1788)
   (trend analysis of the last 100 issues and PRs)
@@ -109,7 +112,8 @@ interpretation.
    - Mutation: `break` 90 on the files a pull request changes; the scheduled
      full-tree report is a maintainer artifact, and a mutant surviving in it is
      not a finding under rule 1.
-   - Clones: `CLONE_CEILING` 245 and `CSS_YAML_CLONE_CEILING` 35. A clone under
+   - Clones: `CLONE_CEILING` 245 and `CSS_YAML_CLONE_CEILING` 37 (35 at
+     acceptance; raised once, see the amendment of 2026-11-01). A clone under
      the ceiling is not a finding. The ceilings still fall when a change that
      was in remit anyway happens to remove clones, so the headroom is not spent
      on new copies; nobody removes clones to make them fall.
@@ -150,3 +154,27 @@ interpretation.
   2026-11-23, measured as agent-filed issues per agent against the counts in
   Context), the remaining lever is the Hive configuration, and that request goes
   to the Hive maintainers with this ADR attached.
+
+## Amendment: CSS and YAML clone ceiling (2026-11-01)
+
+Rule 3 froze `CSS_YAML_CLONE_CEILING` at 35. On 2026-10-29, #1986 split the
+end user member collection out of the Refresh metrics workflow into its own
+lane, `refresh-members.yml`, so that an oversized upstream logo could no longer
+abort the metrics, case-study and talk refreshes (#1980). The new workflow
+repeats the checkout and setup header and the test, build and
+open-automation-pr tail that every automation lane carries. Neither block can
+move into a composite action: checkout must precede any local action, and the
+workflow ordering contract reads workflow-level `run` steps only. The split
+therefore added two exact clones that extraction cannot pay for, and the
+maintainer raised the ceiling to 37 in the same pull request, with the reason
+recorded beside the constant in `scripts/check-duplication.mjs`.
+
+This amendment records that change here so the ADR and the gate agree. The
+effect on rule 3 is limited to the number:
+
+- `CSS_YAML_CLONE_CEILING` is 37. It remains a frozen regression gate: it falls
+  when an in-remit change happens to remove a CSS or YAML clone, and it does
+  not rise again without a further amendment.
+- `CLONE_CEILING` (245) and every other threshold in rule 3 are unchanged.
+- A clone under either ceiling is still not a finding, and a change whose only
+  effect is to lower a clone count is still out of agent remit under rule 2.
