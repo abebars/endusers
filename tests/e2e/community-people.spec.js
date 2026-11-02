@@ -67,7 +67,7 @@ test.describe('TAB roster', () => {
     const firstName = await page
       .locator('article')
       .filter({ has: cards.first() })
-      .locator('h4')
+      .locator('h3')
       .first()
       .textContent();
     expect(firstName?.trim()).not.toBe('');

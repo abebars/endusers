@@ -119,7 +119,7 @@ test('each report title links to its own cncf.io page', () => {
   const items = findAllByType(RadarReports(), 'li');
   items.forEach((item, index) => {
     const report = reports[index];
-    const heading = findByType(item, 'h3');
+    const heading = findByType(item, 'h2');
     assert.ok(heading, `report ${report.id} rendered no heading`);
     const anchor = findByType(heading, 'a');
     assert.ok(anchor, `report ${report.id} rendered no title link`);

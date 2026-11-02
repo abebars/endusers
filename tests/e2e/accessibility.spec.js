@@ -213,14 +213,9 @@ const NAVBAR_VIOLATIONS = ['label-content-name-mismatch'];
 // same self-retiring contract: an entry that stops being reported fails the
 // state's light-mode scan and has to be deleted.
 const KNOWN_STATE_VIOLATIONS = {
-  // Each dialog opens over a page whose card headings already skip a level,
-  // and axe scans the whole document, so the underlying list is still in the
-  // scan. These retire with the route entries above.
-  'member profile dialog': [...NAVBAR_VIOLATIONS, 'heading-order'],
-  'TAB profile dialog': [...NAVBAR_VIOLATIONS, 'heading-order'],
-  // The drawer replaces the navbar links it would otherwise report on, so
-  // this state records the heading skip alone.
-  'mobile navigation drawer': ['heading-order'],
+  'member profile dialog': NAVBAR_VIOLATIONS,
+  'TAB profile dialog': NAVBAR_VIOLATIONS,
+  'mobile navigation drawer': [],
 };
 
 const WCAG_TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'];
@@ -251,42 +246,15 @@ const DISABLED_RULES = Object.create(null);
 //
 // Every route carries the navbar, so every route starts from
 // NAVBAR_VIOLATIONS; route-specific entries are appended per path.
-//
-// HEADING_ORDER_ROUTES are the pages whose first card heading skips a level:
-// a card list rendered at h3 under the page h1 (member directory, radar
-// reports, award winners, the home and community landing pillars), a person
-// card rendered at h4 under an h2 section (TAB roster), and the blog
-// archive's year headings. The markup lives in src/components and in the
-// authored pages, not in this spec, so the entries are recorded here and
-// retire themselves when that markup is fixed.
-const HEADING_ORDER_ROUTES = [
-  '/',
-  '/community',
-  '/community/members',
-  '/community/technical-advisory-board',
-  '/community/awards',
-  '/resources/radar-reports',
-  '/blog/archive',
-];
-
 const KNOWN_VIOLATIONS = Object.fromEntries(
-  ROUTES.map((route) => [
-    route.path,
-    [
-      ...NAVBAR_VIOLATIONS,
-      ...(HEADING_ORDER_ROUTES.includes(route.path) ? ['heading-order'] : []),
-    ],
-  ]),
+  ROUTES.map((route) => [route.path, [...NAVBAR_VIOLATIONS]]),
 );
 
 // Route-specific violations on CONTENT_ROUTES, keyed by path, with the same
 // self-retiring contract. The navbar entry is implied for every content route
 // and retired through the template sample in KNOWN_VIOLATIONS, so only what
 // a page adds of its own belongs here.
-const KNOWN_CONTENT_VIOLATIONS = Object.assign(Object.create(null), {
-  // The staff person cards render at h4 directly under the page h1.
-  '/community/get-involved': ['heading-order'],
-});
+const KNOWN_CONTENT_VIOLATIONS = Object.create(null);
 
 // Both halves of the baseline contract against one scan's results. `allowed`
 // is every rule id the scan may report without failing; `recorded` is the

@@ -23,19 +23,19 @@ architects, and organizations running cloud native technologies in production.
 
 <div className="pillars">
   <div className="pillar">
-    <h3>Work with proven leaders</h3>
+    <h2>Work with proven leaders</h2>
     <p>Maximize what open source can do for your business, alongside the organizations already doing it at scale.</p>
   </div>
   <div className="pillar">
-    <h3>Stay ahead of change</h3>
+    <h2>Stay ahead of change</h2>
     <p>CNCF projects move at <a href="https://insights.linuxfoundation.org/collection/details/cncf">high velocity</a> — end users keep their organizations in the know on modern infrastructure.</p>
   </div>
   <div className="pillar">
-    <h3>Sustain open source</h3>
+    <h2>Sustain open source</h2>
     <p>Pool resources with your peers to support the sustainable development of the projects you depend on.</p>
   </div>
   <div className="pillar">
-    <h3>Elevate your platform teams</h3>
+    <h2>Elevate your platform teams</h2>
     <p>A supportive, knowledge-focused community where teamwork and empathy help your teams succeed.</p>
   </div>
 </div>

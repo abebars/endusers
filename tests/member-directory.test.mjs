@@ -808,7 +808,7 @@ test('a search that matches nothing shows the empty state, not the grid', () => 
   assert.equal(findByClass(directory.view.tree, 'grid'), undefined);
   const empty = findByClass(directory.view.tree, 'emptyState');
   assert.equal(
-    textOf(findByType(empty, 'h3', EXPAND_SHARED)),
+    textOf(findByType(empty, 'h2', EXPAND_SHARED)),
     'No organizations match',
   );
 

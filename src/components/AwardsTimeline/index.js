@@ -39,7 +39,7 @@ function WinnerCard({ entry }) {
       </a>
       <div className={styles.cardBody}>
         <p className={styles.awardLabel}>{awardLabel}</p>
-        <h3 className={styles.orgName}>{organization}</h3>
+        <h2 className={styles.orgName}>{organization}</h2>
         <p className={styles.citation}>{citation}</p>
         <p className={styles.event}>{event}</p>
         <div className={styles.links}>

@@ -16,11 +16,11 @@ export default function RadarReports() {
       <ul className={styles.list}>
         {radarReports.map((report) => (
           <li key={report.id} className={styles.item}>
-            <h3 className={styles.title}>
+            <h2 className={styles.title}>
               <a href={report.url} target="_blank" rel="noreferrer">
                 {report.title}
               </a>
-            </h3>
+            </h2>
             {report.publishedAt && (
               <p className={styles.date}>{formatDate(report.publishedAt)}</p>
             )}

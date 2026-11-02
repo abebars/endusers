@@ -214,7 +214,7 @@ test('the card image alt falls back to the company when there is no role', () =>
 test('the card shows role above company when both are present', () => {
   const { tree } = render(PersonCard, { person: FULL_PERSON });
   const info = findByClass(tree, 'personInfo');
-  assert.equal(textOf(findByType(info, 'h4')), 'Ada Lovelace');
+  assert.equal(textOf(findByType(info, 'h3')), 'Ada Lovelace');
   assert.equal(textOf(findByType(info, 'p')), 'Principal Engineer');
   assert.equal(textOf(findByType(info, 'span')), 'Analytical Engines');
 });

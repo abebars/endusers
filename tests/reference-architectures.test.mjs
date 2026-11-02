@@ -227,12 +227,14 @@ test('a query that matches nothing swaps the grid for the empty state', () => {
   toolbarProps(view.tree).setQuery('no architecture is named this');
 
   assert.equal(
-    findAllByType(view.tree, 'h2').length,
+    findAllByType(view.tree, 'h2').filter(
+      (heading) => heading.props.className === 'orgName',
+    ).length,
     0,
     'no organization headings survive an empty result set',
   );
   assert.equal(
-    textOf(findByType(view.tree, 'h3', EXPAND_SHARED)),
+    textOf(findByType(view.tree, 'h2', EXPAND_SHARED)),
     'No architectures match',
   );
   assert.equal(toolbarProps(view.tree).resultCount, 0);
@@ -253,7 +255,9 @@ test('the empty state clear button restores the full grid', () => {
   button.props.onClick();
 
   assert.equal(
-    findAllByType(view.tree, 'h3', EXPAND_SHARED).length,
+    findAllByType(view.tree, 'h2', EXPAND_SHARED).filter(
+      (heading) => textOf(heading) === 'No architectures match',
+    ).length,
     0,
     'the empty state is gone once the filters are cleared',
   );

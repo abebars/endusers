@@ -38,7 +38,7 @@ test.describe('member directory filtering', () => {
 
     // Search for the first card's own organization name, so the query is
     // guaranteed to match at least one member on any data revision.
-    const firstName = await section.locator('article h3').first().textContent();
+    const firstName = await section.locator('article h2').first().textContent();
     await search.fill(firstName.trim());
 
     await expect

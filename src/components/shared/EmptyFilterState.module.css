@@ -6,7 +6,11 @@
   text-align: center;
 }
 
-.emptyState h3 {
+.emptyState h2 {
+  /* Keeps the h3 size this block rendered at before the outline fix: the
+     element moved up a level so the catalog pages keep an unbroken heading
+     chain, but the empty state is copy, not a section title. */
+  font-size: 1.5rem;
   margin: 0 0 0.5rem;
 }
 

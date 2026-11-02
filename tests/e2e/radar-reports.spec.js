@@ -65,7 +65,7 @@ test.describe('radar reports list', () => {
     // Order is meaningful: the collector writes newest first and the component
     // maps the array as-is, so the page is the reverse-chronological feed.
     const renderedHrefs = await section
-      .locator('ul > li h3 a')
+      .locator('ul > li h2 a')
       .evaluateAll((anchors) => anchors.map((anchor) => anchor.href));
     expect(renderedHrefs).toEqual(reports.map((report) => report.url));
   });
@@ -78,13 +78,13 @@ test.describe('radar reports list', () => {
 
     for (const report of reports) {
       const item = section.locator('ul > li').filter({
-        has: page.locator(`h3 a[href="${report.url}"]`),
+        has: page.locator(`h2 a[href="${report.url}"]`),
       });
       await expect(item, `${report.url} should render once`).toHaveCount(1);
 
       // The title is the link, so a report whose title stops rendering leaves
       // an anchor with no accessible name rather than a missing element.
-      await expect(item.locator('h3 a')).toHaveText(report.title);
+      await expect(item.locator('h2 a')).toHaveText(report.title);
 
       const paragraphs = item.locator('p');
       await expect(paragraphs).toHaveCount(2);
@@ -93,17 +93,19 @@ test.describe('radar reports list', () => {
     }
   });
 
-  test('the list is a flat set of level-3 headings', async ({ page }) => {
+  test('the list is a flat set of level-2 headings', async ({ page }) => {
     await page.goto(RADAR_PATH);
     const section = sectionOf(page);
 
-    // Each report is an <h3> under the page's <h1>/<h2>. The unit suite reads
-    // the JSX tag name; only a real document has an outline that assistive
-    // technology and the theme's table of contents actually walk.
-    await expect(section.getByRole('heading', { level: 3 })).toHaveCount(
+    // Each report is an <h2> one level under the page's <h1>: the list
+    // follows the title with no section heading in between, so h2 is the
+    // first level that does not skip. The unit suite reads the JSX tag name;
+    // only a real document has an outline that assistive technology and the
+    // theme's table of contents actually walk.
+    await expect(section.getByRole('heading', { level: 2 })).toHaveCount(
       reports.length,
     );
-    await expect(section.getByRole('heading', { level: 4 })).toHaveCount(0);
+    await expect(section.getByRole('heading', { level: 3 })).toHaveCount(0);
   });
 });
 
@@ -167,7 +169,7 @@ test.describe('radar reports outbound links', () => {
     // The hrefs are mirrored verbatim from cncf.io into the corpus, so a
     // relative or http value would be served exactly as collected.
     const hrefs = await section
-      .locator('ul > li h3 a')
+      .locator('ul > li h2 a')
       .evaluateAll((anchors) =>
         anchors.map((anchor) => anchor.getAttribute('href') ?? ''),
       );
