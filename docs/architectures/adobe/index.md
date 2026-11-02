@@ -31,13 +31,13 @@ import CNCFProjectCard from '@site/src/components/CNCFProjectCard';
 
 ## Relevant CNCF projects
 
-  <CNCFProjectCard name={"Kubernetes"} href={"https://www.cncf.io/projects/kubernetes/"} logo={"/img/cncf-projects/kubernetes-kubernetes-icon-color.svg"} since={"2019"} version={"1.29.6"} description={"- Kubernetes has been the foundation for our Internal Developer Platform and almost all of Adobe's containerized workloads run on Kubernetes clusters."} />
+  <CNCFProjectCard name={"Kubernetes"} href={"https://www.cncf.io/projects/kubernetes/"} logo={"/img/cncf-projects/kubernetes-kubernetes-icon-color.svg"} since={"2019"} version={"1.29.6"} description={"Kubernetes has been the foundation for our Internal Developer Platform and almost all of Adobe's containerized workloads run on Kubernetes clusters."} />
 
-  <CNCFProjectCard name={"Helm"} href={"https://www.cncf.io/projects/helm/"} logo={"/img/cncf-projects/helm-helm-icon-color.svg"} since={"2019"} version={"v3.12.3"} description={"- Helm is our package manager and helps us abstract out some of the complexity by including them as dependencies and only exposing the values.yaml file."} />
+  <CNCFProjectCard name={"Helm"} href={"https://www.cncf.io/projects/helm/"} logo={"/img/cncf-projects/helm-helm-icon-color.svg"} since={"2019"} version={"v3.12.3"} description={"Helm is our package manager and helps us abstract out some of the complexity by including them as dependencies and only exposing the values.yaml file."} />
 
   <CNCFProjectCard name={"Argo"} href={"https://www.cncf.io/projects/argo/"} logo={"/img/cncf-projects/argo-argo-icon-color.svg"} since={"2022"} description={"We are using all four projects under Argo: Argo CD: v2.9.22 Argo Workflow: v3.4.6 Argo Events: v1.9.0 Argo Rollouts v1.6.0"} />
 
-  <CNCFProjectCard name={"Backstage"} href={"https://www.cncf.io/projects/backstage/"} logo={"/img/cncf-projects/backstage-backstage-icon-color.svg"} since={"2023"} version={"TBD"} description={"- Backstage is the backbone for our unified internal developer portal."} />
+  <CNCFProjectCard name={"Backstage"} href={"https://www.cncf.io/projects/backstage/"} logo={"/img/cncf-projects/backstage-backstage-icon-color.svg"} since={"2023"} description={"Backstage is the backbone for our unified internal developer portal."} />
 
 ## Developer Platforms @ Adobe
 Adobe has been working on building an Internal Developer Platform (IDP) for the past several years. We have a core infrastructure layer which offers a compute layer on top of cloud providers such as AWS and Azure. On top of the infrastructure layer, we provide an end-to-end developer experience which helps developers in different phases of SDLC.
