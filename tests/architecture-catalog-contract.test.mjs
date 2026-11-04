@@ -361,14 +361,14 @@ function projectKey(label) {
   return label.toLowerCase().replace(/[^a-z0-9]/g, '');
 }
 
-// A label need not be a card's name to belong to a project. Since #2022 the
-// `projects` label is the project's own name ("Argo", "Envoy") while the card
-// keeps the component the page describes ("Argo CD", "Envoy Gateway"), so the
-// label matches no card by name. The card's href still says which project the
-// component belongs to: a label that spells the slug of a linked project is
-// that project. Without this step such a label has no slug, drops out of the
-// collision check, and a later page filed under the component's name splits
-// the filter again unnoticed.
+// A label need not be a card's name to belong to a project. Catalog pages use
+// the project's own name as the `projects` label ("Argo", "Envoy") while the
+// card keeps the component the page describes ("Argo CD", "Envoy Gateway"),
+// so the label matches no card by name. The card's href still says which
+// project the component belongs to: a label that spells the slug of a linked
+// project is that project. Without this step such a label has no slug, drops
+// out of the collision check, and a later page filed under the component's
+// name splits the filter again unnoticed.
 function projectSlugsByLabel(records, cardSlugs) {
   const slugs = new Map(cardSlugs);
   const bySlugKey = new Map();
