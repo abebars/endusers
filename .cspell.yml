@@ -36,6 +36,7 @@ words:
   - pkgs
   - reprioritizations
   - retag
+  - scaffolder
   - srcdoc
   - vbscript
   # Inkscape sodipodi:namedview attributes on the SVG metadata allowlist.

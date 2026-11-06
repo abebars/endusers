@@ -57,7 +57,7 @@ import CNCFProjectCard from '@site/src/components/CNCFProjectCard';
 
 <CNCFProjectCard name={"KEDA"} href={"https://www.cncf.io/projects/keda/"} logo={"/img/cncf-projects/keda-keda-icon-color.svg"} since={"2024"} description={"Event-driven autoscaling alongside the Horizontal Pod Autoscaler: pre-scaling on news publication events, plus scheduled and queue-based scaling. Adoption: Developing (opt-in per service)."} />
 
-<CNCFProjectCard name={"Karpenter"} href={"https://github.com/kubernetes-sigs/karpenter"} logo={"/img/cncf-projects/kubernetes-kubernetes-icon-color.svg"} description={"Provisions the nodes for our clusters, mixing spot and on-demand capacity. Karpenter is a subproject of the Kubernetes special interest group (SIG) for autoscaling. Adoption: Established."} />
+<CNCFProjectCard name={"Karpenter"} logo={"/img/cncf-projects/kubernetes-kubernetes-icon-color.svg"} description={"Provisions the nodes for our clusters, mixing spot and on-demand capacity. Karpenter is a subproject of the Kubernetes special interest group (SIG) for autoscaling. Adoption: Established."} />
 
 <CNCFProjectCard name={"Open Policy Agent (OPA)"} href={"https://www.cncf.io/projects/open-policy-agent-opa/"} logo={"/img/cncf-projects/open-policy-agent-opa-icon-color.svg"} since={"2022"} description={"Admission policy written in Rego, the Open Policy Agent policy language. Adoption: Established."} />
 
@@ -65,7 +65,7 @@ import CNCFProjectCard from '@site/src/components/CNCFProjectCard';
 
 <CNCFProjectCard name={"SPIFFE"} href={"https://www.cncf.io/projects/spiffe/"} logo={"/img/cncf-projects/spiffe-spiffe-icon-color.svg"} description={"The identity format for services, in their mesh certificates. Adoption: Developing."} />
 
-<CNCFProjectCard name={"Kubebuilder"} href={"https://github.com/kubernetes-sigs/kubebuilder"} logo={"/img/cncf-projects/kubernetes-kubernetes-icon-color.svg"} since={"2021"} description={"The framework behind our Tenant Operator, which turns a `Tenant` resource in Git into namespaces, access and policies. Adoption: Established."} />
+<CNCFProjectCard name={"Kubebuilder"} logo={"/img/cncf-projects/kubernetes-kubernetes-icon-color.svg"} since={"2021"} description={"The framework behind our Tenant Operator, which turns a `Tenant` resource in Git into namespaces, access and policies. Adoption: Established."} />
 
 ## Other projects
 
